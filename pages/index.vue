@@ -1,51 +1,68 @@
+
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        Menuggest
-      </h1>
-      <h2 class="subtitle">
-        My tremendous Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="mainHolderDeluxChangeThislater">
+  <navigationBar title="Menuggest"
+  >
+
+  </navigationBar>
+  <div class="maxContainer">
+
+   <pageHolder>
+
+   </pageHolder>
+
+      <div>
+        <RightsideHolder>
+        </RightsideHolder>
       </div>
-    </div>
+
   </div>
+  </div>
+
 </template>
 
 <script>
+  /* eslint-disable no-alert, no-console */
 import Logo from '~/components/Logo.vue'
+import RightsideHolder from '../components/RightsideHolder'
+  import navigationBar from '../components/navigationBar'
+  import pageHolder from '../components/pageHolder'
 
 export default {
+  data () {
+    return {
+      dismissSecs: 10,
+      dismissCountDown: 0,
+      showDismissibleAlert: false
+    }
+  },
   components: {
-    Logo
+    RightsideHolder,
+    Logo,
+    navigationBar,
+    pageHolder
+  },
+  methods: {
+    countDownChanged (dismissCountDown) {
+      this.dismissCountDown = dismissCountDown
+    },
+    showAlert () {
+      this.dismissCountDown = this.dismissSecs
+    }
   }
 }
 </script>
 
 <style>
-.container {
+.maxContainer {
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+.mainHolderDeluxChangeThislater{
+  overflow: hidden;
 }
 
 .title {
