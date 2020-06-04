@@ -1,9 +1,8 @@
 <template>
   <section class="rightSideHolder">
     <div>
-      <h2>
-        {{ menuOptionsSelected }} {{selectedCourse}}</h2>
-      <menuDataHolder>
+      <h2>{{ menuOptionsSelected }} {{selectedCourse}}</h2>
+      <menuDataHolder v-on:sendToMenu="addtomenu">
       </menuDataHolder>
     </div>
 
@@ -20,6 +19,12 @@
         selectedCourse: 'main'
       }
     },
+    methods: {
+      addtomenu(item) {
+        console.log("Right side",item)
+        this.$emit('sendToMenu', item)
+      }
+    },
     name: 'RightsideHolder',
     components: {
       menuDataHolder
@@ -31,12 +36,12 @@
 <style lang="scss" scoped>
   .rightSideHolder{
     width: 350px;
-    height: 100%;
+    height: auto;
     background-color: #F7F8FB;
-    align-self: flex-end;
     padding: 0 10px;
   }
   h2 {
     text-align: center;
+    margin: 5px 0;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <b-list-group>
 <!--  Active moet met var  -->
-    <b-list-group-item v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
+    <b-list-group-item @click="addtomenu(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between ">
         <h5 class="mb-1">
           {{ item.message }}
@@ -34,6 +34,12 @@
             desc:'rose gebakken met een saus van gorgonzolakaas'
           },
         ]
+      }
+    },
+    methods: {
+      addtomenu(item) {
+        console.log("Data holder",item)
+        this.$emit('sendToMenu', item)
       }
     },
     name: 'menuDataHolder'
