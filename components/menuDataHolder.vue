@@ -23,16 +23,23 @@
         // Get acctual data
         items: [
           {
+            id:1,
             message: 'Runder-ribeye 350',
             desc:'Voor de vleesliefhebber 350g van de grill met pepersause'
           },
-          { message: 'Zalmfilet',
+          {
+            id:2,
+            message: 'Zalmfilet',
             desc:'Zalmfilet op de huid gebakken met sause van mosterd en basilicum'
           },
-          { message: 'Eendenborst',
+          {
+            id:3,
+            message: 'Eendenborst',
             desc:'Zuurkool en aardappelpuree'
           },
-          { message: 'sate van varkenshaas',
+          {
+            id:4,
+            message: 'sate van varkenshaas',
             desc:'rose gebakken met een saus van gorgonzolakaas'
           },
         ]

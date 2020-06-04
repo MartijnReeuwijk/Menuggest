@@ -3,7 +3,7 @@
 
     <b-list-group>
       <!--  Active moet met var  -->
-      <b-list-group-item @click="removeItem(item)" v-for="item in menuCardData"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
+      <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardData"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between ">
           <h5 class="mb-1">
             {{ item.message }}
@@ -29,8 +29,9 @@
       }
     },
     methods:{
-      removeItem(item){
-          this.menuCardData.splice(item, 1);
+      removeItem(index){
+        console.log('index', index)
+        this.menuCardData.splice(index, 1);
       }
     }
   }
