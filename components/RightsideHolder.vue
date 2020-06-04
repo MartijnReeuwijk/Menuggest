@@ -35,7 +35,7 @@
 
 <style lang="scss" scoped>
   .rightSideHolder{
-    width: 350px;
+    width: 375px;
     height: auto;
     background-color: #F7F8FB;
     padding: 0 10px;

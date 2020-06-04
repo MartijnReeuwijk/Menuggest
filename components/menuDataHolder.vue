@@ -20,8 +20,10 @@
   export default {
     data () {
       return {
+        // Get acctual data
         items: [
-          { message: 'Runder-ribeye 350',
+          {
+            message: 'Runder-ribeye 350',
             desc:'Voor de vleesliefhebber 350g van de grill met pepersause'
           },
           { message: 'Zalmfilet',
