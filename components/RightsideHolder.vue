@@ -2,7 +2,7 @@
   <section class="rightSideHolder">
     <div>
       <h2>{{ menuOptionsSelected }} {{selectedCourse}}</h2>
-      <menuDataHolder v-on:sendToMenu="addtomenu">
+      <menuDataHolder v-on:sendToMenu="addtomenu" :suggestionMode="false">
       </menuDataHolder>
     </div>
 

@@ -1,6 +1,5 @@
 <template>
-  <section class="menukaartPaper">
-
+  <section class="menukaartPaper" ref="menukaartPaper">
     <b-list-group>
       <!--  Active moet met var  -->
       <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardData"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
@@ -32,6 +31,8 @@
       removeItem(index){
         console.log('index', index)
         this.menuCardData.splice(index, 1);
+      //  Add overflow funtion
+
       }
     }
   }
@@ -47,7 +48,8 @@
   }
 .menukaartPaper{
   width: 595px;
-  height: 842px;
+  min-height: 842px;
+  height: auto;
   padding: 20px;
   background-color: white;
   border: 1px solid gray;

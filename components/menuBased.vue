@@ -1,11 +1,12 @@
 <template>
- <div class="pageHolder">
-   <pageHolder v-bind:menuCardData="menuCardData">
-<!--     Add picks-->
-   </pageHolder>
-     <RightsideHolder v-on:sendToMenu="updatePicks">
-     </RightsideHolder>
- </div>
+  <div class="pageHolder" ref="menukaartPaper">
+    <pageHolder v-bind:menuCardData="menuCardData">
+      <!--     Add picks-->
+
+    </pageHolder>
+    <RightsideHolder v-on:sendToMenu="updatePicks">
+    </RightsideHolder>
+  </div>
 
 </template>
 
@@ -25,9 +26,15 @@
     },
     methods:{
       updatePicks(item){
-        console.log('Data in menubase', item)
         this.menuCardData.push(item)
-        console.log('this.menuCardData', this.menuCardData)
+        this.overflow()
+      },
+      overflow(){
+        //  Ja dit moet wel anders de logic zit in het verkeerde component
+        let height = this.$refs.menukaartPaper.clientHeight;
+        if(height > 862) {
+          alert("Je menu is nu meer dan 1 page (Dit is een tijdelijke error)")
+        }
       }
     }
   }
