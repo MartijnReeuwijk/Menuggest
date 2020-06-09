@@ -2,7 +2,9 @@
   <section class="rightSideHolder">
     <div>
       <h2>{{ menuOptionsSelected }} {{selectedCourse}}</h2>
-      <menuDataHolder v-on:sendToMenu="addtomenu" :suggestionMode="false">
+      <menuDataHolder
+        v-on:sendToMenu="addtomenu"
+        :suggestionMode="this.suggestionMode">
       </menuDataHolder>
     </div>
 
@@ -17,6 +19,11 @@
       return {
         menuOptionsSelected: 'Menu options - ',
         selectedCourse: 'main'
+      }
+    },
+    props:{
+      suggestionMode:{
+        default:false
       }
     },
     methods: {

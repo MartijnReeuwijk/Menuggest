@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="suggestion-box">
-        <b-button variant="outline-primary">Suggesties</b-button>
+        <b-button :pressed.sync="myToggle" @click="suggestionMode" variant="outline-primary">Suggesties</b-button>
       </div>
     </div>
 
@@ -21,6 +21,17 @@
 <script>
   export default {
     name: 'bottom-nav',
+    data() {
+      return {
+        myToggle: false,
+      }
+    },
+    methods:{
+      suggestionMode() {
+        console.log('this.myToggle', this.myToggle)
+        this.$emit('suggestionMode', this.myToggle)
+      }
+    }
   }
 
 </script>

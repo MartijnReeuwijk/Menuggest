@@ -23,16 +23,12 @@
     props:['menuCardData'],
     data () {
       return {
-
-
       }
     },
     methods:{
       removeItem(index){
         console.log('index', index)
         this.menuCardData.splice(index, 1);
-      //  Add overflow funtion
-
       }
     }
   }

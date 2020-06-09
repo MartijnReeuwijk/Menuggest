@@ -1,7 +1,12 @@
 <template>
   <section class="a4holder" ref="a4holder">
     <menukaartA4 :menuCardData="menuCardData"></menukaartA4>
-    <bottomNav :style="{ width: myWidth + 'px' }"></bottomNav>
+    <bottomNav
+      v-on:suggestionMode="suggestionMode"
+      :style="{ width: myWidth + 'px' }"
+    >
+
+    </bottomNav>
   </section>
 </template>
 
@@ -11,7 +16,11 @@
 
   export default {
     name: 'pageHolder',
-    props:['menuCardData'],
+    props:{
+      menuCardData:{
+      //  add defaults if needed
+      }
+    },
     data() {
       return {
         myWidth: '750'
@@ -24,6 +33,9 @@
     methods: {
       getWindowWidth () {
         this.myWidth = this.$refs.a4holder.clientWidth;
+      },
+      suggestionMode (item) {
+        this.$emit('suggestionMode', item)
       }
     },
     mounted()

@@ -1,10 +1,15 @@
 <template>
   <div class="pageHolder" ref="menukaartPaper">
-    <pageHolder v-bind:menuCardData="menuCardData">
-      <!--     Add picks-->
 
+    <pageHolder
+      v-on:suggestionMode="updateSuggestion"
+    :menuCardData="menuCardData">
     </pageHolder>
-    <RightsideHolder v-on:sendToMenu="updatePicks">
+
+    <RightsideHolder
+      v-on:sendToMenu="updatePicks"
+      :suggestionMode="this.suggestionMode"
+    >
     </RightsideHolder>
   </div>
 
@@ -16,7 +21,8 @@
   export default {
     data () {
       return {
-        menuCardData:[]
+        menuCardData:[],
+        suggestionMode:"",
       }
     },
     name: 'menuBased',
@@ -25,6 +31,9 @@
       pageHolder
     },
     methods:{
+      updateSuggestion(item) {
+        this.suggestionMode = item
+      },
       updatePicks(item){
         this.menuCardData.push(item)
         this.overflow()
