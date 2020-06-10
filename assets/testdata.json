@@ -1,0 +1,26 @@
+items: [
+{
+id:1,
+message: 'Runder-ribeye 350',
+profit:'good',
+desc:'Voor de vleesliefhebber 350g van de grill met pepersause'
+},
+{
+id:2,
+message: 'Zalmfilet',
+profit:'good',
+desc:'Zalmfilet op de huid gebakken met sause van mosterd en basilicum'
+},
+{
+id:3,
+message: 'Eendenborst',
+profit:'avg',
+desc:'Zuurkool en aardappelpuree'
+},
+{
+id:4,
+message: 'sate van varkenshaas',
+profit:'bad',
+desc:'rose gebakken met een saus van gorgonzolakaas'
+},
+]

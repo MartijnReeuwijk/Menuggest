@@ -28,7 +28,6 @@
     },
     methods:{
       suggestionMode() {
-        console.log('this.myToggle', this.myToggle)
         this.$emit('suggestionMode', this.myToggle)
       }
     }

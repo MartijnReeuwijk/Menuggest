@@ -1,11 +1,12 @@
 <template>
   <section class="a4holder" ref="a4holder">
-    <menukaartA4 :menuCardData="menuCardData"></menukaartA4>
+    <menukaartA4
+      :menuCardData="menuCardData"></menukaartA4>
+
     <bottomNav
       v-on:suggestionMode="suggestionMode"
       :style="{ width: myWidth + 'px' }"
     >
-
     </bottomNav>
   </section>
 </template>

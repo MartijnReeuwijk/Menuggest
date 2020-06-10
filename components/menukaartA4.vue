@@ -1,5 +1,6 @@
 <template>
   <section class="menukaartPaper" ref="menukaartPaper">
+
     <b-list-group>
       <!--  Active moet met var  -->
       <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardData"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
@@ -27,7 +28,6 @@
     },
     methods:{
       removeItem(index){
-        console.log('index', index)
         this.menuCardData.splice(index, 1);
       }
     }

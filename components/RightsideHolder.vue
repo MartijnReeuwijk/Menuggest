@@ -1,10 +1,17 @@
 <template>
   <section class="rightSideHolder">
     <div>
-      <h2>{{ menuOptionsSelected }} {{selectedCourse}}</h2>
+      <h2>
+        {{title}}
+        {{ menuOptionsSelected }}
+        {{ selectedCourse }}
+      </h2>
+
       <menuDataHolder
         v-on:sendToMenu="addtomenu"
-        :suggestionMode="this.suggestionMode">
+        :sideMenuData="sideMenuData"
+        :suggestionMode="this.suggestionMode"
+      >
       </menuDataHolder>
     </div>
 
@@ -17,18 +24,25 @@
   export default {
     data () {
       return {
-        menuOptionsSelected: 'Menu options - ',
-        selectedCourse: 'main'
       }
     },
     props:{
+      sideMenuData:[],
+      title:{
+        Type: String,
+        default: null
+      },
       suggestionMode:{
-        default:false
-      }
-    },
+        type: Boolean,
+        default: false
+      },
+        menuOptionsSelected:{
+        },
+        selectedCourse:{
+        },
+      },
     methods: {
       addtomenu(item) {
-        console.log("Right side",item)
         this.$emit('sendToMenu', item)
       }
     },

@@ -3,12 +3,16 @@
 
     <pageHolder
       v-on:suggestionMode="updateSuggestion"
-    :menuCardData="menuCardData">
+      :menuCardData="menuCardData">
     </pageHolder>
 
     <RightsideHolder
       v-on:sendToMenu="updatePicks"
+      :title="title"
+      :sideMenuData="sideMenuData"
       :suggestionMode="this.suggestionMode"
+      :menuOptionsSelected="menuOptionsSelected"
+      :selectedCourse="selectedCourse"
     >
     </RightsideHolder>
   </div>
@@ -18,14 +22,25 @@
 <script>
   import RightsideHolder from '../components/RightsideHolder'
   import pageHolder from '../components/pageHolder'
+
   export default {
+    name: 'menuBased',
     data () {
       return {
         menuCardData:[],
-        suggestionMode:"",
+        suggestionMode: {
+          type: Boolean,
+          default: false
+        },
+        // Dit is niet helemaal lekker de dynamiek moet uit de data komen en niet mn if statement
+          menuOptionsSelected: 'Menu options:',
+          selectedCourse:'Hoofd',
       }
     },
-    name: 'menuBased',
+    props:{
+      sideMenuData:[],
+      title:String
+    },
     components: {
       RightsideHolder,
       pageHolder
@@ -33,6 +48,12 @@
     methods:{
       updateSuggestion(item) {
         this.suggestionMode = item
+        if(item === true){
+        //  Naamgeving,Propchain en Dynamic moet anders
+        this.menuOptionsSelected = "Suggestie mode"
+        } else {
+          this.menuOptionsSelected =  'Menu options:'
+        }
       },
       updatePicks(item){
         this.menuCardData.push(item)
