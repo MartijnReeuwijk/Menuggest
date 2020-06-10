@@ -1,8 +1,22 @@
 <template>
   <section class="menukaartPaper" ref="menukaartPaper">
+    <div v-if="menuCardData.length > 0 && menuCardData[0].options">
+        <b-list-group>
+          <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardData[0].options"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between ">
+              <h5 class="mb-1">
+                {{ item.message }}
+              </h5>
+            </div>
+            <p class="mb-1">
+              {{ item.desc }}
+            </p>
+          </b-list-group-item>
+        </b-list-group>
+    </div>
 
+<div v-else>
     <b-list-group>
-      <!--  Active moet met var  -->
       <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardData"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between ">
           <h5 class="mb-1">
@@ -14,6 +28,7 @@
         </p>
       </b-list-group-item>
     </b-list-group>
+</div>
 
   </section>
 </template>

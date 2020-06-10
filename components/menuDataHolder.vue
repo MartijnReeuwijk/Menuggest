@@ -1,8 +1,8 @@
 <template>
   <b-list-group>
 <!--  Active moet met var  -->
-    <b-list-group-item @click="addtomenu(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between ">
+    <b-list-group-item @click="clickEvent(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
+      <div class=" clickThrough d-flex w-100 justify-content-between ">
         <transition name="fade" v-enter>
            <div class="profit-colour" v-show="suggestionMode===true" v-bind:class="`${item.profit}`"></div>
        </transition>
@@ -37,7 +37,9 @@
     },
 
     methods: {
-      addtomenu(item) {
+      clickEvent(item) {
+        // Event dep, maar zegt niks in de docs
+        event.target.classList.add("active")
         this.$emit('sendToMenu', item)
       }
     },
@@ -45,6 +47,10 @@
 </script>
 
 <style lang="scss" scoped>
+  .clickThrough{
+    /*click whole element*/
+    pointer-events: none;
+  }
   .customStyle{
     margin: 5px 0;
     border-radius: 0;

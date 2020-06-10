@@ -125,14 +125,14 @@
       {
         "id":1,
         "profit":"good",
-        "message": "Runder-ribeye 350",
+        "message": "Spareribs",
         "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
       },
       {
         "id":2,
         "profit":"good",
-        "message": "Zalmfilet",
-        "desc": "Zalmfilet op de huid gebakken met sause van mosterd en basilicum"
+        "message": "Tonijn",
+        "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
       },
       {
         "id":3,
@@ -165,14 +165,14 @@
       {
         "id":1,
         "profit":"good",
-        "message": "Runder-ribeye 350",
-        "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
+        "message": "Kerst kalkoen",
+        "desc":"Kalkoen met kip en groente"
       },
       {
         "id":2,
         "profit":"good",
-        "message": "Zalmfilet",
-        "desc": "Zalmfilet op de huid gebakken met sause van mosterd en basilicum"
+        "message": "Tonijn",
+        "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
       },
       {
         "id":3,
@@ -183,8 +183,8 @@
       {
         "id":4,
         "profit":"avg",
-        "message": "Sate van varkenshaas",
-        "desc":"rose gebakken met een saus van gorgonzolakaas"
+        "message": "Sate van kip",
+        "desc":"Gebakken met een saus van champion"
       },
       {
         "id":5,
