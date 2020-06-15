@@ -2,7 +2,7 @@
   <section class="rightSideHolder">
     <div>
       <h2>
-        {{title}}
+        {{ title }}
         {{ menuOptionsSelected }}
         {{ selectedCourse }}
       </h2>

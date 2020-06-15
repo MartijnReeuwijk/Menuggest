@@ -1,10 +1,10 @@
 <template>
-  $END$
+  <div class="shadow"></div>
 </template>
 
 <script>
   export default {
-    name: 'salesInfo'
+    name: 'overlayShadow'
   }
 </script>
 

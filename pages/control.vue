@@ -3,14 +3,13 @@
     <navigationBar title="Menuggest">
     </navigationBar>
 
+
     <menuBased
       :sideMenuData="data"
       title="Menukaart analyse"
       >
     </menuBased>
-    <div>
-      as
-    </div>
+
   </div>
 
 </template>

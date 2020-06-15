@@ -4,7 +4,8 @@
     <b-list-group-item @click="clickEvent(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
       <div class="clickThrough d-flex w-100 justify-content-between ">
         <transition name="fade" v-enter>
-           <div class="profit-colour" v-show="suggestionMode===true" v-bind:class="`${item.profit}`"></div>
+           <div class="profit-colour" v-show="suggestionMode===true" v-bind:class="`${item.profit}`">
+           </div>
        </transition>
         <h5 class="mb-1">
           {{ item.message }}

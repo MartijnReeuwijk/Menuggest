@@ -30,13 +30,14 @@
         menuCardData:[],
         suggestionMode: false,
         // Dit is niet helemaal lekker de dynamiek moet uit de data komen en niet mn if statement
-        menuOptionsSelected: 'Menu options:',
-        selectedCourse:'Hoofd',
+
       }
     },
     props:{
       sideMenuData:[],
-      title:String
+      title:String,
+      menuOptionsSelected:String,
+      selectedCourse:String
     },
     components: {
       RightsideHolder,

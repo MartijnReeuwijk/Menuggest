@@ -1,5 +1,9 @@
 <template>
   <section class="a4holder" ref="a4holder">
+
+  <buttonHolder v-if="salesInfo">
+  </buttonHolder>
+
     <menukaartA4
       :menuCardData="menuCardData">
     </menukaartA4>
@@ -16,6 +20,7 @@
 <script>
   import menukaartA4 from './menukaartA4'
   import bottomNav from './bottomNav'
+  import buttonHolder from './buttonHolder'
 
   export default {
     name: 'pageHolder',
@@ -31,7 +36,8 @@
     },
     components:{
       menukaartA4,
-      bottomNav
+      bottomNav,
+      buttonHolder
     },
     methods: {
       getWindowWidth () {
@@ -40,6 +46,13 @@
       suggestionMode (item) {
         this.$emit('suggestionMode', item)
       }
+    },
+    computed:{
+      salesInfo: function () {
+        return this.$route.name === "control";
+      }
+      //this.$route.query.page
+
     },
     mounted()
     {
@@ -55,6 +68,7 @@
 <style lang="scss" scoped>
   .a4holder{
     width: 100%;
+    position: relative;
   }
   .smooth {
     transition: ease-in-out 0.2s;

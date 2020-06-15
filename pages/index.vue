@@ -4,7 +4,9 @@
     </navigationBar>
 
     <menuBased
-      :sideMenuData="data">
+      :sideMenuData="data"
+      title="Menukaart maken"
+      selectedCourse="Hoofgerecht">
     </menuBased>
 
   </div>
