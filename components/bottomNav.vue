@@ -9,7 +9,7 @@
           <b-button variant="outline-primary">Na</b-button>
         </div>
       </div>
-      <div class="suggestion-box">
+      <div class="suggestion-box" v-if="suggestionModeAllowed">
         <b-button :pressed.sync="myToggle" @click="suggestionMode" variant="outline-primary">Suggesties</b-button>
       </div>
     </div>
@@ -30,7 +30,15 @@
       suggestionMode() {
         this.$emit('suggestionMode', this.myToggle)
       }
-    }
+    },
+    computed:{
+      suggestionModeAllowed: function () {
+        return this.$route.name === "index";
+      }
+        //this.$route.query.page
+
+      }
+
   }
 
 </script>
@@ -49,12 +57,15 @@
   .button-holder{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
     height: fit-content;
+    justify-items: center;
+    justify-content: center;
   }
-  .buttons-space{
-    width: 595px;
+  .button-holder .suggestion-box{
+    position: absolute;
+    right: 10px;
   }
+
   .button-holder-inner{
     width: 250px;
     display: flex;

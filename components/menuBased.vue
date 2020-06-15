@@ -28,13 +28,10 @@
     data () {
       return {
         menuCardData:[],
-        suggestionMode: {
-          type: Boolean,
-          default: false
-        },
+        suggestionMode: false,
         // Dit is niet helemaal lekker de dynamiek moet uit de data komen en niet mn if statement
-          menuOptionsSelected: 'Menu options:',
-          selectedCourse:'Hoofd',
+        menuOptionsSelected: 'Menu options:',
+        selectedCourse:'Hoofd',
       }
     },
     props:{

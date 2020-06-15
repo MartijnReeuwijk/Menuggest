@@ -2,7 +2,7 @@
   <b-list-group>
 <!--  Active moet met var  -->
     <b-list-group-item @click="clickEvent(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
-      <div class=" clickThrough d-flex w-100 justify-content-between ">
+      <div class="clickThrough d-flex w-100 justify-content-between ">
         <transition name="fade" v-enter>
            <div class="profit-colour" v-show="suggestionMode===true" v-bind:class="`${item.profit}`"></div>
        </transition>
@@ -10,7 +10,7 @@
           {{ item.message }}
         </h5>
       </div>
-      <p class="mb-1">
+      <p class="clickThrough mb-1">
         {{ item.desc }}
       </p>
     </b-list-group-item>
@@ -39,7 +39,12 @@
     methods: {
       clickEvent(item) {
         // Event dep, maar zegt niks in de docs
-        event.target.classList.add("active")
+
+        if(event.target.classList.contains("active")){
+          event.target.classList.remove("active")
+        } else {
+          event.target.classList.add("active")
+          }
         this.$emit('sendToMenu', item)
       }
     },

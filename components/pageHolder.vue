@@ -7,6 +7,7 @@
     <bottomNav
       v-on:suggestionMode="suggestionMode"
       :style="{ width: myWidth + 'px' }"
+      class="smooth"
     >
     </bottomNav>
   </section>
@@ -25,7 +26,7 @@
     },
     data() {
       return {
-        myWidth: '750'
+        myWidth: '1250'
       }
     },
     components:{
@@ -54,5 +55,8 @@
 <style lang="scss" scoped>
   .a4holder{
     width: 100%;
+  }
+  .smooth {
+    transition: ease-in-out 0.2s;
   }
 </style>

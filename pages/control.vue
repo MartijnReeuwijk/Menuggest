@@ -4,8 +4,13 @@
     </navigationBar>
 
     <menuBased
-      :sideMenuData="data">
+      :sideMenuData="data"
+      title="Menukaart analyse"
+      >
     </menuBased>
+    <div>
+      as
+    </div>
   </div>
 
 </template>
