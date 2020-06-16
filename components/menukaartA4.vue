@@ -1,16 +1,16 @@
 <template>
   <section class="menukaartPaper" ref="menukaartPaper">
-<shadowOverlay></shadowOverlay>
+<!--    split this up-->
+<shadowOverlay v-if="active"></shadowOverlay>
     <div v-if="(menuCardData.length > 0 && menuCardData[0].options) && (control) ">
         <b-list-group>
           <b-list-group-item
-            @click="removeItem(index)"
-            @mouseover="mouseOver"
+            v-b-hover="mouseOver"
             v-for="(item, index) in menuCardData[0].options"
             v-b-popover.hover="{title:item.profitInsight.title, content:item.profitInsight.content}"
             :key="item.id"
             href="#"
-            class="customStyle flex-column align-items-start"
+            class="hover customStyle flex-column align-items-start"
           >
             <div class="d-flex w-100 justify-content-between ">
 <!--     Moet dit afvangen bij de backend        -->
@@ -25,8 +25,9 @@
         </b-list-group>
     </div>
 
-    <div v-if="menuCardData.length > 0 && menuCardData[0].options">
+    <div v-if="(menuCardData.length > 0 && menuCardData[0].options) && (!control)">
       <b-list-group>
+<!--  verander de remove function      -->
         <b-list-group-item
           @click="removeItem(index)"
           v-for="(item, index) in menuCardData[0].options"
@@ -61,6 +62,9 @@
     </b-list-group>
 </div>
 
+
+
+
   </section>
 </template>
 
@@ -87,7 +91,6 @@
         this.menuCardData.splice(index, 1);
       },
       mouseOver: function(){
-        console.log('active', this.active)
         this.active = !this.active;
       }
     }
@@ -95,6 +98,9 @@
 </script>
 
 <style lang="scss" scoped>
+  .hover:hover{
+    z-index: 10;
+  }
   .customStyle{
     border: 0;
     text-align: center;

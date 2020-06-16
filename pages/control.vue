@@ -6,6 +6,7 @@
 
     <menuBased
       :sideMenuData="data"
+      :suggestionMode="true"
       title="Menukaart analyse"
       >
     </menuBased>

@@ -28,7 +28,7 @@
     data () {
       return {
         menuCardData:[],
-        suggestionMode: false,
+
         // Dit is niet helemaal lekker de dynamiek moet uit de data komen en niet mn if statement
 
       }
@@ -37,7 +37,11 @@
       sideMenuData:[],
       title:String,
       menuOptionsSelected:String,
-      selectedCourse:String
+      selectedCourse:String,
+      suggestionMode: {
+        type:Boolean,
+        default:false
+      },
     },
     components: {
       RightsideHolder,

@@ -5,7 +5,7 @@
 
     <menuBased
       :sideMenuData="data"
-      title="Archive"
+      title="Archief"
       >
     </menuBased>
   </div>
