@@ -7,8 +7,8 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="/test/">Deallijst</b-nav-item>
-          <b-nav-item href="/">Menukaart maken</b-nav-item>
+          <b-nav-item href="/">Deallijst</b-nav-item>
+          <b-nav-item href="/menu">Menukaart maken</b-nav-item>
           <b-nav-item href="/archive">Menukaart archief</b-nav-item>
           <b-nav-item href="/control">Beheer paneel</b-nav-item>
         </b-navbar-nav>

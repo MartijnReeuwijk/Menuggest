@@ -9,6 +9,7 @@
        </transition>
         <h5 class="mb-1">
           {{ item.message }}
+          <b-badge v-if="(suggestionMode===true) && (item.prime) " variant="success">Primeur</b-badge>
         </h5>
       </div>
       <p class="clickThrough mb-1">

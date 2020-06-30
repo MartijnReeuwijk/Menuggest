@@ -11,6 +11,7 @@
       </div>
       <div class="suggestion-box" v-if="suggestionModeAllowed">
         <b-button :pressed.sync="myToggle" @click="suggestionMode" variant="outline-primary">Suggesties</b-button>
+        <b-button variant="primary">Save</b-button>
       </div>
     </div>
 
@@ -33,7 +34,7 @@
     },
     computed:{
       suggestionModeAllowed: function () {
-        return this.$route.name === "index";
+        return this.$route.name === "menu";
       }
         //this.$route.query.page
 
@@ -76,5 +77,8 @@
     display: flex;
     justify-content: center;
     height: fit-content;
+  }
+  .suggestion-box button{
+    margin: 0 5px;
   }
 </style>

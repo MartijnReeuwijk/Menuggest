@@ -2,30 +2,35 @@
   {
     "id":1,
     "profit":"good",
+    "prime": false,
     "message": "Runder-ribeye 350",
     "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
   },
   {
     "id":2,
     "profit":"good",
+    "prime": false,
     "message": "Zalmfilet",
     "desc": "Zalmfilet op de huid gebakken met sause van mosterd en basilicum"
   },
   {
     "id":3,
     "profit":"good",
+    "prime": true,
     "message": "Eendenborst",
     "desc":"Zuurkool en aardappelpuree"
   },
   {
     "id":4,
     "profit":"avg",
+    "prime": false,
     "message": "Sate van varkenshaas",
     "desc":"rose gebakken met een saus van gorgonzolakaas"
   },
   {
     "id":5,
     "profit":"bad",
+    "prime": false,
     "message": "sate van varkenshaas",
     "desc":"rose gebakken met een saus van gorgonzolakaas"
   }

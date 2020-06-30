@@ -1,18 +1,24 @@
 <template>
   <section class="rightSideHolder">
     <div>
-      <h2>
-        {{ title }}
-        {{ menuOptionsSelected }}
-        {{ selectedCourse }}
-      </h2>
 
+      <div class="titelHolder">
+        <h2>
+          {{ title }}
+          <!--        {{ menuOptionsSelected }}-->
+        </h2>
+        <hr/>
+        <filterHolder></filterHolder>
+      </div>
+
+      <div class="padding">
       <menuDataHolder
         v-on:sendToMenu="addtomenu"
         :sideMenuData="sideMenuData"
         :suggestionMode="this.suggestionMode"
       >
       </menuDataHolder>
+      </div>
     </div>
 
   </section>
@@ -21,6 +27,7 @@
 <script>
   /* eslint-disable no-alert, no-console */
   import menuDataHolder from './menuDataHolder'
+  import filterHolder from './filterHolder'
   export default {
     data () {
       return {
@@ -48,21 +55,33 @@
     },
     name: 'RightsideHolder',
     components: {
-      menuDataHolder
+      menuDataHolder,
+      filterHolder
     },
 
   }
 </script>
 
 <style lang="scss" scoped>
+  .padding{
+    padding: 0 10px;
+  }
+  hr{
+    margin: 10px 0;
+  }
   .rightSideHolder{
-    width: 375px;
+    width: 500px;
     height: auto;
     background-color: #F7F8FB;
-    padding: 0 10px;
+
   }
   h2 {
     text-align: center;
-    margin: 5px 0;
+    padding: 5px;
+    margin: 0px;
+  }
+  .titelHolder{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 </style>
