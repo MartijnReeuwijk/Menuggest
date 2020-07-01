@@ -13,7 +13,6 @@
         <b-button  @click="suggestionMode" :pressed.sync="myToggle" >Suggesties</b-button>
         <b-button  @click="save" >Save</b-button>
         <b-button  @click="printMenu" >Print</b-button>
-
       </div>
     </div>
 
@@ -34,7 +33,11 @@
         this.$emit('suggestionMode', this.myToggle)
       },
       printMenu(){
-        console.log('print')
+        // menukaartPaper
+        window.print()
+        // var printThis =  this.$parent.$children[0].$refs["menukaartPaper"]
+        // console.log('printThis', printThis)
+        // console.log('window', window)
       },
       save() {
         this.$emit('suggestionMode', this.myToggle)

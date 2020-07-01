@@ -47,4 +47,9 @@
   .mainHolderDeluxChangeThislater {
     overflow: hidden;
   }
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+  }
 </style>

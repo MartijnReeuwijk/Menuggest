@@ -4,7 +4,7 @@
     <menuNameComponent></menuNameComponent>
 
 
-    <section class="menukaartPaper" ref="menukaartPaper">
+    <section class="menukaartPaper" id="section-to-print" ref="menukaartPaper">
       <!--    split this up-->
       <shadowOverlay v-if="active"></shadowOverlay>
       <div v-if="(menuCardDataStore.createdMenu.length > 0 && menuCardDataStore.createdMenu[0].options) && (control) ">
@@ -99,7 +99,9 @@
     },
     methods:{
       removeItem(index){
-        this.menuCardData.splice(index, 1);
+        // this.menuCardData.splice(index, 1);
+        console.log('index', index)
+        this.$store.commit('createdMenu/remove',index)
       },
       mouseOver: function(){
         this.active = !this.active;
@@ -127,6 +129,22 @@
     background-color: white;
     border: 1px solid gray;
     margin: 10px auto;
-
+  }
+  @media print {
+    #section-to-print, #section-to-print * {
+      visibility: visible;
+    }
+    #section-to-print {
+      width: 595px;
+      height: 100%;
+      position: absolute;
+      border: none;
+      margin: 0 auto;
+      /*text-decoration: none;*/
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
   }
 </style>
