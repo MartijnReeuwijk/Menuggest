@@ -7,11 +7,11 @@
     <section class="menukaartPaper" ref="menukaartPaper">
       <!--    split this up-->
       <shadowOverlay v-if="active"></shadowOverlay>
-      <div v-if="(menuCardData.length > 0 && menuCardData[0].options) && (control) ">
+      <div v-if="(menuCardDataStore.createdMenu.length > 0 && menuCardDataStore.createdMenu[0].options) && (control) ">
         <b-list-group>
           <b-list-group-item
             v-b-hover="mouseOver"
-            v-for="(item, index) in menuCardData[0].options"
+            v-for="(item, index) in menuCardDataStore.createdMenu[0].options"
             v-b-popover.hover="{title:item.profitInsight.title, content:item.profitInsight.content}"
             :key="item.id"
             href="#"
@@ -30,12 +30,12 @@
         </b-list-group>
       </div>
 
-      <div v-if="(menuCardData.length > 0 && menuCardData[0].options) && (!control)">
+      <div v-if="(menuCardDataStore.createdMenu.length > 0 && menuCardDataStore.createdMenu[0].options) && (!control)">
         <b-list-group>
           <!--  verander de remove function      -->
           <b-list-group-item
             @click="removeItem(index)"
-            v-for="(item, index) in menuCardData[0].options"
+            v-for="(item, index) in menuCardDataStore.createdMenu[0].options"
             :key="item.id"
             href="#"
             class="customStyle flex-column align-items-start"
@@ -54,7 +54,7 @@
       </div>
       <div v-else>
         <b-list-group>
-          <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardData"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
+          <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardDataStore.createdMenu"  :key="item.id"   href="#"  class="customStyle flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between ">
               <h5 class="mb-1">
                 {{ item.message }}
@@ -92,6 +92,9 @@
     computed:{
       control: function () {
         return this.$route.name === "control";
+      },
+      menuCardDataStore: function(){
+        return this.$store.state.createdMenu
       }
     },
     methods:{
