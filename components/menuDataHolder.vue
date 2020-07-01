@@ -41,13 +41,15 @@
     methods: {
       clickEvent(item) {
         // Event dep, maar zegt niks in de docs
-
         if(event.target.classList.contains("active")){
           event.target.classList.remove("active")
         } else {
           event.target.classList.add("active")
           }
-        this.$emit('sendToMenu', item)
+        // this.$emit('sendToMenu', item)
+        // return this.$store.state.isSettings
+        // this.$store.('updatecreatedMenu',item)
+        this.$store.commit('createdMenu/add', item)
       }
     },
   }

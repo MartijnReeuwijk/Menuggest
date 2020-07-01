@@ -10,8 +10,10 @@
         </div>
       </div>
       <div class="suggestion-box" v-if="suggestionModeAllowed">
-        <b-button :pressed.sync="myToggle" @click="suggestionMode" variant="outline-primary">Suggesties</b-button>
-        <b-button variant="primary">Save</b-button>
+        <b-button  @click="suggestionMode" :pressed.sync="myToggle" >Suggesties</b-button>
+        <b-button  @click="save" >Save</b-button>
+        <b-button  @click="printMenu" >Print</b-button>
+
       </div>
     </div>
 
@@ -29,6 +31,12 @@
     },
     methods:{
       suggestionMode() {
+        this.$emit('suggestionMode', this.myToggle)
+      },
+      printMenu(){
+        console.log('print')
+      },
+      save() {
         this.$emit('suggestionMode', this.myToggle)
       }
     },

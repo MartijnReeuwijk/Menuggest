@@ -1,5 +1,5 @@
 <template>
-  <section class="a4holder" ref="a4holder">
+  <section class="menu_holder" ref="menu_holder">
 
   <buttonHolder v-if="salesInfo">
   </buttonHolder>
@@ -14,6 +14,8 @@
       class="smooth"
     >
     </bottomNav>
+
+    <div class="bottom_navigation_pusher"></div>
   </section>
 </template>
 
@@ -41,7 +43,7 @@
     },
     methods: {
       getWindowWidth () {
-        this.myWidth = this.$refs.a4holder.clientWidth;
+        this.myWidth = this.$refs.menu_holder.clientWidth;
       },
       suggestionMode (item) {
         this.$emit('suggestionMode', item)
@@ -52,11 +54,10 @@
         return this.$route.name === "control";
       }
       //this.$route.query.page
-
     },
     mounted()
     {
-      this.myWidth = this.$refs.a4holder.clientWidth;
+      this.myWidth = this.$refs.menu_holder.clientWidth;
       this.$nextTick(function() {
         window.addEventListener('resize', this.getWindowWidth);
         this.getWindowWidth()
@@ -66,11 +67,15 @@
 </script>
 
 <style lang="scss" scoped>
-  .a4holder{
+  .menu_holder{
     width: 100%;
     position: relative;
+    padding: 10px 0;
   }
   .smooth {
     transition: ease-in-out 0.2s;
+  }
+  .bottom_navigation_pusher{
+    height: 75px;
   }
 </style>

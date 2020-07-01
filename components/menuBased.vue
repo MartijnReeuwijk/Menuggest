@@ -59,7 +59,7 @@
       },
       updatePicks(item){
         this.menuCardData.push(item)
-        this.overflow()
+        // this.overflow()
       },
       overflow(){
         //  Ja dit moet wel anders de logic zit in het verkeerde component
@@ -75,7 +75,7 @@
 <style lang="scss" scoped>
   .pageHolder{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: auto;
     background-color: darkgray;
     display: flex;
