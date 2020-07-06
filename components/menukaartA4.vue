@@ -1,7 +1,9 @@
 <template>
   <div>
 
-    <menuNameComponent></menuNameComponent>
+    <menuNameComponent>
+
+    </menuNameComponent>
 
 
     <section class="menukaartPaper" id="section-to-print" ref="menukaartPaper">
@@ -99,9 +101,7 @@
     },
     methods:{
       removeItem(index){
-        // this.menuCardData.splice(index, 1);
-        console.log('index', index)
-        this.$store.commit('createdMenu/remove',index)
+        this.$store.commit('createdMenu/removeMenu',index)
       },
       mouseOver: function(){
         this.active = !this.active;

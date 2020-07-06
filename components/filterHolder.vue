@@ -1,33 +1,67 @@
 <template>
+  <div>
   <div class="filterHolder">
 <!--    buttons maken als comp-->
 <!--  Met slots  -->
-    <div class="customButton">
-      <img src="@/assets/sort.png" alt="">
+    <div class="customButton" >
+      <img class="swing animate" src="@/assets/sort.png" alt="">
      <p>Soort</p>
     </div>
-    <div class="customButton">
-      <img src="@/assets/search.png" alt="">
+    <div class="customButton " @click="tool_kit">
+      <img class="search animate" src="@/assets/search.png" alt="">
       <p>Zoeken</p>
     </div>
     <div class="customButton">
-      <img src="@/assets/filter.png" alt="">
+      <img class="filter animate" src="@/assets/filter.png" alt="">
       <p>Filter</p>
     </div>
     <div class="customButton">
-      <img src="@/assets/copy.png" alt="">
+      <img class="copy animate" src="@/assets/copy.png" alt="">
       <p>Copy</p>
     </div>
+  </div>
+
   </div>
 </template>
 
 <script>
+  import SearchFunction from './searchFunction'
   export default {
-    name: 'filterHolder'
+    name: 'filterHolder',
+    components: {SearchFunction},
+    methods:{
+      tool_kit(){
+        this.$store.commit('createdMenu/switchToolKit')
+      },
+    }
   }
 </script>
 
 <style lang="scss" scoped>
+  .animate{
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -ms-transition: -ms-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+  }
+  .search:hover{
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+  }
+  .swing:hover {
+    -webkit-animation: swing 1s ease-in-out;
+    animation: swing 1s ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+  .filter:hover{
+    -webkit-animation: scale 1s ease-in-out;
+    animation: scale 1s ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
+
+
 .filterHolder{
   width: 100%;
   display: flex;
@@ -48,4 +82,47 @@
     width:30px;
     height: auto;
   }
+
+
+
+
+  @keyframes swing {
+    15% {
+      -webkit-transform: translateY(3px);
+      transform: translateY(3px);
+    }
+    30% {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+    }
+    50% {
+      -webkit-transform: translateY(1px);
+      transform: translateY(1px);
+    }
+    65% {
+      -webkit-transform: translateY(-1px);
+      transform: translateY(-1px);
+    }
+    80% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes scale {
+    0% {
+      transform:scale(1, 1);
+      -ms-transform:scale(1, 1);
+      -webkit-transform:scale(1, 1);
+    }
+    100% {
+      transform:scale(1.5, 0.5);
+      -ms-transform:scale(1.5, 0.5);
+      -webkit-transform:scale(1.5, 0.5);
+    }
+  }
+
 </style>

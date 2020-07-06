@@ -1,12 +1,20 @@
 export const state = () => ({
-  createdMenu:[]
+  menuName:'',
+  createdMenu:[],
+  toolkit:false
 })
 
 export const mutations = {
-  add (state, item){
+  addMenuName (state, item){
+    state.menuName = item
+  },
+  addMenu (state, item){
     state.createdMenu.push(item)
   },
-  remove(state, index ) {
+  removeMenu(state, index ) {
     state.createdMenu.splice(index, 1);
-  }
+  },
+  switchToolKit (state, item){
+    state.toolkit = !state.toolkit
+  },
 }

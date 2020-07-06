@@ -59,7 +59,7 @@
       },
       updatePicks(item){
         this.menuCardData.push(item)
-        // this.overflow()
+        this.overflow()
       },
       overflow(){
         //  Ja dit moet wel anders de logic zit in het verkeerde component

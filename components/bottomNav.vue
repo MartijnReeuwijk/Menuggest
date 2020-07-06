@@ -33,14 +33,19 @@
         this.$emit('suggestionMode', this.myToggle)
       },
       printMenu(){
-        // menukaartPaper
         window.print()
         // var printThis =  this.$parent.$children[0].$refs["menukaartPaper"]
-        // console.log('printThis', printThis)
-        // console.log('window', window)
       },
       save() {
-        this.$emit('suggestionMode', this.myToggle)
+        const data = JSON.stringify(this.$store.state.createdMenu.createdMenu)
+        // save to DB
+        // Save and download
+        window.open(URL.createObjectURL(
+          new Blob([data], {
+            type: 'application/binary'}
+          )
+        ))
+
       }
     },
     computed:{

@@ -1,7 +1,10 @@
 <template>
   <b-list-group>
 <!--  Active moet met var  -->
-    <b-list-group-item @click="clickEvent(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle flex-column align-items-start">
+<!-- De transision moet van buiten het scherm komen -->
+
+    <b-list-group-item @click="clickEvent(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle card-1 flex-column align-items-start">
+
       <div class="clickThrough d-flex w-100 justify-content-between ">
         <transition name="fade" v-enter>
            <div class="profit-colour" v-show="suggestionMode===true" v-bind:class="`${item.profit}`">
@@ -15,7 +18,9 @@
       <p class="clickThrough mb-1">
         {{ item.desc }}
       </p>
+
     </b-list-group-item>
+
   </b-list-group>
 </template>
 
@@ -46,7 +51,7 @@
         } else {
           event.target.classList.add("active")
           }
-        this.$store.commit('createdMenu/add', item)
+        this.$store.commit('createdMenu/addMenu', item)
       }
     },
   }
@@ -64,6 +69,15 @@
     position: relative;
     overflow: hidden;
   }
+
+  .card-1{
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  .card-1:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+
   .profit-colour{
     background-color: transparent;
     width: 10px;
@@ -93,7 +107,6 @@
     -webkit-transition:0.3s ease;
     -moz-transition:0.3s ease;
     left: -10px;
-
   }
 
 </style>
