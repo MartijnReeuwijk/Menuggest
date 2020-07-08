@@ -67,6 +67,7 @@
       checkData: function () {
         const data = this.$store.state.createdMenu.createdMenu
         const downloadAllowed = false
+        //TODO: Deze prefix stuff verbeteren
         // Get prefix voor errors of dat de user het vergeet
         const date = new Date()
         const prefixName = this.$store.state.createdMenu.preMenuName

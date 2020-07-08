@@ -27,6 +27,7 @@ export const mutations = {
     state.suggestionMode = !state.suggestionMode
   },
   addMenucardItem (state, item){
+    console.log('item', item)
     state.menuItems = item
   },
   addMenuName (state, item){

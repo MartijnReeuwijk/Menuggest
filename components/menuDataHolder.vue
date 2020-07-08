@@ -4,7 +4,7 @@
     <!-- De transision moet van buiten het scherm komen -->
 
     <b-list-group-item :key="item.message" @click="clickEvent(item)" class="customStyle card-1 flex-column align-items-start" href="#"
-                       v-for="item in items">
+                       v-for="item in datashow">
 
       <div class="clickThrough d-flex w-100 justify-content-between ">
         <transition name="fade">
@@ -34,7 +34,7 @@
     name: 'menuDataHolder',
     data () {
       return {
-        items: this.$store.state.createdMenu.menuItems,
+        // items:
       }
     },
     created: function () {
@@ -43,6 +43,9 @@
     computed: {
       suggestions: function () {
         return this.$store.state.createdMenu.suggestionMode
+      },
+      datashow:function () {
+        return  this.$store.state.createdMenu.menuItems
       }
     },
     methods: {

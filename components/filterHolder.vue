@@ -3,7 +3,7 @@
     <div class="filterHolder">
       <!--    buttons maken als comp-->
       <!--  Met slots  -->
-      <div class="customButton">
+      <b-button variant="light" @click="filterMenuData">
         <svg class="bi bi-sort-numeric-up" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M4 14a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-1 0v11a.5.5 0 0 0 .5.5z" fill-rule="evenodd"/>
@@ -13,9 +13,9 @@
             d="M12.438 7V1.668H11.39l-1.262.906v.969l1.21-.86h.052V7h1.046zm-2.84 5.82c.054.621.625 1.278 1.761 1.278 1.422 0 2.145-.98 2.145-2.848 0-2.05-.973-2.688-2.063-2.688-1.125 0-1.972.688-1.972 1.836 0 1.145.808 1.758 1.719 1.758.69 0 1.113-.351 1.261-.742h.059c.031 1.027-.309 1.856-1.133 1.856-.43 0-.715-.227-.773-.45H9.598zm2.757-2.43c0 .637-.43.973-.933.973-.516 0-.934-.34-.934-.98 0-.625.407-1 .926-1 .543 0 .941.375.941 1.008z"/>
         </svg>
         <p>Soort</p>
-      </div>
+      </b-button>
 
-      <div @click="tool_kit" class="customButton ">
+      <b-button variant="light" @click="tool_kit">
         <svg class="bi bi-search" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
@@ -24,18 +24,18 @@
                 fill-rule="evenodd"/>
         </svg>
         <p>Zoeken</p>
-      </div>
+      </b-button>
 
-      <div class="customButton">
+      <b-button variant="light">
         <svg class="bi bi-filter" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
                 fill-rule="evenodd"/>
         </svg>
         <p>Filter</p>
-      </div>
+      </b-button>
 
-      <div class="customButton">
+      <b-button variant="light">
         <svg class="bi bi-files" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3z"
@@ -44,7 +44,7 @@
             d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z"/>
         </svg>
         <p>Copy</p>
-      </div>
+      </b-button>
 
     </div>
 
@@ -61,6 +61,17 @@
       tool_kit () {
         this.$store.commit('createdMenu/switchToolKit')
       },
+      filterMenuData(){
+
+
+        // filteredItems() {
+        //   return this.items.filter(item => {
+        //     return item.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+        //   })
+        // }
+
+
+      }
     }
   }
 </script>
@@ -97,6 +108,7 @@
     width: 100%;
     display: flex;
     padding: 5px;
+    height: 70px;
     justify-content: space-around;
   }
 
