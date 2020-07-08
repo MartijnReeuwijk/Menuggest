@@ -1,7 +1,7 @@
 <template>
       <div class="vertical-nav suggestion-box" v-if="suggestionModeAllowed">
-        <b-button :pressed.sync="myToggle" @click="suggestionMode" variant="out-line">Suggesties</b-button>
-        <b-button @click="printMenu" variant="out-line">
+        <b-button :pressed.sync="myToggle" @click="suggestionMode" variant="light">Suggesties</b-button>
+        <b-button @click="printMenu" variant="light">
           Print
           <svg class="bi bi-printer" fill="currentColor" height="1em" viewBox="0 0 16 16" width="1em"
                xmlns="http://www.w3.org/2000/svg">
