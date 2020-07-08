@@ -44,7 +44,7 @@
     },
     methods: {
       suggestionMode () {
-        this.$store.commit('createdMenu/switchIndex')
+        // this.$store.commit('createdMenu/switchIndex')
         this.$store.commit('createdMenu/switchSuggestionMode')
       },
       printMenu () {

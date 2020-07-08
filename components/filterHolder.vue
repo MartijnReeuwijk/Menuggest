@@ -61,16 +61,30 @@
       tool_kit () {
         this.$store.commit('createdMenu/switchToolKit')
       },
-      filterMenuData(){
+      filterMenuData: function () {
+        const data = this.$store.state.createdMenu.menuItems
 
 
-        // filteredItems() {
-        //   return this.items.filter(item => {
-        //     return item.type.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-        //   })
-        // }
+        // Dit is onhandig veel
+        const goodArray = []
+        const avgArray = []
+        const badArray = []
 
+        data.forEach(item => {
+          if (item.profit == 'good') {
+            goodArray.push(item)
+          }
+          if (item.profit == 'avg') {
+            avgArray.push(item)
+          }
+          if (item.profit == 'bad') {
+            badArray.push(item)
+          }
+        })
+        const newDataArray = goodArray.concat(avgArray, badArray)
 
+        this.$store.commit('createdMenu/addMenucardItem', newDataArray)
+        this.$store.commit('createdMenu/switchIndex', true)
       }
     }
   }
