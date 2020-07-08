@@ -1,10 +1,10 @@
 <template>
-    <div class="input-group padding">
-      <input type="text" class="form-control" placeholder="Zoeken" aria-label="Zoeken" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Zoeken</button>
-      </div>
+  <div class="input-group padding">
+    <input aria-describedby="basic-addon2" aria-label="Zoeken" class="form-control" placeholder="Zoeken" type="text">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Zoeken</button>
     </div>
+  </div>
 </template>
 
 <script>
@@ -14,7 +14,7 @@
 </script>
 
 <style lang="scss" scoped>
-.padding{
-  padding: 5px 10px;
-}
+  .padding {
+    padding: 5px 10px;
+  }
 </style>

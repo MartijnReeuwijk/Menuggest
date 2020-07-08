@@ -5,10 +5,10 @@
     </pageHolder>
 
     <RightsideHolder
-      v-on:sendToMenu="updatePicks"
-      :title="title"
       :menuOptionsSelected="menuOptionsSelected"
       :selectedCourse="selectedCourse"
+      :title="title"
+      v-on:sendToMenu="updatePicks"
     >
     </RightsideHolder>
   </div>
@@ -22,41 +22,40 @@
   export default {
     name: 'menuBased',
     data () {
-      return {
-      }
+      return {}
     },
-    props:{
-      title:String,
-      menuOptionsSelected:String,
-      selectedCourse:String,
+    props: {
+      title: String,
+      menuOptionsSelected: String,
+      selectedCourse: String,
       suggestionMode: {
-        type:Boolean,
-        default:false
+        type: Boolean,
+        default: false
       },
     },
     components: {
       RightsideHolder,
       pageHolder
     },
-    methods:{
-      updateSuggestion(item) {
+    methods: {
+      updateSuggestion (item) {
         this.suggestionMode = item
-        if(item === true){
-        //  Naamgeving,Propchain en Dynamic moet anders
-        this.menuOptionsSelected = "Suggestie mode"
+        if (item === true) {
+          //  Naamgeving,Propchain en Dynamic moet anders
+          this.menuOptionsSelected = 'Suggestie mode'
         } else {
-          this.menuOptionsSelected =  'Menu options:'
+          this.menuOptionsSelected = 'Menu options:'
         }
       },
-      updatePicks(item){
+      updatePicks (item) {
         this.menuCardData.push(item)
         this.overflow()
       },
-      overflow(){
+      overflow () {
         //  Ja dit moet wel anders de logic zit in het verkeerde component
-        let height = this.$refs.menukaartPaper.clientHeight;
-        if(height > 862) {
-          alert("Je menu is nu meer dan 1 page (Dit is een tijdelijke error)")
+        let height = this.$refs.menukaartPaper.clientHeight
+        if (height > 862) {
+          alert('Je menu is nu meer dan 1 page (Dit is een tijdelijke error)')
         }
       }
     }
@@ -64,7 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .pageHolder{
+  .pageHolder {
     width: 100%;
     height: 100vh;
     overflow: hidden;

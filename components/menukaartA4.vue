@@ -10,16 +10,16 @@
       <!--    split this up-->
       <shadowOverlay v-if="active"></shadowOverlay>
 
-<!--Dit beter-->
+      <!--Dit beter-->
       <div v-if="(menuCardDataStore.length > 0 && menuCardDataStore[0].options) && (control) ">
         <b-list-group>
           <b-list-group-item
-            v-b-hover="mouseOver"
-            v-for="(item, index) in menuCardDataStore[0].options"
-            v-b-popover.hover="{title:item.profitInsight.title, content:item.profitInsight.content}"
             :key="item.id"
-            href="#"
             class="hover customStyle flex-column align-items-start"
+            href="#"
+            v-b-hover="mouseOver"
+            v-b-popover.hover="{title:item.profitInsight.title, content:item.profitInsight.content}"
+            v-for="(item, index) in menuCardDataStore[0].options"
           >
             <div class="d-flex w-100 justify-content-between ">
               <!--     Moet dit afvangen bij de backend        -->
@@ -33,7 +33,6 @@
           </b-list-group-item>
         </b-list-group>
       </div>
-
 
 
       <div v-if="(menuCardDataStore.length > 0 && menuCardDataStore[0].options) && (!control)">
@@ -41,11 +40,11 @@
           <!--  verander de remove function      -->
 
           <b-list-group-item
-            @click="removeItem(index)"
-            v-for="(item, index) in menuCardDataStore[0].options"
             :key="item.id"
-            href="#"
+            @click="removeItem(index)"
             class="customStyle flex-column align-items-start"
+            href="#"
+            v-for="(item, index) in menuCardDataStore[0].options"
           >
             <div class="d-flex w-100 justify-content-between ">
               <!--     Moet dit afvangen bij de backend        -->
@@ -61,11 +60,11 @@
       </div>
 
 
-
       <div v-else>
         <b-list-group>
 
-          <b-list-group-item @click="removeItem(index)" v-for="(item, index) in menuCardDataStore"  :key="item.id"   href="#"  class="customStyle  flex-column align-items-start">
+          <b-list-group-item :key="item.id" @click="removeItem(index)" class="customStyle  flex-column align-items-start"
+                             href="#" v-for="(item, index) in menuCardDataStore">
 
             <div class="d-flex w-100 justify-content-between ">
               <h5 class="mb-1">
@@ -79,7 +78,6 @@
           </b-list-group-item>
         </b-list-group>
       </div>
-
 
 
     </section>
@@ -89,17 +87,18 @@
 <script>
   import shadowOverlay from './shadow'
   import menuNameComponent from './menuNameComponent'
+
   export default {
     name: 'menukaartA4',
-    props:['menuCardData'],
-    components:{
+    props: ['menuCardData'],
+    components: {
       shadowOverlay,
       menuNameComponent
     },
     data () {
       return {
         active: false,
-        menudataTest:[]
+        menudataTest: []
       }
     },
     // watch:{
@@ -108,38 +107,41 @@
     //   }
     // },
 
-    computed:{
+    computed: {
       control: function () {
-        return this.$route.name === "control";
+        return this.$route.name === 'control'
       },
-      menuCardDataStore: function(){
+      menuCardDataStore: function () {
         this.menudataTest.push([])
         return this.$store.state.createdMenu.createdMenu
       }
     },
-    methods:{
-      removeItem(index){
-        this.$store.commit('createdMenu/removeMenu',index)
+    methods: {
+      removeItem (index) {
+        this.$store.commit('createdMenu/removeMenu', index)
       },
-      mouseOver: function(){
-        this.active = !this.active;
+      mouseOver: function () {
+        this.active = !this.active
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .hover:hover{
+  .hover:hover {
     z-index: 10;
   }
-  .customStyle{
+
+  .customStyle {
     border: 0;
     text-align: center;
   }
+
   .customStyle h5 {
     width: 100%;
   }
-  .menukaartPaper{
+
+  .menukaartPaper {
     width: 595px;
     min-height: 842px;
     height: auto;
@@ -148,6 +150,7 @@
     border: 1px solid gray;
     margin: 10px auto;
   }
+
   @media print {
     #section-to-print, #section-to-print * {
       visibility: visible;
@@ -164,13 +167,17 @@
       bottom: 0;
       top: 0;
     }
-.customAnime{
-  opacity: 0;
-  animation: fadein 0.3s;
-}
+    .customAnime {
+      opacity: 0;
+      animation: fadein 0.3s;
+    }
     @keyframes fadein {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     /*Effects global*/

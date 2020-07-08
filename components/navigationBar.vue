@@ -1,8 +1,8 @@
 <template>
-<!--  Maak dynamic paging  -->
+  <!--  Maak dynamic paging  -->
   <div>
-    <b-navbar toggleable="lg"  type="dark" variant="dark">
-      <b-navbar-brand href="/" >{{title}}</b-navbar-brand>
+    <b-navbar toggleable="lg" type="dark" variant="dark">
+      <b-navbar-brand href="/">{{title}}</b-navbar-brand>
 
 
       <b-collapse id="nav-collapse" is-nav>
@@ -25,7 +25,7 @@
 </script>
 
 <style lang="scss" scoped>
-.nav-item{
-  margin: 0 15px;
-}
+  .nav-item {
+    margin: 0 15px;
+  }
 </style>

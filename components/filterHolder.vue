@@ -1,36 +1,37 @@
 <template>
   <div>
-  <div class="filterHolder">
-<!--    buttons maken als comp-->
-<!--  Met slots  -->
-    <div class="customButton" >
-      <img class="swing animate" src="@/assets/sort.png" alt="">
-     <p>Soort</p>
+    <div class="filterHolder">
+      <!--    buttons maken als comp-->
+      <!--  Met slots  -->
+      <div class="customButton">
+        <img alt="" class="swing animate" src="@/assets/sort.png">
+        <p>Soort</p>
+      </div>
+      <div @click="tool_kit" class="customButton ">
+        <img alt="" class="search animate" src="@/assets/search.png">
+        <p>Zoeken</p>
+      </div>
+      <div class="customButton">
+        <img alt="" class="filter animate" src="@/assets/filter.png">
+        <p>Filter</p>
+      </div>
+      <div class="customButton">
+        <img alt="" class="copy animate" src="@/assets/copy.png">
+        <p>Copy</p>
+      </div>
     </div>
-    <div class="customButton " @click="tool_kit">
-      <img class="search animate" src="@/assets/search.png" alt="">
-      <p>Zoeken</p>
-    </div>
-    <div class="customButton">
-      <img class="filter animate" src="@/assets/filter.png" alt="">
-      <p>Filter</p>
-    </div>
-    <div class="customButton">
-      <img class="copy animate" src="@/assets/copy.png" alt="">
-      <p>Copy</p>
-    </div>
-  </div>
 
   </div>
 </template>
 
 <script>
   import SearchFunction from './searchFunction'
+
   export default {
     name: 'filterHolder',
     components: {SearchFunction},
-    methods:{
-      tool_kit(){
+    methods: {
+      tool_kit () {
         this.$store.commit('createdMenu/switchToolKit')
       },
     }
@@ -38,23 +39,26 @@
 </script>
 
 <style lang="scss" scoped>
-  .animate{
+  .animate {
     -webkit-transition: -webkit-transform .3s ease-in-out;
     -ms-transition: -ms-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
   }
-  .search:hover{
-    transform:rotate(45deg);
-    -ms-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
+
+  .search:hover {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
   }
+
   .swing:hover {
     -webkit-animation: swing 1s ease-in-out;
     animation: swing 1s ease-in-out;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
   }
-  .filter:hover{
+
+  .filter:hover {
     -webkit-animation: scale 1s ease-in-out;
     animation: scale 1s ease-in-out;
     -webkit-animation-iteration-count: 1;
@@ -62,28 +66,29 @@
   }
 
 
-.filterHolder{
-  width: 100%;
-  display: flex;
-  padding: 5px;
-  justify-content: space-around;
-}
-  .customButton{
+  .filterHolder {
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+  }
+
+  .customButton {
     width: 50px;
     height: 50px;
     text-align: center;
     display: table;
     cursor: pointer;
   }
+
   .customButton p {
     margin: 0;
   }
+
   .customButton img {
-    width:30px;
+    width: 30px;
     height: auto;
   }
-
-
 
 
   @keyframes swing {
@@ -112,16 +117,17 @@
       transform: translateY(0);
     }
   }
+
   @keyframes scale {
     0% {
-      transform:scale(1, 1);
-      -ms-transform:scale(1, 1);
-      -webkit-transform:scale(1, 1);
+      transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
     }
     100% {
-      transform:scale(1.5, 0.5);
-      -ms-transform:scale(1.5, 0.5);
-      -webkit-transform:scale(1.5, 0.5);
+      transform: scale(1.5, 0.5);
+      -ms-transform: scale(1.5, 0.5);
+      -webkit-transform: scale(1.5, 0.5);
     }
   }
 

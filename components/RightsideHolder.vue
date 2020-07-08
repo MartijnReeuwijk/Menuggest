@@ -10,15 +10,15 @@
       </div>
 
       <transition name="slide-fade">
-      <menu-list-toolkit v-if="toolkit.toolkit">
+        <menu-list-toolkit v-if="toolkit.toolkit">
 
-      </menu-list-toolkit>
+        </menu-list-toolkit>
       </transition>
 
       <div class="padding">
-      <menuDataHolder
-      >
-      </menuDataHolder>
+        <menuDataHolder
+        >
+        </menuDataHolder>
       </div>
     </div>
 
@@ -30,28 +30,26 @@
   import menuDataHolder from './menuDataHolder'
   import filterHolder from './filterHolder'
   import MenuListToolkit from './menuListToolkit'
+
   export default {
     data () {
-      return {
-      }
+      return {}
     },
-    props:{
-      sideMenuData:[],
-      title:{
+    props: {
+      sideMenuData: [],
+      title: {
         Type: String,
         default: null
       },
-      suggestionMode:{
+      suggestionMode: {
         type: Boolean,
         default: false
       },
-        menuOptionsSelected:{
-        },
-        selectedCourse:{
-        },
-      },
-    computed:{
-      toolkit: function(){
+      menuOptionsSelected: {},
+      selectedCourse: {},
+    },
+    computed: {
+      toolkit: function () {
         return this.$store.state.createdMenu
       }
     },
@@ -66,39 +64,44 @@
 </script>
 
 <style lang="scss" scoped>
-  .padding{
+  .padding {
     padding: 0 10px;
   }
-  hr{
+
+  hr {
     margin: 10px 0;
   }
+
   h2 {
     text-align: center;
     padding: 5px;
     margin: 0px;
   }
 
-  .rightSideHolder{
+  .rightSideHolder {
     width: 500px;
     height: auto;
     background-color: #F7F8FB;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
-  .titelHolder{
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  .titelHolder {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   }
 
 
   .slide-fade-enter-active {
     transition: all .3s ease;
   }
+
   .slide-fade-leave-active {
     transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
+
   .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
+    /* .slide-fade-leave-active below version 2.1.8 */
+  {
     transform: translateY(-10px);
     opacity: 0;
   }
