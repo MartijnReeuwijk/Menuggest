@@ -38,17 +38,21 @@
 </template>
 
 <script>
+  import myFile from '../assets/archive.json'
+
   export default {
     name: 'bottom-nav',
     data() {
       return {
         myToggle: false,
-        timerCount: 60
+        timerCount: 60,
+        archive:myFile
       }
     },
     methods:{
       suggestionMode() {
-        this.$emit('suggestionMode', this.myToggle)
+        this.$store.commit('createdMenu/switchIndex')
+        this.$store.commit('createdMenu/switchSuggestionMode')
       },
       printMenu(){
         window.print()
@@ -71,13 +75,17 @@
         if (name === '') {
           name = `${prefixName}-${prefixMonth}-${prefixYear}.json`
         }
-        const
-          blob = new Blob([data], { type: 'application/binary' }),
-          nameAnchor = document.createElement('a');
-        nameAnchor.download = name;
-        nameAnchor.href = (window.webkitURL || window.URL).createObjectURL(blob);
-        nameAnchor.dataset.downloadurl = ['application/binary', nameAnchor.download, nameAnchor.href].join(':');
-        nameAnchor.click();
+
+
+
+
+        // const
+        //   blob = new Blob([data], { type: 'application/binary' }),
+        //   nameAnchor = document.createElement('a');
+        // nameAnchor.download = name;
+        // nameAnchor.href = (window.webkitURL || window.URL).createObjectURL(blob);
+        // nameAnchor.dataset.downloadurl = ['application/binary', nameAnchor.download, nameAnchor.href].join(':');
+        // nameAnchor.click();
       }
     },
     computed:{
@@ -88,13 +96,11 @@
       },
 
     watch: {
-      //Elke minuut een save
       timerCount: {
         handler(value) {
           if (value > 0) {
             setTimeout(() => {
               this.timerCount--;
-              console.log(this.timerCount)
             }, 1000);
           } else {
             // this.save()

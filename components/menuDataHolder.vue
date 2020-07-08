@@ -1,18 +1,19 @@
 <template>
   <b-list-group>
-<!--  Active moet met var  -->
-<!-- De transision moet van buiten het scherm komen -->
+    <!--  Active moet met var  -->
+    <!-- De transision moet van buiten het scherm komen -->
 
     <b-list-group-item @click="clickEvent(item)"  v-for="item in items"  :key="item.message"  href="#"  class="customStyle card-1 flex-column align-items-start">
 
       <div class="clickThrough d-flex w-100 justify-content-between ">
-        <transition name="fade" v-enter>
-           <div class="profit-colour" v-show="suggestionMode===true" v-bind:class="`${item.profit}`">
-           </div>
-       </transition>
+        <transition name="fade" >
+          <div class="profit-colour" v-show="suggestions" v-bind:class="`${item.profit}`"></div>
+        </transition>
         <h5 class="mb-1">
           {{ item.message }}
-          <b-badge v-if="(suggestionMode===true) && (item.prime) " variant="success">Primeur</b-badge>
+          <transition name="fade" >
+            <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+          </transition>
         </h5>
       </div>
       <p class="clickThrough mb-1">
@@ -26,31 +27,30 @@
 
 <script>
   /* eslint-disable no-alert, no-console */
-
+  import myFile from '../assets/menukaart.json'
   export default {
     name: 'menuDataHolder',
     data () {
       return {
-        // Get acctual data
-        items: this.sideMenuData
+        items: this.$store.state.createdMenu.menuItems,
       }
     },
-    props:{
-      sideMenuData:[],
-      suggestionMode: {
-        type: Boolean,
-        default: false
-      },
+    created: function () {
+      this.$store.commit('createdMenu/addMenucardItem', myFile)
     },
-
+    computed: {
+      suggestions: function () {
+        return this.$store.state.createdMenu.suggestionMode
+      }
+    },
     methods: {
       clickEvent(item) {
-       // maak dit op store base
+        // maak dit op store base
         if(event.target.classList.contains("active")){
           event.target.classList.remove("active")
         } else {
           event.target.classList.add("active")
-          }
+        }
         this.$store.commit('createdMenu/addMenu', item)
       }
     },
@@ -102,11 +102,13 @@
     -moz-transition:0.3s ease;
     left: 0;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    transition:0.3s ease;
-    -webkit-transition:0.3s ease;
-    -moz-transition:0.3s ease;
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
     left: -10px;
   }
+
 
 </style>

@@ -1,0 +1,343 @@
+  [
+    {
+      "id":1,
+      "profit":"good",
+      "message": "Menukaart - Maart 2020",
+      "desc":"",
+      "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Runder-ribeye 350",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+          "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Zalmfilet",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+          "desc": "Zalmfilet op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+
+    },
+    {
+      "id":2,
+      "profit":"good",
+      "message": "Menukaart - Wild 2020",
+      "desc":"",
+      "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Runder-ribeye 350",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+          "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Zalmfilet",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+          "desc": "Zalmfilet op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+
+    },
+    {
+      "id":3,
+      "profit":"good",
+      "message": "Menukaart - Asperges 2019",
+      "desc":"Asperges menu",
+          "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Runder-ribeye 350",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Zalmfilet",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc": "Zalmfilet op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+
+    },
+    {
+      "id":4,
+      "profit":"avg",
+      "message": "Menukaart - April 2020",
+      "desc":"",
+          "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Spareribs",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Voor de vleesliefhebber 350g van de grill met pepersause"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Tonijn",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+
+    },
+    {
+      "id":5,
+      "profit":"bad",
+      "message": "Menukaart - Kerst 2019",
+      "desc":"Kerst menu",
+
+       "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Kerst kalkoen",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Kalkoen met kip en groente"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Tonijn",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "bad",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van kip",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "warning",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Gebakken met een saus van champion"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+   }
+  ]

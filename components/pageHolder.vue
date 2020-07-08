@@ -6,12 +6,10 @@
 
     <legenda></legenda>
 
-    <menukaartA4
-      :menuCardData="menuCardData">
+    <menukaartA4>
     </menukaartA4>
 
     <bottomNav
-      v-on:suggestionMode="suggestionMode"
       :style="{ width: myWidth + 'px' }"
       class="smooth"
     >

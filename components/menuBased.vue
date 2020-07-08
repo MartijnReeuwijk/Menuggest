@@ -1,16 +1,12 @@
 <template>
   <div class="pageHolder" ref="menukaartPaper">
 
-    <pageHolder
-      v-on:suggestionMode="updateSuggestion"
-      :menuCardData="menuCardData">
+    <pageHolder>
     </pageHolder>
 
     <RightsideHolder
       v-on:sendToMenu="updatePicks"
       :title="title"
-      :sideMenuData="sideMenuData"
-      :suggestionMode="this.suggestionMode"
       :menuOptionsSelected="menuOptionsSelected"
       :selectedCourse="selectedCourse"
     >
@@ -27,14 +23,9 @@
     name: 'menuBased',
     data () {
       return {
-        menuCardData:[],
-
-        // Dit is niet helemaal lekker de dynamiek moet uit de data komen en niet mn if statement
-
       }
     },
     props:{
-      sideMenuData:[],
       title:String,
       menuOptionsSelected:String,
       selectedCourse:String,
@@ -76,7 +67,7 @@
   .pageHolder{
     width: 100%;
     height: 100vh;
-    overflow: auto;
+    overflow: hidden;
     background-color: darkgray;
     display: flex;
   }

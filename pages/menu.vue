@@ -4,7 +4,6 @@
     </navigationBar>
 
     <menuBased
-      :sideMenuData="data"
       title="Menukaart maken"
       selectedCourse="Hoofgerecht">
     </menuBased>

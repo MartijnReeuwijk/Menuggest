@@ -2,7 +2,10 @@ export const state = () => ({
   fallbackMenuName:'',
   menuName:'',
   createdMenu:[],
+  menuItems:[],
+  suggestionMode:false,
   toolkit:false,
+  switchIndex:false,
   preMenuName:'Menukaart',
   monthNames:[
     "January", "February", "March", "April", "May", "June",
@@ -11,6 +14,21 @@ export const state = () => ({
 })
 
 export const mutations = {
+  switchIndex (state, item){
+    //TODO: Check deze logic maybe een 3de var
+    if (state.suggestionMode){
+      state.switchIndex = false
+    }
+    else{
+      state.switchIndex = !state.switchIndex
+    }
+  },
+  switchSuggestionMode (state){
+    state.suggestionMode = !state.suggestionMode
+  },
+  addMenucardItem (state, item){
+    state.menuItems = item
+  },
   addMenuName (state, item){
     state.menuName =  `${item}.json`
   },

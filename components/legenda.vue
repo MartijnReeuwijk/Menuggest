@@ -37,6 +37,14 @@
               <p>Lage winstmarge</p>
             </div>
           </div>
+
+          <div class="indexItem">
+            <div class="indexPlacer">
+              <b-badge variant="success">Primeur</b-badge>
+              <p>Vroeg voor het seizoen</p>
+            </div>
+          </div>
+
         </div>
       </transition>
 
@@ -48,36 +56,47 @@
   export default {
     name: 'legenda',
     data () {
-      return {
-        indexOpen: false
+      return {}
+    },
+    computed: {
+      indexOpen: function () {
+        return this.$store.state.createdMenu.switchIndex
       }
     },
     methods: {
       openLegenda: function () {
-        this.indexOpen = !this.indexOpen
+        this.$store.commit('createdMenu/switchIndex')
       },
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .badge {
+    align-self: center;
+    margin-right: 5px;
+  }
+
   .captionLocation {
     position: absolute;
     background-color: transparent;
     top: 10px;
     left: 10px;
   }
-  .indexItem{
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  .indexItem {
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   }
+
   .indexClicker {
     width: fit-content;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   }
-  .indexClicker:hover{
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  .indexClicker:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   .indexPlacer {
@@ -86,7 +105,7 @@
     border-radius: 5px;
     display: flex;
     margin: 5px 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
   .indexPlacer p {
