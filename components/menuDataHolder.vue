@@ -67,7 +67,7 @@
 
   .customStyle {
     margin: 5px 0;
-    border-radius: 0;
+    border-radius: 0.25rem;
     border: 1px darkgray solid;
     position: relative;
     overflow: hidden;
