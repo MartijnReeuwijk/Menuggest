@@ -5,7 +5,7 @@
 
     <menuBased
       title="Menukaart maken"
-      selectedCourse="Hoofgerecht">
+      >
     </menuBased>
 
   </div>
