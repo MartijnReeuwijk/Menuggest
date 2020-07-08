@@ -9,11 +9,15 @@
     <menukaartA4>
     </menukaartA4>
 
-    <bottomNav
-      :style="{ width: myWidth + 'px' }"
-      class="smooth"
-    >
-    </bottomNav>
+    <div class="sideBarTest">
+      <action-bar></action-bar>
+    </div>
+
+<!--    <bottomNav-->
+<!--      :style="{ width: myWidth + 'px' }"-->
+<!--      class="smooth"-->
+<!--    >-->
+<!--    </bottomNav>-->
 
     <div class="bottom_navigation_pusher"></div>
   </section>
@@ -24,6 +28,7 @@
   import bottomNav from './bottomActionBar'
   import buttonHolder from './buttonHolder'
   import legenda from './legenda'
+  import ActionBar from './actionBar'
 
   export default {
     name: 'pageHolder',
@@ -38,6 +43,7 @@
       }
     },
     components: {
+      ActionBar,
       menukaartA4,
       bottomNav,
       buttonHolder,
@@ -73,7 +79,13 @@
     position: relative;
     padding: 10px 0;
   }
-
+.sideBarTest{
+  width: 200px;
+  height: calc(100vh - 75px);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
   .smooth {
     transition: ease-in-out 0.2s;
   }
