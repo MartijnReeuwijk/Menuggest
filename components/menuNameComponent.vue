@@ -1,8 +1,8 @@
 <template>
   <div class="nameHolder">
 <!-- Naam opties -->
-    <input v-model="value" @change="saveName" type="text" placeholder="Naam" class="form-control">
-    <b-form-select v-model="selected" @change="saveName" :options="options"></b-form-select>
+    <input v-model="value" @change="saveName" type="text" placeholder="Menukaart" class="form-control">
+    <b-form-select class="custom-select" v-model="selected" @change="saveName" :options="options"></b-form-select>
     <b-form-input v-model="yearNumber" id="type-number" @change="saveName" min="2000" max="2025" placeholder="Jaar" type="number"></b-form-input>
   </div>
 </template>
@@ -14,21 +14,31 @@
       autoSave() {
 
       },
-      saveName(){
-        const name = `${this.value}-${this.selected}-${this.yearNumber}`
-        if(!this.value.length >= 0){
-          this.value = "Naamloos"
+      dateErrorPrev(){
+        //Dit moet global
+        const monthNames = this.$store.state.createdMenu.monthNames
+        const date = new Date()
+        if(this.selected === ''){
+          this.selected = monthNames[date.getMonth()]
         }
-      //  - / start of name
-      },
-      checkData(){
+        if(this.value.length == 0){
+          this.value = this.$store.state.createdMenu.preMenuName
+        }
+        if(this.yearNumber ===''){
+         this.yearNumber = date.getFullYear()
+        }
 
-      }
+      },
+      saveName(){
+        this.dateErrorPrev()
+        let name = `${this.value}-${this.selected}-${this.yearNumber}`
+        this.$store.commit('createdMenu/addMenuName', name)
+      },
     },
     data() {
       return {
         value: '',
-        yearNumber: new Date().getFullYear(),
+        yearNumber: '',
         selected: '',
         options: [
           { value: '', text: 'Maand/type' },
@@ -41,6 +51,9 @@
           { value: 'Asperges', text: 'Asperges' }
         ]
       }
+    },
+    computed:{
+
     }
   }
 </script>
@@ -51,4 +64,7 @@
   margin: 0 auto 10px;
   display: flex;
 }
+  .custom-select{
+    margin: 0 10px;
+  }
 </style>

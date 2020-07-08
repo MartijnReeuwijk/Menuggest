@@ -35,20 +35,62 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/pwa',
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
+    ['bootstrap-vue/nuxt', {
+      icons: true,
+    }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+  pwa: {
+    meta: {
+      title: 'Menuggest',
+      author: 'Martijn Reeuwijk',
+    },
+    manifest: {
+      name: 'Menuggest',
+      short_name: 'Menuggest',
+      lang: 'en',
+      display: "standalone",
+      background_color: "#fff",
+      description: "A simply readable Hacker News app.",
+      icons: [{
+        "src": "static/favicons.ico/android-icon-48x48.png",
+        "sizes": "48x48",
+        "type": "image/png"
+      }, {
+        "src": "static/favicons.ico/android-icon-72x72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+      }, {
+        "src": "static/favicons.ico/android-icon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      }, {
+        "src": "static/favicons.ico/android-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "static/favicons.ico/android-icon-168x168.png",
+        "sizes": "168x168",
+        "type": "image/png"
+      }, {
+        "src": "static/favicons.ico/android-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }],
+    },
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

@@ -21,7 +21,7 @@
 
 <script>
   import menukaartA4 from './menukaartA4'
-  import bottomNav from './bottomNav'
+  import bottomNav from './bottomActionBar'
   import buttonHolder from './buttonHolder'
 
   export default {
