@@ -4,6 +4,8 @@
   <buttonHolder v-if="salesInfo">
   </buttonHolder>
 
+    <legenda></legenda>
+
     <menukaartA4
       :menuCardData="menuCardData">
     </menukaartA4>
@@ -23,6 +25,7 @@
   import menukaartA4 from './menukaartA4'
   import bottomNav from './bottomActionBar'
   import buttonHolder from './buttonHolder'
+  import legenda from './legenda'
 
   export default {
     name: 'pageHolder',
@@ -39,7 +42,8 @@
     components:{
       menukaartA4,
       bottomNav,
-      buttonHolder
+      buttonHolder,
+      legenda
     },
     methods: {
       getWindowWidth () {
