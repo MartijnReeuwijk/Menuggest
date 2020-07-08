@@ -2,7 +2,7 @@
   <b-list-group>
     <!--  Active moet met var  -->
     <!-- De transision moet van buiten het scherm komen -->
-
+    <transition-group name="list" tag="div">
     <b-list-group-item :key="item.message" @click="clickEvent(item)" class="customStyle card-1 flex-column align-items-start" href="#"
                        v-for="item in datashow">
 
@@ -22,7 +22,7 @@
       </p>
 
     </b-list-group-item>
-
+    </transition-group>
   </b-list-group>
 </template>
 
