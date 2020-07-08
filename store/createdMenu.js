@@ -30,7 +30,9 @@ export const mutations = {
     state.menuItems = item
   },
   addMenuName (state, item){
-    state.menuName =  `${item}.json`
+    // voor mogelijke downlaod naar local
+    // state.menuName =  `${item}.json`
+    state.menuName = item
   },
   addMenu (state, item){
     state.createdMenu.push(item)

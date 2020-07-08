@@ -8,7 +8,6 @@
       :menuOptionsSelected="menuOptionsSelected"
       :selectedCourse="selectedCourse"
       :title="title"
-      v-on:sendToMenu="updatePicks"
     >
     </RightsideHolder>
   </div>
