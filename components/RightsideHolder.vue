@@ -16,8 +16,7 @@
       </transition>
 
       <div class="padding">
-        <menuDataHolder
-        >
+        <menuDataHolder>
         </menuDataHolder>
       </div>
     </div>
