@@ -24,7 +24,7 @@
             <div class="d-flex w-100 justify-content-between ">
               <!--     Moet dit afvangen bij de backend        -->
               <h5 class="mb-1">
-                {{ item.message }}
+                {{ item.name }}
               </h5>
             </div>
             <p class="mb-1">
@@ -49,7 +49,7 @@
             <div class="d-flex w-100 justify-content-between ">
               <!--     Moet dit afvangen bij de backend        -->
               <h5 class="mb-1">
-                {{ item.message }}
+                {{ item.name }}
               </h5>
             </div>
             <p class="mb-1">
@@ -68,7 +68,7 @@
 
             <div class="d-flex w-100 justify-content-between ">
               <h5 class="mb-1">
-                {{ item.message }}
+                {{ item.name }}
               </h5>
             </div>
             <p class="mb-1">

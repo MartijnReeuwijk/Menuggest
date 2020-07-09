@@ -35,14 +35,9 @@
       return {}
     },
     props: {
-      sideMenuData: [],
       title: {
         Type: String,
         default: null
-      },
-      suggestionMode: {
-        type: Boolean,
-        default: false
       },
       menuOptionsSelected: {},
       selectedCourse: {},
@@ -65,7 +60,15 @@
 <style lang="scss" scoped>
   .padding {
     padding: 0 10px;
+    height: calc(100vh - 118px);
+    overflow: scroll;
+    z-index: -1;
+    overflow-x: hidden;
   }
+  .padding::-webkit-scrollbar {
+    display: none;
+  }
+
 
   hr {
     margin: 10px 0;

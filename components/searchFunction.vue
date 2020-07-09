@@ -21,7 +21,7 @@
       const newDataArray =[]
       data.filter(item => {
       // return item.message.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-        if (item.message.toLowerCase().indexOf(this.search.toLowerCase()) > -1) {
+        if (item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1) {
           newDataArray.unshift(item)
         }else{
           newDataArray.push(item)

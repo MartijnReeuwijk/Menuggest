@@ -3,7 +3,7 @@
     <!--  Active moet met var  -->
     <!-- De transision moet van buiten het scherm komen -->
     <transition-group name="list" tag="div">
-    <b-list-group-item :key="item.message" @click="clickEvent(item)" class="customStyle card-1 flex-column align-items-start" href="#"
+    <b-list-group-item :key="item.name" @click="clickEvent(item)" class="customStyle card-1 flex-column align-items-start" href="#"
                        v-for="item in datashow">
 
       <div class="clickThrough d-flex w-100 justify-content-between ">
@@ -11,7 +11,7 @@
           <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
         </transition>
         <h5 class="mb-1">
-          {{ item.message }}
+          {{ item.name }}
           <transition name="fade">
             <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
           </transition>
@@ -38,7 +38,13 @@
       }
     },
     created: function () {
-      this.$store.commit('createdMenu/addMenucardItem', myFile)
+      const menuKaartNoIng = []
+      myFile.forEach(item => {
+        if (item.ingredient === false){
+          menuKaartNoIng.push(item)
+        }
+      })
+      this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
     },
     computed: {
       suggestions: function () {
@@ -63,11 +69,17 @@
 </script>
 
 <style lang="scss" scoped>
-  .clickThrough {
+ h5{
+    text-transform: capitalize;
+  }
+ ::-webkit-scrollbar {
+   display: none;
+ }
+
+ .clickThrough {
     /*click whole element*/
     pointer-events: none;
   }
-
   .customStyle {
     margin: 5px 0;
     border-radius: 0.25rem;
