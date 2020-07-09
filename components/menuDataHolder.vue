@@ -82,6 +82,7 @@
   }
   .customStyle {
     margin: 5px 0;
+    text-transform: capitalize;
     border-radius: 0.25rem;
     border: 1px darkgray solid;
     position: relative;

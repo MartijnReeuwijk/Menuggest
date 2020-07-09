@@ -5,7 +5,7 @@
       <div v-for="items in filterMenuItems">
         <h5 class="title">{{items.mainMenu}}</h5>
        <div v-for="items in items.subMenu" class="menuItem">
-         <b-nav-item @click="hide">{{items}}</b-nav-item>
+         <b-nav-item :value="items" @click="hide">{{items}}</b-nav-item>
         </div>
       </div>
     </b-nav>
@@ -51,6 +51,7 @@
     border: 1px solid black;
     border-radius: 5px;
     margin: 2px 0;
+    background-color: white;
     text-transform: capitalize;
   }
   .sideMenuPlacer{
@@ -62,10 +63,10 @@
     margin: 0;
   }
   .sideMenuDeals{
+    background-color: #F7F8FB;
     width: 200px;
     position: relative;
     padding: 5px;
-    border-right: solid black 1px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     height: calc(100vh - 56px);
   }
