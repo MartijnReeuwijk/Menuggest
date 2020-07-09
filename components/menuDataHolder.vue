@@ -2,9 +2,9 @@
   <b-list-group>
     <!--  Active moet met var  -->
     <!-- De transision moet van buiten het scherm komen -->
-
+    <transition-group name="list" tag="div">
     <b-list-group-item :key="item.message" @click="clickEvent(item)" class="customStyle card-1 flex-column align-items-start" href="#"
-                       v-for="item in items">
+                       v-for="item in datashow">
 
       <div class="clickThrough d-flex w-100 justify-content-between ">
         <transition name="fade">
@@ -22,7 +22,7 @@
       </p>
 
     </b-list-group-item>
-
+    </transition-group>
   </b-list-group>
 </template>
 
@@ -34,7 +34,7 @@
     name: 'menuDataHolder',
     data () {
       return {
-        items: this.$store.state.createdMenu.menuItems,
+        // items:
       }
     },
     created: function () {
@@ -43,6 +43,9 @@
     computed: {
       suggestions: function () {
         return this.$store.state.createdMenu.suggestionMode
+      },
+      datashow:function () {
+        return  this.$store.state.createdMenu.menuItems
       }
     },
     methods: {
