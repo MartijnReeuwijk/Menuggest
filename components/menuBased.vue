@@ -21,20 +21,26 @@
   export default {
     name: 'menuBased',
     data () {
-      return {}
+      return {
+        window: {
+          width: 0,
+          height: 0
+        }
+      }
     },
     props: {
       title: String,
-      menuOptionsSelected: String,
-      selectedCourse: String,
-      suggestionMode: {
-        type: Boolean,
-        default: false
-      },
     },
     components: {
       RightsideHolder,
       pageHolder
+    },
+    mounted () {
+      window.addEventListener('resize', this.handleResize)
+      this.handleResize()
+    },
+    destroyed () {
+      window.removeEventListener('resize', this.handleResize)
     },
     methods: {
       updateSuggestion (item) {
@@ -56,6 +62,10 @@
         if (height > 862) {
           alert('Je menu is nu meer dan 1 page (Dit is een tijdelijke error)')
         }
+      },
+      handleResize () {
+        this.window.width = window.innerWidth
+        this.window.height = window.innerHeight
       }
     }
   }

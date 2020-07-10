@@ -45,6 +45,7 @@
 <style>
   .mainHolderDeluxChangeThislater {
     overflow: hidden;
+    height: 100vh;
   }
   @media print {
     body * {

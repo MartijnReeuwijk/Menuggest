@@ -1,20 +1,18 @@
 <template>
-      <div class="buttons-space">
-        <div class="button-holder-inner">
-          <b-button variant="outline-primary">Voor</b-button>
-          <b-button variant="primary">Hoofd</b-button>
-          <b-button variant="outline-primary">Na</b-button>
-        </div>
-      </div>
+  <div class="buttons-space">
+    <div class="button-holder-inner">
+      <b-button variant="outline-primary">Voor</b-button>
+      <b-button variant="primary">Hoofd</b-button>
+      <b-button variant="outline-primary">Na</b-button>
+    </div>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'verticalActionBar',
     data () {
-      return {
-
-      }
+      return {}
     }
   }
 
@@ -30,6 +28,7 @@
     bottom: 0;
     align-items: center;
   }
+
   .button-holder {
     width: 100%;
     display: flex;
@@ -37,6 +36,7 @@
     justify-items: center;
     justify-content: center;
   }
+
   .button-holder-inner {
     width: 250px;
     display: flex;

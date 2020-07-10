@@ -40,7 +40,7 @@
             price: 25,
             currency: 'euro',
             profit: 'good',
-            margin: '1-3'
+            margin: '5'
           },
           {
             type: 'rund',
@@ -48,7 +48,7 @@
             price: 10,
             currency: 'euro',
             profit: 'good',
-            margin: '1-3'
+            margin: '4'
           },
           {
             type: 'rund',
@@ -85,7 +85,7 @@
           },
           {
             type: 'tomaat',
-            margin: '5',
+            margin: '2.5',
             currency: 'euro',
             name: 'cherry tomaat',
             price: 13,
@@ -94,7 +94,7 @@
           },
           {
             type: 'tomaat',
-            margin: '5',
+            margin: '0',
             currency: 'euro',
             name: 'tross tomaat',
             price: 18,

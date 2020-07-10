@@ -3,26 +3,28 @@
     <!--  Active moet met var  -->
     <!-- De transision moet van buiten het scherm komen -->
     <transition-group name="list" tag="div">
-    <b-list-group-item :key="item.name" @click="clickEvent(item)" class="customStyle card-1 flex-column align-items-start" href="#"
-                       v-for="item in datashow">
+      <b-list-group-item :key="item.name" @click="clickEvent(item)"
+                         class="customStyle card-1 flex-column align-items-start" href="#"
+                         v-for="item in datashow">
 
-      <div class="clickThrough d-flex w-100 justify-content-between ">
-        <transition name="fade">
-          <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
-        </transition>
-        <h5 class="mb-1">
-          {{ item.name }}
+        <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
-            <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+            <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
           </transition>
-        </h5>
-      </div>
-      <p class="clickThrough mb-1">
-        {{ item.desc }}
-      </p>
+          <h5 class="mb-1">
+            {{ item.name }}
+            <transition name="fade">
+              <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+            </transition>
+          </h5>
+        </div>
+        <p class="clickThrough mb-1">
+          {{ item.desc }}
+        </p>
 
-    </b-list-group-item>
+      </b-list-group-item>
     </transition-group>
+    <div class="pusher"></div>
   </b-list-group>
 </template>
 
@@ -40,7 +42,7 @@
     created: function () {
       const menuKaartNoIng = []
       myFile.forEach(item => {
-        if (item.ingredient === false){
+        if (item.ingredient === false) {
           menuKaartNoIng.push(item)
         }
       })
@@ -50,8 +52,8 @@
       suggestions: function () {
         return this.$store.state.createdMenu.suggestionMode
       },
-      datashow:function () {
-        return  this.$store.state.createdMenu.menuItems
+      datashow: function () {
+        return this.$store.state.createdMenu.menuItems
       }
     },
     methods: {
@@ -69,17 +71,23 @@
 </script>
 
 <style lang="scss" scoped>
- h5{
+  h5 {
     text-transform: capitalize;
   }
- ::-webkit-scrollbar {
-   display: none;
- }
 
- .clickThrough {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pusher {
+    height: 60px;
+  }
+
+  .clickThrough {
     /*click whole element*/
     pointer-events: none;
   }
+
   .customStyle {
     margin: 5px 0;
     text-transform: capitalize;

@@ -63,7 +63,8 @@
       <div v-else>
         <b-list-group>
 
-          <b-list-group-item :key="item.id" @click="removeItem(index)" class="customStyle  flex-column align-items-start"
+          <b-list-group-item :key="item.id" @click="removeItem(index)"
+                             class="customStyle  flex-column align-items-start"
                              href="#" v-for="(item, index) in menuCardDataStore">
 
             <div class="d-flex w-100 justify-content-between ">
@@ -81,6 +82,10 @@
 
 
     </section>
+
+    <div class="pusher">
+
+    </div>
   </div>
 </template>
 
@@ -132,6 +137,10 @@
     z-index: 10;
   }
 
+  .pusher {
+    height: 50px;
+  }
+
   .customStyle {
     border: 0;
     text-align: center;
@@ -140,6 +149,7 @@
   .customStyle h5 {
     width: 100%;
   }
+
 
   .menukaartPaper {
     width: 595px;
