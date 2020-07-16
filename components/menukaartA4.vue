@@ -143,6 +143,7 @@
 
   .customStyle {
     border: 0;
+    font-size: larger;
     text-align: center;
   }
 
@@ -152,7 +153,8 @@
 
 
   .menukaartPaper {
-    width: 595px;
+    width: 795px;
+    /*A4 size hoe dit in verhouding*/
     min-height: 842px;
     height: auto;
     padding: 20px;
