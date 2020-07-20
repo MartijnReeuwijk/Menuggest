@@ -18,7 +18,6 @@
   import menuBased from '../components/menuBased'
   import myFile from '../assets/archive.json'
 
-
   export default {
     data () {
       return {
@@ -46,5 +45,6 @@
 <style>
   .mainHolderDeluxChangeThislater {
     overflow: hidden;
+    height: 100vh;
   }
 </style>

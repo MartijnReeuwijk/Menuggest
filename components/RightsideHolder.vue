@@ -65,6 +65,7 @@
     z-index: -1;
     overflow-x: hidden;
   }
+
   .padding::-webkit-scrollbar {
     display: none;
   }

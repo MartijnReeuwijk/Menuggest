@@ -9,17 +9,19 @@
     <menukaartA4>
     </menukaartA4>
 
-    <div class="sideBarTest">
-      <action-bar></action-bar>
-    </div>
 
-<!--    <bottomNav-->
-<!--      :style="{ width: myWidth + 'px' }"-->
-<!--      class="smooth"-->
-<!--    >-->
-<!--    </bottomNav>-->
+    <action-bar></action-bar>
+    <!--    <div class="sideBarInside">-->
+    <!--      <div class="sideBarInsideRelative">-->
+    <!-- -->
+    <!--      </div>-->
+    <!--    </div>-->
 
-    <div class="bottom_navigation_pusher"></div>
+    <!--    <bottomNav-->
+    <!--      :style="{ width: myWidth + 'px' }"-->
+    <!--      class="smooth"-->
+    <!--    >-->
+    <!--    </bottomNav>-->
   </section>
 </template>
 
@@ -74,18 +76,29 @@
 </script>
 
 <style lang="scss" scoped>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   .menu_holder {
     width: 100%;
     position: relative;
     padding: 10px 0;
+    overflow: scroll;
   }
-.sideBarTest{
-  width: 200px;
-  height: calc(100vh - 75px);
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+
+  .sideBarInsideRelative {
+    position: relative;
+  }
+
+  .sideBarInside {
+    width: 200px;
+    height: calc(100vh - 75px);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
   .smooth {
     transition: ease-in-out 0.2s;
   }

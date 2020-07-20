@@ -51,7 +51,7 @@
         window.print()
         // var printThis =  this.$parent.$children[0].$refs["menukaartPaper"]
       },
-      save:function (data,name){
+      save: function (data, name) {
         const archive = this.archive
         const menuToArchive = {
           id: Math.floor(Math.random() * 10000),
@@ -79,7 +79,7 @@
         if (name === '') {
           name = `${prefixName}-${prefixMonth}-${prefixYear}`
         }
-        if (downloadAllowed){
+        if (downloadAllowed) {
           const blob = new Blob([data], {type: 'application/binary'})
           const nameAnchor = document.createElement('a')
           nameAnchor.download = name
@@ -87,7 +87,7 @@
           nameAnchor.dataset.downloadurl = ['application/binary', nameAnchor.download, nameAnchor.href].join(':')
           nameAnchor.click()
         }
-        this.save(data,name)
+        this.save(data, name)
 
       }
     },
@@ -120,9 +120,9 @@
     height: 150px;
     width: 150px;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     bottom: 10px;
-    right: 10px;
+    left: 10px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
