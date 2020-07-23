@@ -7,6 +7,7 @@ export const state = () => ({
     "July", "August", "September", "October", "November", "December"
   ],
   createdMenu:[],
+  cashRegisterData:[],
   menuItems:[],
   toolkit:false,
   suggestionMode:false,
@@ -52,5 +53,8 @@ export const mutations = {
   },
   switchToolKit (state, item){
     state.toolkit = !state.toolkit
+  },
+  cashRegisterData (state, item){
+    state.cashRegisterData = item
   },
 }

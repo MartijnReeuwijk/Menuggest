@@ -28,7 +28,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/bootstrap-vue'
+    '@/plugins/bootstrap-vue',
+    { src: "@/plugins/chart", ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -50,8 +51,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
+  http: {
+    // proxyHeaders: false
+  },
   pwa: {
     meta: {
       title: 'Menuggest',
