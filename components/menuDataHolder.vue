@@ -39,9 +39,8 @@
         // items:
       }
     },
-    mounted: function () {
+    created: function () {
       let menuKaartNoIng = []
-      console.log(menukaart.length)
       if(menukaart.length > 0){
         menukaart.forEach(item => {
           if (item.ingredient === false) {
@@ -59,16 +58,7 @@
         // const data = JSON.stringify(localStorageMenukaart)
         // console.log(localStorageMenukaart)
       }
-
-      if (this.datashow.length <= 0){
-        const localStorageMenukaart = localStorage.getItem('MenuggestDB_menuKaart')
-        const data = JSON.parse(localStorageMenukaart)
-        console.log('data', data)
-        this.$store.commit('createdMenu/addMenucardItem', data)
-      }else{
-        this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
-
-      }
+      this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
 
     },
     computed: {
