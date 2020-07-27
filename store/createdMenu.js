@@ -38,7 +38,7 @@ export const mutations = {
   },
   addMenucardItem (state, item){
     console.log('item', item)
-    state.menuItems = item
+    state.menuItems.push(item)
   },
   addMenuName (state, item){
     // voor mogelijke downlaod naar local

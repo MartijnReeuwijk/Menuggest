@@ -30,7 +30,7 @@
 
 <script>
   /* eslint-disable no-alert, no-console */
-  import myFile from '../assets/menukaart.json'
+  import menukaart from '../assets/menukaart.json'
 
   export default {
     name: 'menuDataHolder',
@@ -39,14 +39,37 @@
         // items:
       }
     },
-    created: function () {
-      const menuKaartNoIng = []
-      myFile.forEach(item => {
-        if (item.ingredient === false) {
-          menuKaartNoIng.push(item)
-        }
-      })
-      this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
+    mounted: function () {
+      let menuKaartNoIng = []
+      console.log(menukaart.length)
+      if(menukaart.length > 0){
+        menukaart.forEach(item => {
+          if (item.ingredient === false) {
+            menuKaartNoIng.push(item)
+          }
+        })
+      }
+      else {
+        // const localStorageMenukaart = localStorage.getItem('MenuggestDB_menuKaart')
+        // localStorageMenukaart.forEach(item => {
+        //   if (item.ingredient === false) {
+        //     menuKaartNoIng.push(item)
+        //   }
+        // })
+        // const data = JSON.stringify(localStorageMenukaart)
+        // console.log(localStorageMenukaart)
+      }
+
+      if (this.datashow.length <= 0){
+        const localStorageMenukaart = localStorage.getItem('MenuggestDB_menuKaart')
+        const data = JSON.parse(localStorageMenukaart)
+        console.log('data', data)
+        this.$store.commit('createdMenu/addMenucardItem', data)
+      }else{
+        this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
+
+      }
+
     },
     computed: {
       suggestions: function () {
