@@ -9,6 +9,7 @@ export const state = () => ({
   createdMenu:[],
   menuItems:[],
   toolkit:false,
+  seasons:[],
   suggestionMode:false,
   switchIndex:false,
 })
