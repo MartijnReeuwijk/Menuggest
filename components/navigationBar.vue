@@ -11,6 +11,9 @@
 
           <b-nav-item href="/insights">Verkoop insights</b-nav-item>
           <!--          <b-nav-item href="/control">Beheer paneel</b-nav-item>-->
+
+          <b-nav-item href="/editMenu">Gerecht toevoegen</b-nav-item>
+
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

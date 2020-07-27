@@ -1,0 +1,42 @@
+[
+  {
+    "season": "Niet van toepassing" ,
+    "timeZone": null,
+    "time": null
+  },
+  {
+    "season": "Wild seizoen" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  },
+  {
+    "season": "Asperge seizoen" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  },
+  {
+    "season": "Kreeft oosterschelde" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  },
+  {
+    "season": "Truffel" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  },
+  {
+    "season": "Lam seizoen" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  },
+  {
+    "season": "Europese Ansjovis" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  },
+  {
+    "season": "Frutti di mare (schelpdieren)" ,
+    "timeZone": "Noordelijk halfnoord",
+    "time": ""
+  }
+]
