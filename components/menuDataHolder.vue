@@ -36,11 +36,17 @@
     name: 'menuDataHolder',
     data () {
       return {
-        // items:
       }
     },
     created: function () {
+
+
+
+
+
+
       let menuKaartNoIng = []
+      console.log("menukaart.length", menukaart.length)
       if(menukaart.length > 0){
         menukaart.forEach(item => {
           if (item.ingredient === false) {

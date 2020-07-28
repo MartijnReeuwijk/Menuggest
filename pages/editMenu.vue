@@ -1,96 +1,98 @@
 <template>
   <section>
     <navigationBar title="Menuggest"></navigationBar>
+    <alert></alert>
 
     <main class="holder">
       <!--      todo: dit is een standaart ding maak dit een standaart element met slots-->
-
-      <!--   Maak info button   -->
-
       <div class="sizeAligner">
         <div class="centerHolder">
-
-          <div class="card customCard">
-
+          <div class="card  customCard">
             <div>
-              <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-
+              <b-form @reset="onReset" @submit="onSubmit" v-if="show">
                 <b-form-group id="input-group-2" label="Gerechts naam:" label-for="input-2">
                   <b-form-input
                     id="input-2"
-                    v-model="form.name"
-                    required
                     placeholder="Bijv: Rode curry"
+                    required
+                    v-model="form.name"
                   ></b-form-input>
                 </b-form-group>
 
                 <b-form-group id="foodDescGroup" label="Gerechts omschrijving:" label-for="foodDesc">
                   <b-form-textarea
                     id="textarea"
-                    v-model="form.desc"
+                    max-rows="6"
                     placeholder="Bijv: Rode curry met tofu of kip in saus"
                     rows="3"
-                    max-rows="6"
+                    v-model="form.desc"
                   ></b-form-textarea>
                 </b-form-group>
 
-                <div class="formStyleSelect">
+                <div class="formStyleSelect extraPadding">
                   <b-form-group class="customSize" id="menuTypeGroup" label="Seizoens type" label-for="menuType">
                     <b-form-select
-                      id="menuType"
-                      v-model="form.season"
                       :options="seasons"
+                      id="menuType"
                       required
+                      v-model="form.season"
                     ></b-form-select>
                   </b-form-group>
                   <b-form-group class="customSize" id="input-group-3" label="Soort" label-for="input-3">
                     <b-form-select
-                      id="input-3"
-                      v-model="form.food"
                       :options="foods"
+                      id="input-3"
                       required
+                      v-model="form.food"
                     ></b-form-select>
                   </b-form-group>
                 </div>
 
                 <h5>Prijs en margins</h5>
                 <div class="profitRelated">
-
-                  <div class="extraPadding">
-                    <b-input-group class="" size="md" prepend="€">
-                      <b-form-input type="number" v-model="form.price" placeholder="Verkoop prijs">
+                  <div class="extraPadding ">
+                    <b-input-group class="" prepend="€" size="md">
+                      <b-form-input placeholder="Verkoop prijs" type="number" v-model="form.price">
                       </b-form-input>
                     </b-input-group>
                   </div>
 
                   <div class="extraPadding">
-                    <b-input-group size="md" prepend="€">
-                      <b-form-input type="number" v-model="form.userAssignedProfit" placeholder="Geschate winst">
+                    <b-input-group prepend="€" size="md">
+                      <b-form-input placeholder="Geschate winst" type="number" v-model="form.userAssignedProfit">
                       </b-form-input>
                     </b-input-group>
-                  </div>
-
-                  <div class="ingredients">
-                    <h5>Ingredienten</h5>
-                    <b-form-group id="ingredientSelectGroup" class="text-capitalize" label-for="ingredientSelect">
-                      <b-form-checkbox-group v-model="form.ingredients" id="ingredientSelect">
-                        <div v-for="items in apiListedIngredients">
-                          <h5>{{items.mainMenu}}</h5>
-                          <div class="ingredientListHolder">
-                            <div v-for="item in items.subMenu">
-                              <b-form-checkbox :value="item" >{{item}}</b-form-checkbox>
-                            </div>
-                          </div>
-                        </div>
-
-                      </b-form-checkbox-group>
-                    </b-form-group>
-
                   </div>
                 </div>
 
+                <div class="ingredients extraPadding text-capitalize">
+                  <h5>Ingredienten</h5>
+                  <b-card class="mb-1" no-body>
+                    <div v-for="(items, index) in apiListedIngredients">
+                      <b-card-header class="p-1" header-tag="header" role="tab">
+                        <!--                        `v-b-toggle.accordion-${{index}}`-->
+                        <b-button block class="text-capitalize" v-b-toggle="'accordion-' + index" variant="info">
+                          {{items.mainMenu}}
+                        </b-button>
+                      </b-card-header>
+
+                      <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
+                        <b-card-body class="ingredientListHolder">
+                          <div v-for="item in items.subMenu">
+                            <b-form-checkbox :value="item" v-model="form.ingredients">
+                              {{item}}
+                            </b-form-checkbox>
+                          </div>
+                        </b-card-body>
+                      </b-collapse>
+                    </div>
+
+                  </b-card>
+                </div>
+
+
                 <b-form-group id="input-group-4" label="Extra gerechten infomatie" label-for="input-4">
-                  <b-form-checkbox-group v-model="form.extraFoodData" id="checkboxes-4">
+                  <b-form-checkbox-group id="checkboxes-4" v-model="form.extraFoodData">
                     <b-form-checkbox value="vegetarisch">vegetarisch</b-form-checkbox>
                     <b-form-checkbox value="vegan">vegan</b-form-checkbox>
                     <b-form-checkbox value="noten">noten</b-form-checkbox>
@@ -114,16 +116,15 @@
       </div>
 
 
-
       <!--      <transition-group name="list" tag="div">-->
 
       <transition name="fade">
-        <div class="contextFloater text-capitalize"  v-show="this.form.ingredients.length > 0">
+        <div class="contextFloater text-capitalize" v-show="this.form.ingredients.length > 0">
           <h4>Ingredienten lijst</h4>
           <hr>
-          <transition-group tag="ul"  name="list">
+          <transition-group name="list" tag="ul">
             <!--            met groups add een key-->
-            <li v-for="items in this.form.ingredients" :key="items">
+            <li :key="items" v-for="items in this.form.ingredients">
               {{items}}
             </li>
           </transition-group>
@@ -144,42 +145,48 @@
   import leftbar from '../components/leftbar'
   import seasons from '../assets/season.json'
   import ingredients from '../assets/apiFilterMenu.json'
+  import alert from '../components/alert'
   // import menukaart from '../assets/menukaart.json'
 
   export default {
     name: 'editMenu',
-    components:{
+    components: {
       navigationBar,
       RightsideHolder,
       leftbar,
+      alert
     },
-    data() {
+    data () {
       return {
-        seasonsTest:seasons,
-        ingredientsList:ingredients,
+        seasonsTest: seasons,
+        ingredientsList: ingredients,
         form: {
+          id: '',
           name: '',
           food: null,
           season: null,
           extraFoodData: [],
-          profit:"avg",
-          userAssignedProfit:"",
-          desc:"",
-          time:"",
-          luxe:"",
-          course:"",
-          price:Number,
-          currency:"euro",
-          foodType:"",
-          ingredients:[]
+          profit: 'avg',
+          userAssignedProfit: '',
+          desc: '',
+          time: '',
+          luxe: '',
+          course: '',
+          price: Number,
+          currency: 'euro',
+          foodType: '',
+          ingredients: []
         },
-        foods: [{ text: 'Opties', value: null }, 'Rund', 'Zalm', 'Tonijn', 'Lam','Kalf','Varken','Schaap','Schol','Tong','Bot','Tarbot','Kreeft', 'Krab','Schaaldier', 'Overig'],
-        seasons : [{ text: 'Opties', value: null }],
-        apiListedIngredients : [],
+        foods: [{
+          text: 'Opties',
+          value: null
+        }, 'Rund', 'Zalm', 'Tonijn', 'Lam', 'Kalf', 'Varken', 'Schaap', 'Schol', 'Tong', 'Bot', 'Tarbot', 'Kreeft', 'Krab', 'Schaaldier', 'Overig'],
+        seasons: [{text: 'Opties', value: null}],
+        apiListedIngredients: [],
         show: true
       }
     },
-    mounted(){
+    mounted () {
       this.seasonsTest.forEach(item => {
         this.seasons.push(item.season)
       })
@@ -192,65 +199,47 @@
       // todo: Connect dit naar een database
       onSubmit: function (evt) {
         evt.preventDefault()
-        let posOutlook = this.form
-        this.$store.commit('createdMenu/addMenucardItem', posOutlook)
-
-        if (localStorage.getItem('MenuggestDB_menuKaart')) {
-          console.log('local', localStorage.getItem('MenuggestDB_menuKaart'))
-          console.log('local type', typeof localStorage.getItem('MenuggestDB_menuKaart'))
-
-          const parsed = JSON.parse(localStorage.getItem('MenuggestDB_menuKaart'))
-          console.log('parsed', parsed)
-          console.log('typeof parsed', typeof parsed)
-
-          const vueState = this.$store.state.createdMenu.menuItems
-
-          console.log('vueState', vueState)
-
-          const updateLocal = []
-          updateLocal.push(parsed)
-
-          vueState.forEach(item => {
-            if (Array.isArray(item)) {
-              return
-            } else {
-              updateLocal.push(item)
-            }
-          })
-          const flat = updateLocal.flat();
-
-          console.log(flat)
-
-          localStorage.setItem('MenuggestDB_menuKaart', JSON.stringify(flat))
-
+        this.form.id = function () {
+          return Math.floor(Math.random() * 10000)
         }
-        else {
-          localStorage.setItem('MenuggestDB_menuKaart', JSON.stringify(posOutlook))
-        }
+        const newItem = this.form
+        const oldArray = this.$store.state.createdMenu.menuItems
+        const newArray = []
+        newArray.push(newItem)
+        oldArray.forEach(item => {
+          newArray.push(item)
+        })
+        this.$store.commit('createdMenu/addMenucardItem', newArray)
 
+        // Set timer
+        this.$store.commit('createdMenu/saveAlert', true)
+        // setTimeout(this.restTimer(), 2000);
       },
-      onReset(evt) {
+      onReset (evt) {
         evt.preventDefault()
         // Reset our form values
         this.form.name = ''
         this.form.food = null
         this.form.extraFoodData = []
-        this.form.season= null
-        this.form.profit="avg"
-        this.form.userAssignedProfit=''
-        this.form.desc=""
-        this.form.time=""
-        this.form.luxe=""
-        this.form.course=""
-        this.form.price=Number
-        this.form.currency="euro"
-        this.form.foodType=""
-        this.form.ingredients= null
+        this.form.season = null
+        this.form.profit = 'avg'
+        this.form.userAssignedProfit = ''
+        this.form.desc = ''
+        this.form.time = ''
+        this.form.luxe = ''
+        this.form.course = ''
+        this.form.price = Number
+        this.form.currency = 'euro'
+        this.form.foodType = ''
+        this.form.ingredients = null
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {
           this.show = true
         })
+      },
+      restTimer () {
+        this.$store.commit('createdMenu/saveAlert', false)
       }
     }
   }
@@ -261,55 +250,67 @@
     width: 100%;
     display: flex;
   }
+
   .holder {
     display: flex;
     justify-content: space-between;
     background-color: darkgray;
   }
+
   .centerHolder {
     width: 100%;
-    height:  calc(100vh - 56px);
-    overflow-y:scroll;
+    height: calc(100vh - 56px);
+    overflow-y: scroll;
   }
 
-  .customCard{
+  .customCard {
     max-width: 500px;
     margin: 10px auto;
     padding: 10px;
   }
-  .customSize{
+
+  .customSize {
     min-width: 150px;
     width: 50%;
     text-transform: capitalize;
   }
-  .formStyleSelect{
+
+  .formStyleSelect {
     display: flex;
     justify-content: space-between;
   }
-  .profitRelated{
-    padding: 0 0 5px 0 ;
+
+  .profitRelated {
+    padding: 0 0 5px 0;
   }
-  .extraPadding{
+
+  .profitRelated > div {
+    width: 50%;
+    float: left;
+  }
+
+  .extraPadding {
     padding: 5px 0 0 0;
 
   }
 
-  .ingredientListHolder{
+  .ingredientListHolder {
     display: flex;
     width: 100%;
     overflow: hidden;
     flex-wrap: wrap;
     justify-content: space-between;
     text-transform: capitalize;
-    padding: 10px 0;
   }
-  .ingredientListHolder div{
+
+  .ingredientListHolder div {
     min-width: 200px;
     max-width: 50%;
     width: 33%;
     align-self: flex-start;
   }
-  .contextFloater{
+
+  .contextFloater {
     min-width: 200px;
     height: fit-content;
     opacity: 1;
@@ -371,7 +372,6 @@
     transform: scaleY(0);
     transform-origin: center top;
   }
-
 
 
 </style>

@@ -12,6 +12,7 @@ export const state = () => ({
   seasons:[],
   suggestionMode:false,
   switchIndex:false,
+  saveAlert:false
 })
 
 export const mutations = {
@@ -38,7 +39,7 @@ export const mutations = {
   },
   addMenucardItem (state, item){
     console.log('item', item)
-    state.menuItems.push(item)
+    state.menuItems = item
   },
   addMenuName (state, item){
     // voor mogelijke downlaod naar local
@@ -53,5 +54,9 @@ export const mutations = {
   },
   switchToolKit (state, item){
     state.toolkit = !state.toolkit
+  },
+  saveAlert (state, item){
+    state.saveAlert = item
+    console.log('state.saveAlert', state.saveAlert)
   },
 }
