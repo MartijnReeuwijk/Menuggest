@@ -15,30 +15,22 @@ export const state = () => ({
   saveAlert:false
 })
 
+// TODO:: Verbeter de store
+//  Action ipv just mutations
 export const mutations = {
+  menuItemsToevoegen(state, item){
+    state.menuItems.unshift(item)
+  },
   switchIndex (state, item){
     //TODO: Check deze logic maybe een 3de var
-
     state.switchIndex = !state.switchIndex
     state.suggestionMode = !state.suggestionMode
-    // if (item){
-    //   state.switchIndex = item
-    //   state.suggestionMode = item
-    // }
-    // if (state.suggestionMode){
-    //   state.switchIndex = false
-    // }
-    // else{
-    //   state.switchIndex = !state.switchIndex
-    // }
   },
-  // dit kan anders / nieuwe logic maar low importance
   switchSuggestionMode (state, item){
     state.switchIndex = !state.switchIndex
     state.suggestionMode = !state.suggestionMode
   },
   addMenucardItem (state, item){
-    console.log('item', item)
     state.menuItems = item
   },
   addMenuName (state, item){

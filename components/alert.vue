@@ -3,8 +3,8 @@
   <div class="alert-fixed" v-show="alert">
     <b-alert show variant="info">
         <b-spinner small></b-spinner>
-        <span class="sr-only">Opslaan</span>
-      Opslaan
+        <span class="sr-only">Opslaan Opslaan naar de database</span>
+      Opslaan naar de database
     </b-alert>
   </div>
   </transition>
@@ -35,7 +35,7 @@
 <style lang="scss" scoped>
 .alert-fixed{
   position: fixed;
-  width: 200px;
+  width: 250px;
   margin: 0 auto;
   top: 10px;
   left: 0;

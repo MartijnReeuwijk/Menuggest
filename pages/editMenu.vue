@@ -2,11 +2,12 @@
   <section>
     <navigationBar title="Menuggest"></navigationBar>
     <alert></alert>
-
+<!--Split this file-->
     <main class="holder">
       <!--      todo: dit is een standaart ding maak dit een standaart element met slots-->
       <div class="sizeAligner">
         <div class="centerHolder">
+
           <div class="card  customCard">
             <div>
               <b-form @reset="onReset" @submit="onSubmit" v-if="show">
@@ -29,7 +30,6 @@
                   ></b-form-textarea>
                 </b-form-group>
 
-                <div class="formStyleSelect extraPadding">
                   <b-form-group class="customSize" id="menuTypeGroup" label="Seizoens type" label-for="menuType">
                     <b-form-select
                       :options="seasons"
@@ -38,7 +38,7 @@
                       v-model="form.season"
                     ></b-form-select>
                   </b-form-group>
-                  <b-form-group class="customSize" id="input-group-3" label="Soort" label-for="input-3">
+                  <b-form-group class="customSize" id="input-group-3" label="Gerechts type" label-for="input-3">
                     <b-form-select
                       :options="foods"
                       id="input-3"
@@ -46,7 +46,21 @@
                       v-model="form.food"
                     ></b-form-select>
                   </b-form-group>
-                </div>
+
+
+
+                <b-form-group class="customSize" id="courses" label="Gangen" label-for="course">
+                  <b-form-select
+                    :options="coursed"
+                    id="course"
+                    required
+                    v-model="form.course"
+                  ></b-form-select>
+                </b-form-group>
+
+
+
+
 
                 <h5>Prijs en margins</h5>
                 <div class="profitRelated">
@@ -117,19 +131,20 @@
 
 
       <!--      <transition-group name="list" tag="div">-->
+<!--      <div class="contextFloater text-capitalize" v-show="this.form.ingredients.length > 0">-->
+<!--        <h4>Ingredienten lijst</h4>-->
+<!--        <hr>-->
+<!--        <transition-group name="list" tag="ul">-->
+<!--          &lt;!&ndash;            met groups add een key&ndash;&gt;-->
+<!--          <li :key="items" v-for="items in this.form.ingredients">-->
+<!--            {{items}}-->
+<!--          </li>-->
+<!--        </transition-group>-->
+
+<!--      </div>-->
 
       <transition name="fade">
-        <div class="contextFloater text-capitalize" v-show="this.form.ingredients.length > 0">
-          <h4>Ingredienten lijst</h4>
-          <hr>
-          <transition-group name="list" tag="ul">
-            <!--            met groups add een key-->
-            <li :key="items" v-for="items in this.form.ingredients">
-              {{items}}
-            </li>
-          </transition-group>
-
-        </div>
+        <ingredient-floater title="Ingredienten" :data="this.form.ingredients"  v-show="this.form.ingredients.length > 0" ></ingredient-floater>
       </transition>
 
       <RightsideHolder title="Gerechten"></RightsideHolder>
@@ -146,11 +161,13 @@
   import seasons from '../assets/season.json'
   import ingredients from '../assets/apiFilterMenu.json'
   import alert from '../components/alert'
-  // import menukaart from '../assets/menukaart.json'
+  import IngredientFloater from '../components/dataForm/ingredientFloater'
+  import uuid from '../assets/scrips/UUID.js'
 
   export default {
     name: 'editMenu',
     components: {
+      IngredientFloater,
       navigationBar,
       RightsideHolder,
       leftbar,
@@ -161,27 +178,47 @@
         seasonsTest: seasons,
         ingredientsList: ingredients,
         form: {
-          id: '',
-          name: '',
+          id: Number,
+          name: "",
           food: null,
           season: null,
           extraFoodData: [],
           profit: 'avg',
-          userAssignedProfit: '',
-          desc: '',
-          time: '',
-          luxe: '',
-          course: '',
+          userAssignedProfit: String,
+          desc: "",
+          time: String,
+          luxe: Boolean,
+          course: null,
           price: Number,
           currency: 'euro',
-          foodType: '',
-          ingredients: []
+          foodType: String,
+          ingredients: [],
+          totalIngredients: Number
         },
         foods: [{
           text: 'Opties',
           value: null
-        }, 'Rund', 'Zalm', 'Tonijn', 'Lam', 'Kalf', 'Varken', 'Schaap', 'Schol', 'Tong', 'Bot', 'Tarbot', 'Kreeft', 'Krab', 'Schaaldier', 'Overig'],
+        }, 'Soep','Rund', 'Zalm', 'Tonijn', 'Lam', 'Kalf', 'Varken', 'Schaap', 'Schol', 'Tong', 'Bot', 'Tarbot', 'Kreeft', 'Krab', 'Schaaldier', 'Overig'],
         seasons: [{text: 'Opties', value: null}],
+        coursed:[
+          { value: null, text: 'Selecteer een gang' },
+          {
+            text:'Voorgerecht',
+            value:'appetizer'
+          },
+          {
+            text:'Hoofdgerecht',
+            value:'main'
+          },
+          {
+            text:'Nagerecht',
+            value:'dessert'
+          },
+          {
+            text:'Niet van toepassing',
+            value:'none'
+          }
+        ],
         apiListedIngredients: [],
         show: true
       }
@@ -199,21 +236,16 @@
       // todo: Connect dit naar een database
       onSubmit: function (evt) {
         evt.preventDefault()
-        this.form.id = function () {
-          return Math.floor(Math.random() * 10000)
-        }
-        const newItem = this.form
-        const oldArray = this.$store.state.createdMenu.menuItems
-        const newArray = []
-        newArray.push(newItem)
-        oldArray.forEach(item => {
-          newArray.push(item)
-        })
-        this.$store.commit('createdMenu/addMenucardItem', newArray)
 
-        // Set timer
+        // Totaal niet nodig maarja vind het leuk
+        this.form.id = uuid.uuid()
+        // shallow copy
+        // Dit is tegen een mutation error maar geen idee waarom ik die kreeg want ik push gewoon een item
+        // niks raars
+        const newItem = Object.assign({}, this.form);
+
+        this.$store.commit('createdMenu/menuItemsToevoegen', newItem)
         this.$store.commit('createdMenu/saveAlert', true)
-        // setTimeout(this.restTimer(), 2000);
       },
       onReset (evt) {
         evt.preventDefault()
@@ -231,7 +263,8 @@
         this.form.price = Number
         this.form.currency = 'euro'
         this.form.foodType = ''
-        this.form.ingredients = null
+        this.form.ingredients = []
+        this.form.totalIngredients = 0
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {
@@ -246,6 +279,12 @@
 </script>
 
 <style lang="scss" scoped>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .custom-select{
+
+  }
   .sizeAligner {
     width: 100%;
     display: flex;
@@ -259,20 +298,14 @@
 
   .centerHolder {
     width: 100%;
-    height: calc(100vh - 56px);
-    overflow-y: scroll;
+    height: calc(100vh - 55px);
+    overflow: scroll;
   }
 
   .customCard {
     max-width: 500px;
     margin: 10px auto;
     padding: 10px;
-  }
-
-  .customSize {
-    min-width: 150px;
-    width: 50%;
-    text-transform: capitalize;
   }
 
   .formStyleSelect {
@@ -342,36 +375,6 @@
     opacity: 0;
   }
 
-
-  /*Based on */
-  /*https://codepen.io/ktsn/pen/vJgYxB*/
-  /*De groeps kreeg ik steeds niet aan de praat maar dit werkt ik zie nu in dat je de transform beter moet doen zo dat je geen pop krijgt */
-  .list-enter-active,
-  .list-leave-active,
-  .list-move {
-    transition: 0.3s cubic-bezier(0.59, 0.12, 0.34, 0.95);
-    transition-property: opacity, transform;
-  }
-
-  .list-enter {
-    opacity: 0;
-    transform: translateX(-10px) scaleY(0.5);
-  }
-
-  .list-enter-to {
-    opacity: 1;
-    transform: translateX(0) scaleY(1);
-  }
-
-  .list-leave-active {
-    position: absolute;
-  }
-
-  .list-leave-to {
-    opacity: 0;
-    transform: scaleY(0);
-    transform-origin: center top;
-  }
 
 
 </style>

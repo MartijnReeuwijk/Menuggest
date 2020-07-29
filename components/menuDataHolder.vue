@@ -39,14 +39,7 @@
       }
     },
     created: function () {
-
-
-
-
-
-
       let menuKaartNoIng = []
-      console.log("menukaart.length", menukaart.length)
       if(menukaart.length > 0){
         menukaart.forEach(item => {
           if (item.ingredient === false) {
@@ -67,13 +60,16 @@
       this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
 
     },
+    watch:{
+
+    },
     computed: {
       suggestions: function () {
         return this.$store.state.createdMenu.suggestionMode
       },
       datashow: function () {
         return this.$store.state.createdMenu.menuItems
-      }
+      },
     },
     methods: {
       clickEvent (item) {
