@@ -93,7 +93,7 @@
                       <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
                         <b-card-body class="ingredientListHolder">
                           <div v-for="item in items.subMenu">
-                            <b-form-checkbox :value="item" v-model="form.ingredients">
+                            <b-form-checkbox :value="item.toLowerCase()" v-model="form.ingredients">
                               {{item}}
                             </b-form-checkbox>
                           </div>
@@ -114,7 +114,6 @@
                     <b-form-checkbox value="primeur">primeur</b-form-checkbox>
                   </b-form-checkbox-group>
                 </b-form-group>
-
                 <b-button type="submit" variant="primary">Submit</b-button>
                 <b-button type="reset" variant="danger">Reset</b-button>
                 <b-button type="info" variant="info">Uitleg</b-button>
@@ -129,19 +128,6 @@
 
       </div>
 
-
-      <!--      <transition-group name="list" tag="div">-->
-<!--      <div class="contextFloater text-capitalize" v-show="this.form.ingredients.length > 0">-->
-<!--        <h4>Ingredienten lijst</h4>-->
-<!--        <hr>-->
-<!--        <transition-group name="list" tag="ul">-->
-<!--          &lt;!&ndash;            met groups add een key&ndash;&gt;-->
-<!--          <li :key="items" v-for="items in this.form.ingredients">-->
-<!--            {{items}}-->
-<!--          </li>-->
-<!--        </transition-group>-->
-
-<!--      </div>-->
 
       <transition name="fade">
         <ingredient-floater title="Ingredienten" :data="this.form.ingredients"  v-show="this.form.ingredients.length > 0" ></ingredient-floater>
@@ -177,6 +163,7 @@
       return {
         seasonsTest: seasons,
         ingredientsList: ingredients,
+        apiListedIngredients: [],
         form: {
           id: Number,
           name: "",
@@ -219,7 +206,6 @@
             value:'none'
           }
         ],
-        apiListedIngredients: [],
         show: true
       }
     },
@@ -237,11 +223,17 @@
       onSubmit: function (evt) {
         evt.preventDefault()
 
-        // Totaal niet nodig maarja vind het leuk
+// checkes moeten eigelijk naar de backend
+
+
         this.form.id = uuid.uuid()
-        // shallow copy
-        // Dit is tegen een mutation error maar geen idee waarom ik die kreeg want ik push gewoon een item
-        // niks raars
+        // this.form.ingredients.forEach(item => {
+        //   item.toLowerCase()
+        // })
+
+
+
+        // this.form.ingredients =
         const newItem = Object.assign({}, this.form);
 
         this.$store.commit('createdMenu/menuItemsToevoegen', newItem)

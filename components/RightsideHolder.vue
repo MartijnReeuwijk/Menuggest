@@ -15,7 +15,7 @@
         </menu-list-toolkit>
       </transition>
 
-      <div class="padding">
+      <div class="innerScroll">
         <menuDataHolder>
         </menuDataHolder>
       </div>
@@ -58,15 +58,15 @@
 </script>
 
 <style lang="scss" scoped>
-  .padding {
+  .innerScroll {
     padding: 0 10px;
-    height: calc(100vh - 118px);
+    height: calc(100vh - 135px);
     overflow: scroll;
     z-index: -1;
     overflow-x: hidden;
   }
 
-  .padding::-webkit-scrollbar {
+  .innerScroll::-webkit-scrollbar {
     display: none;
   }
 
@@ -82,7 +82,7 @@
   }
 
   .rightSideHolder {
-
+    width: 400px;
     height: auto;
     background-color: #F7F8FB;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
