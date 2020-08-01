@@ -24,8 +24,19 @@
 
       </b-list-group-item>
     </transition-group>
+
+    <div class="noResults"  v-if="datashow.length === 0">
+      <h3>Geen resultaat</h3>
+    </div>
+
     <div class="pusher"></div>
   </b-list-group>
+
+
+
+
+
+
 </template>
 
 <script>
@@ -93,7 +104,9 @@
   ::-webkit-scrollbar {
     display: none;
   }
-
+.noResults{
+  text-align: center;
+}
   .pusher {
     height: 60px;
   }

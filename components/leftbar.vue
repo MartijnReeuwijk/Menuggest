@@ -85,7 +85,7 @@
       match(){
         const preFilter = this.preFilter
         const selectedIngredient = this.search.ingredients
-        const containsSelected = []
+        let containsSelected = []
 
         if (selectedIngredient.length > 0){
 
@@ -113,7 +113,11 @@
 
             })
           })
-
+          // if(containsSelected.length == 0){
+          //   containsSelected = [{
+          //     name: "Geen resultaat gevonden"
+          //   }]
+          // }
           this.$store.commit('createdMenu/addMenucardItem', containsSelected)
         }
         else {
@@ -152,7 +156,8 @@
     margin: 5px;
   }
   .sideMenuDeals {
-    width: 400px;
+    width: 100%;
+    max-width: 300px;
     background-color: #F7F8FB;
     position: relative;
     padding: 5px;

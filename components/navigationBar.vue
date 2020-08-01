@@ -29,7 +29,7 @@
               <b-avatar variant="light"></b-avatar>
             </template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Loguit</b-dropdown-item>
+            <b-dropdown-item href="login">Loguit</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
 
