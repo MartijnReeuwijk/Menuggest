@@ -3,7 +3,7 @@
     <div class="filterHolder">
       <!--    buttons maken als comp-->
       <!--  Met slots  -->
-      <b-button @click="filterMenuData" variant="light">
+      <b-button variant="light">
         <svg class="bi bi-sort-numeric-up" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M4 14a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-1 0v11a.5.5 0 0 0 .5.5z" fill-rule="evenodd"/>
@@ -15,8 +15,8 @@
         </svg>
         <p>Soort</p>
       </b-button>
-
-      <b-button @click="tool_kit" variant="light">
+<!--Dit kan allemaal in slots en parts maar is vel werk-->
+      <b-button variant="light">
         <svg class="bi bi-search" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
           <path d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
@@ -37,57 +37,17 @@
         <p>Filter</p>
       </b-button>
 
-<!--      <b-button variant="light">-->
-<!--        <svg class="bi bi-files" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"-->
-<!--             xmlns="http://www.w3.org/2000/svg">-->
-<!--          <path-->
-<!--            d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3z"-->
-<!--            fill-rule="evenodd"/>-->
-<!--          <path-->
-<!--            d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z"/>-->
-<!--        </svg>-->
-<!--        <p>Copy</p>-->
-<!--      </b-button>-->
-
     </div>
 
   </div>
 </template>
 
 <script>
-  import SearchFunction from './searchFunction'
   // TODO:: Oke dit  Moet op een copy van de state en niet de state zelf
   export default {
-    name: 'filterHolder',
-    components: {SearchFunction},
+    name: 'leftfilter',
+    components: {},
     methods: {
-      tool_kit () {
-        this.$store.commit('createdMenu/switchToolKit')
-      },
-      filterMenuData: function () {
-        const data = this.$store.state.createdMenu.menuItems
-
-        // Dit is onhandig veel
-        const goodArray = []
-        const avgArray = []
-        const badArray = []
-
-        data.forEach(item => {
-          if (item.profit == 'good') {
-            goodArray.push(item)
-          }
-          if (item.profit == 'avg') {
-            avgArray.push(item)
-          }
-          if (item.profit == 'bad') {
-            badArray.push(item)
-          }
-        })
-        const newDataArray = goodArray.concat(avgArray, badArray)
-
-        this.$store.commit('createdMenu/addMenucardItem', newDataArray)
-        this.$store.commit('createdMenu/switchIndex', true)
-      }
     }
   }
 </script>

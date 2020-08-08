@@ -1,5 +1,145 @@
 [
   {
+    "name" : "Italiaans dessert",
+    "profit": "good",
+    "desc": "Italiaans dessert",
+    "time": "0,5",
+    "luxe": false,
+    "vegan": false,
+    "vegetarian": true,
+    "course": "after",
+    "ingredient": false,
+    "price": 8,
+    "currency":"euro",
+    "foodType":"ice",
+    "ingredients": {
+      "season": false,
+      "sause": false,
+      "garnish": false,
+      "crisps": true,
+      "fries": true
+    }
+  },
+  {
+    "name" : "Klassiek",
+    "profit": "avg",
+    "desc": "Het klassieke gerecht",
+    "time": "0,5",
+    "luxe": false,
+    "vegan": false,
+    "vegetarian": true,
+    "course": "after",
+    "ingredient": false,
+    "price": 8,
+    "currency":"euro",
+    "foodType":"ice",
+    "ingredients": {
+      "season": false,
+      "sause": false,
+      "garnish": false,
+      "crisps": true,
+      "fries": true
+    }
+  },
+  {
+    "name" : "kaasfondue",
+    "profit": "good",
+    "desc": "Lekker dippen",
+    "time": "0,5",
+    "luxe": false,
+    "vegan": false,
+    "vegetarian": true,
+    "course": "main",
+    "ingredient": false,
+    "price": 18.50,
+    "currency":"euro",
+    "foodType":"kaas",
+    "ingredients": {
+      "season": false,
+      "sause": false,
+      "garnish": false,
+      "crisps": true,
+      "fries": true
+    }
+  },
+  {
+    "name" : "Ravioli van seizoen",
+    "profit": "bad",
+    "desc": "Hand gemaakte Ravioli met liefde",
+    "time": "0,5",
+    "luxe": true,
+    "vegan": false,
+    "vegetarian": true,
+    "course": "main",
+    "ingredient": false,
+    "price": 19,
+    "currency":"euro",
+    "foodType":"pasta",
+    "ingredients": {
+      "season": true,
+      "sause": true,
+      "garnish": true,
+      "fries": true
+    }
+  },
+  {
+    "name" : "rode curry",
+    "profit": "good",
+    "desc": "Rode curry met tofu of kip",
+    "time": "0,5",
+    "luxe": false,
+    "vegan": "option",
+    "vegetarian": "option",
+    "course": "main",
+    "ingredient": false,
+    "price": 17.5,
+    "currency":"euro",
+    "foodType":"rund",
+    "ingredients": {
+      "sause": false,
+      "garnish": false,
+      "fries": true
+    }
+  },
+  {
+    "name" : "Ierse kogelbiefstuk",
+    "profit": "good",
+    "desc": "Shannon-Aberdeen-Angusbiefstuk met rode wijnsaus.",
+    "time": "0,5",
+    "luxe": false,
+    "vegan": false,
+    "vegetarian": false,
+    "course": "main",
+    "ingredient": false,
+    "price": 21,
+    "currency":"euro",
+    "foodType":"rund",
+    "ingredients": {
+      "sause": true,
+      "garnish": "vlees",
+      "fries": true
+    }
+  },
+  {
+    "name" : "sate van varkenshaas",
+    "profit": "good",
+    "desc": "met pittige pindasaus en cassave",
+    "time": "0,5",
+    "luxe": false,
+    "vegan": false,
+    "vegetarian": false,
+    "course": "main",
+    "ingredient": false,
+    "price": 17.50,
+    "currency":"euro",
+    "foodType":"varken",
+    "ingredients": {
+      "sause": true,
+      "garnish": "vlees",
+      "fries": true
+    }
+  },
+  {
     "name" : "Eendenborst",
     "profit": "bad",
     "desc": "Eend",
@@ -27,7 +167,7 @@
     "price": 25,
     "currency":"euro",
     "foodType":"rund",
-    "ingredients": ["tournedos","seizoensgroenten","rode wijnsaus","friet"]
+    "ingredients": ["rund","seizoensgroenten","rode wijnsaus","friet"]
   },
   {
     "name" : "Runder-ribeye 350 gram",
@@ -163,20 +303,5 @@
     "currency":"euro",
     "foodType":"sauce",
     "ingredients": ["bassilicum","pijmboompitten","kaas","knoflook","zonnenbloemolie"]
-  },
-  {
-    "name" : "testas",
-    "profit": "good",
-    "desc": "tournedos,zachtste gedeelte van de haas & bearnaisesaus",
-    "time": "0,5",
-    "luxe": true,
-    "vegan": false,
-    "vegetarian": false,
-    "course": "main",
-    "ingredient": false,
-    "price": 25,
-    "currency":"euro",
-    "foodType":"rund",
-    "ingredients": ["rund","seizoensgroenten","rode wijnsaus","friet"]
   }
 ]

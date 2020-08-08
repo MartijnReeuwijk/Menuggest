@@ -24,29 +24,55 @@
 
       </b-list-group-item>
     </transition-group>
+
+    <div class="noResults"  v-if="datashow.length === 0">
+      <h3>Geen resultaat</h3>
+    </div>
+
     <div class="pusher"></div>
   </b-list-group>
+
+
+
+
+
+
 </template>
 
 <script>
   /* eslint-disable no-alert, no-console */
-  import myFile from '../assets/menukaart.json'
+  import menukaart from '../assets/menukaart.json'
 
   export default {
     name: 'menuDataHolder',
     data () {
       return {
-        // items:
       }
     },
     created: function () {
-      const menuKaartNoIng = []
-      myFile.forEach(item => {
-        if (item.ingredient === false) {
-          menuKaartNoIng.push(item)
-        }
-      })
+      let menuKaartNoIng = []
+      if(menukaart.length > 0){
+        menukaart.forEach(item => {
+          if (item.ingredient === false) {
+            menuKaartNoIng.push(item)
+          }
+        })
+      }
+      else {
+        // const localStorageMenukaart = localStorage.getItem('MenuggestDB_menuKaart')
+        // localStorageMenukaart.forEach(item => {
+        //   if (item.ingredient === false) {
+        //     menuKaartNoIng.push(item)
+        //   }
+        // })
+        // const data = JSON.stringify(localStorageMenukaart)
+        // console.log(localStorageMenukaart)
+      }
       this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
+
+    },
+    watch:{
+
     },
     computed: {
       suggestions: function () {
@@ -54,7 +80,7 @@
       },
       datashow: function () {
         return this.$store.state.createdMenu.menuItems
-      }
+      },
     },
     methods: {
       clickEvent (item) {
@@ -78,7 +104,9 @@
   ::-webkit-scrollbar {
     display: none;
   }
-
+.noResults{
+  text-align: center;
+}
   .pusher {
     height: 60px;
   }

@@ -1,48 +1,132 @@
 <template>
   <section class="sideMenuDeals">
-    <div class="sideMenuPlacer">
-      <b-nav vertical>
-        <div v-for="items in filterMenuItems">
-          <h5 class="title">{{items.mainMenu}}</h5>
-          <div class="menuItem" v-for="items in items.subMenu">
-            <b-nav-item :value="items" @click="hide">{{items}}</b-nav-item>
-          </div>
+    <b-nav vertical>
+
+      <div class="titelHolder">
+        <h2>
+          {{ title }}
+        </h2>
+        <leftfilter></leftfilter>
+
+        <div class="buttonHolder">
+          <b-button block variant="primary" class="text-capitalize">
+            gerecht zoeken
+          </b-button>
+
+          <b-button block @click="reset" variant="danger" class="text-capitalize">
+            Reset
+          </b-button>
         </div>
-      </b-nav>
-    </div>
-    <b-button class="customButton" variant="primary">
-      Favorite
-    </b-button>
+        <!--    Wil dit eigelijk per click maar mega items is slow        -->
+
+
+      </div>
+
+      <b-card class="mb-1" no-body>
+        <div v-for="(items, index) in apiListedIngredients">
+          <b-card-header class="p-1" header-tag="header" role="tab">
+            <!--                        `v-b-toggle.accordion-${{index}}`-->
+            <b-button block class="text-capitalize" v-b-toggle="'accordion-' + index" variant="info">
+              {{items.mainMenu}}
+            </b-button>
+          </b-card-header>
+
+          <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
+            <b-card-body class="ingredientListHolder">
+              <div class="click" v-for="item in items.subMenu">
+                <b-form-checkbox @change.native="match" :value="item" v-model="search.ingredients">
+                  {{item}}
+                </b-form-checkbox>
+              </div>
+            </b-card-body>
+          </b-collapse>
+        </div>
+      </b-card>
+    </b-nav>
   </section>
 </template>
 
 <script>
+  import ingredients from '../assets/apiFilterMenu.json'
+  import Leftfilter from './apiIngredentFilter/leftFilter'
+
   export default {
     name: 'leftbar',
     data () {
       return {
-        filterMenuItems: [
-          {
-            mainMenu: 'Vlees',
-            subMenu: [
-              'rund', 'varken', 'kip'
-            ]
-          },
-          {
-            mainMenu: 'Vis',
-            subMenu: [
-              'Zalm', 'tonijn', 'schol'
-            ]
-          },
-          {
-            mainMenu: 'groente',
-            subMenu: [
-              'tomaat', 'komkomer'
-            ]
-          }
-        ],
+        preFilter:[],
+        ingredientsList: ingredients,
+        apiListedIngredients: [],
+        search:{
+          ingredients:[]
+        }
       }
     },
+    props: {
+      title: {
+        Type: String,
+        default: null
+      },
+    },
+    components:{
+      Leftfilter
+    },
+    mounted () {
+      this.preFilter = this.$store.state.createdMenu.menuItems
+
+      this.ingredientsList.forEach(items => {
+        this.apiListedIngredients.push(items)
+      })
+    },
+    methods:{
+      reset(){
+
+      },
+      match(){
+        const preFilter = this.preFilter
+        const selectedIngredient = this.search.ingredients
+        let containsSelected = []
+
+        if (selectedIngredient.length > 0){
+
+          preFilter.forEach(item =>{
+            item.ingredients.forEach(ingredientsArray =>{
+              selectedIngredient.forEach(selectedIngredientCheck => {
+                const lowerCase = selectedIngredientCheck.toLowerCase()
+                const uppercase = selectedIngredientCheck.toUpperCase()
+                const capitalize = selectedIngredientCheck.charAt(0).toUpperCase() + selectedIngredientCheck.slice(1)
+
+                // Dit moet omdat ik niet de API van de makro of sligro bestuur of heb
+                // Anders had ik dit op die API geplaatst en altijd Lowercase terug gegeven
+                // Waarom werkt dit niet lekker
+
+                if(ingredientsArray.includes(
+                  (lowerCase) || (uppercase) || (capitalize)
+                )){
+
+                  containsSelected.push(item)
+                } else{
+                  return false
+                }
+
+              })
+
+            })
+          })
+          // if(containsSelected.length == 0){
+          //   containsSelected = [{
+          //     name: "Geen resultaat gevonden"
+          //   }]
+          // }
+          this.$store.commit('createdMenu/addMenucardItem', containsSelected)
+        }
+        else {
+          console.log('preFilter', preFilter)
+          this.$store.commit('createdMenu/addMenucardItem', preFilter)
+        }
+        console.log('containsSelected', containsSelected)
+      }
+    }
   }
 </script>
 
@@ -55,28 +139,38 @@
     text-transform: capitalize;
   }
 
-  .sideMenuPlacer {
-    padding: 10px 0;
-  }
-
   .title {
     display: block;
     padding: 0 1rem;
     margin: 0;
   }
-
+  .titelHolder h2 {
+    text-align: center;
+  }
+  .buttonHolder{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+  }
+  .buttonHolder button{
+    margin: 5px;
+  }
   .sideMenuDeals {
+    width: 100%;
+    max-width: 300px;
     background-color: #F7F8FB;
-    width: 200px;
     position: relative;
     padding: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    height: calc(100vh - 56px);
   }
 
   .customButton {
     width: calc(100% - 10px);
     position: absolute;
     bottom: 5px;
+  }
+  .custom-control{
+    cursor: pointer;
+
   }
 </style>

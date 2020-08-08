@@ -5,8 +5,10 @@
     <div class="holder">
 
       <div class="sizeAligner">
-        <leftbar>
+        <leftbar
+          title="Zoek op">
         </leftbar>
+
 
         <div class="centerHolder">
           <deal-component/>
@@ -14,7 +16,7 @@
       </div>
 
       <RightsideHolder
-        title="Ingredient voor"
+        title="Gebruikt in"
       >
       </RightsideHolder>
 

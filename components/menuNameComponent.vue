@@ -2,9 +2,13 @@
   <div class="nameHolder">
     <!-- Naam opties -->
     <input @change="saveName" class="form-control" placeholder="Menukaart" type="text" v-model="value">
-    <b-form-select :options="options" @change="saveName" class="custom-select" v-model="selected"></b-form-select>
+    <b-form-select :options="options" @change="saveName" class="custom-select" v-model="selected">
+
+    </b-form-select>
     <b-form-input @change="saveName" id="type-number" max="2025" min="2000" placeholder="Jaar" type="number"
-                  v-model="yearNumber"></b-form-input>
+                  v-model="yearNumber">
+
+    </b-form-input>
   </div>
 </template>
 
