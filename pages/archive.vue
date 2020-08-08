@@ -2,12 +2,24 @@
   <div class="mainHolderDeluxChangeThislater">
     <navigationBar title="Menuggest">
     </navigationBar>
-
-    <menuBased
-      :sideMenuData="data"
-      title="Archief"
+<!--
+"id":1,
+      "profit":"good",
+      "message": "Menukaart - Maart 2020",
+      "desc":"",-->
+    <section>
+      <div class="gridArchive">
+      <tile v-for="(item, value) in this.data"
+            :title="item.message"
+            :desc="item.desc"
+            :profit="item.profitUserText"
+            :type="item.seizoen"
       >
-    </menuBased>
+      </tile>
+      </div>
+    </section>
+
+
   </div>
 
 </template>
@@ -16,7 +28,9 @@
   /* eslint-disable no-alert, no-console */
   import navigationBar from '../components/navigationBar'
   import menuBased from '../components/menuBased'
-  import myFile from '../assets/archive.json'
+  import archive from '../assets/archive.json'
+  import Tile from '../components/archief/tile'
+  import ArchiveGrid from '../components/archief/ArchiveGrid'
 
   export default {
     data () {
@@ -24,10 +38,12 @@
         dismissSecs: 10,
         dismissCountDown: 0,
         showDismissibleAlert: false,
-        data:myFile
+        data:archive
       }
     },
     components: {
+      ArchiveGrid,
+      Tile,
       navigationBar,
       menuBased
     },
@@ -46,5 +62,12 @@
   .mainHolderDeluxChangeThislater {
     overflow: hidden;
     height: 100vh;
+  }
+  .gridArchive{
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 </style>
