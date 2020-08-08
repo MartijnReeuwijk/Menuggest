@@ -165,18 +165,18 @@
     "ingredients": ["bassilicum","pijmboompitten","kaas","knoflook","zonnenbloemolie"]
   },
   {
-    "name" : "testas",
+    "name" : "Italiaans dessert",
     "profit": "good",
-    "desc": "tournedos,zachtste gedeelte van de haas & bearnaisesaus",
+    "desc": "Italiaans dessert",
     "time": "0,5",
-    "luxe": true,
+    "luxe": false,
     "vegan": false,
-    "vegetarian": false,
-    "course": "main",
+    "vegetarian": true,
+    "course": "after",
     "ingredient": false,
-    "price": 25,
+    "price": 8,
     "currency":"euro",
-    "foodType":"rund",
-    "ingredients": ["rund","seizoensgroenten","rode wijnsaus","friet"]
+    "foodType":"ice",
+    "ingredients": ["ijs","framboos"]
   }
 ]

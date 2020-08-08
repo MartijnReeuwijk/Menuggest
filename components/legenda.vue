@@ -78,9 +78,11 @@
   }
 
   .captionLocation {
+
+    z-index: 10;
     position: fixed;
     background-color: transparent;
-    top: 66px;
+    top: 75px;
     left: 10px;
   }
 

@@ -2,10 +2,12 @@
   <b-list-group>
     <!--  Active moet met var  -->
     <!-- De transision moet van buiten het scherm komen -->
+
     <transition-group name="list" tag="div">
       <b-list-group-item :key="item.name" @click="clickEvent(item)"
                          class="customStyle card-1 flex-column align-items-start" href="#"
-                         v-for="item in datashow">
+                         v-for="item in filteredData"
+      >
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
@@ -24,6 +26,87 @@
 
       </b-list-group-item>
     </transition-group>
+
+
+    <h5>Voorgerechten</h5>
+    <transition-group name="list" tag="div">
+    <b-list-group-item :key="item.name" @click="clickEvent(item)"
+                       class="customStyle card-1 flex-column align-items-start" href="#"
+                       v-for="item in datashow"
+                       v-if="item.course === 'appetizer'"
+    >
+
+      <div class="clickThrough d-flex w-100 justify-content-between ">
+        <transition name="fade">
+          <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
+        </transition>
+        <h5 class="mb-1">
+          {{ item.name }}
+          <transition name="fade">
+            <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+          </transition>
+        </h5>
+      </div>
+      <p class="clickThrough mb-1">
+        {{ item.desc }}
+      </p>
+
+    </b-list-group-item>
+    </transition-group>
+
+    <h5>Hoofdgerechten</h5>
+    <transition-group name="list" tag="div">
+    <b-list-group-item :key="item.name" @click="clickEvent(item)"
+                         class="customStyle card-1 flex-column align-items-start" href="#"
+                         v-for="item in datashow"
+                         v-if="item.course === 'main'"
+      >
+
+        <div class="clickThrough d-flex w-100 justify-content-between ">
+          <transition name="fade">
+            <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
+          </transition>
+          <h5 class="mb-1">
+            {{ item.name }}
+            <transition name="fade">
+              <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+            </transition>
+          </h5>
+        </div>
+        <p class="clickThrough mb-1">
+          {{ item.desc }}
+        </p>
+
+      </b-list-group-item>
+    </transition-group>
+
+
+    <h5>Nagerechten</h5>
+    <transition-group name="list" tag="div">
+    <b-list-group-item :key="item.name" @click="clickEvent(item)"
+                         class="customStyle card-1 flex-column align-items-start" href="#"
+                         v-for="item in datashow"
+                         v-if="item.course === 'after'"
+      >
+
+        <div class="clickThrough d-flex w-100 justify-content-between ">
+          <transition name="fade">
+            <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
+          </transition>
+          <h5 class="mb-1">
+            {{ item.name }}
+            <transition name="fade">
+              <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+            </transition>
+          </h5>
+        </div>
+        <p class="clickThrough mb-1">
+          {{ item.desc }}
+        </p>
+
+      </b-list-group-item>
+    </transition-group>
+
 
     <div class="noResults"  v-if="datashow.length === 0">
       <h3>Geen resultaat</h3>
@@ -81,6 +164,9 @@
       datashow: function () {
         return this.$store.state.createdMenu.menuItems
       },
+      filteredData: function () {
+        return this.$store.state.createdMenu.filteredData
+      },
     },
     methods: {
       clickEvent (item) {
@@ -89,6 +175,15 @@
           event.target.classList.remove('active')
         } else {
           event.target.classList.add('active')
+        }
+        if (item.course === 'appetizer'){
+          this.$store.commit('createdMenu/appetizerAdd', item)
+        }
+        if (item.course === 'main'){
+          this.$store.commit('createdMenu/mainAdd', item)
+        }
+        if (item.course === 'after'){
+          this.$store.commit('createdMenu/afterAdd', item)
         }
         this.$store.commit('createdMenu/addMenu', item)
       }
@@ -99,6 +194,8 @@
 <style lang="scss" scoped>
   h5 {
     text-transform: capitalize;
+    margin: 0.5rem 0;
+    text-align: center;
   }
 
   ::-webkit-scrollbar {
@@ -107,6 +204,12 @@
 .noResults{
   text-align: center;
 }
+  .list-group-item.active{
+    z-index: 2;
+    color: inherit;
+    background-color:inherit;
+    border-color: inherit;
+  }
   .pusher {
     height: 60px;
   }
