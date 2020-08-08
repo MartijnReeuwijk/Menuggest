@@ -73,7 +73,7 @@
 
                   <div class="extraPadding">
                     <b-input-group prepend="€" size="md">
-                      <b-form-input placeholder="Geschate winst" type="number" v-model="form.userAssignedProfit">
+                      <b-form-input placeholder="Geschate omzet" type="number" v-model="form.userAssignedProfit">
                       </b-form-input>
                     </b-input-group>
                   </div>

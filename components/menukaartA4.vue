@@ -4,83 +4,28 @@
     <menuNameComponent>
 
     </menuNameComponent>
+    <section v-for="(item,value) in menuCardDataStore">
+      <div class="menukaartPaper" :id="value">
+        <!--    split this up-->
+        <shadowOverlay v-if="active"></shadowOverlay>
 
-
-    <section class="menukaartPaper" id="section-to-print" ref="menukaartPaper">
-      <!--    split this up-->
-      <shadowOverlay v-if="active"></shadowOverlay>
-
-      <!--Dit beter-->
-      <div v-if="(menuCardDataStore.length > 0 && menuCardDataStore[0].options) && (control) ">
-        <b-list-group>
-          <b-list-group-item
-            :key="item.id"
-            class="hover customStyle flex-column align-items-start"
-            href="#"
-            v-b-hover="mouseOver"
-            v-b-popover.hover="{title:item.profitInsight.title, content:item.profitInsight.content}"
-            v-for="(item, index) in menuCardDataStore[0].options"
-          >
-            <div class="d-flex w-100 justify-content-between ">
-              <!--     Moet dit afvangen bij de backend        -->
-              <h5 class="mb-1">
-                {{ item.name }}
-              </h5>
-            </div>
-            <p class="mb-1">
-              {{ item.desc }}
-            </p>
-          </b-list-group-item>
-        </b-list-group>
-      </div>
-
-
-      <div v-if="(menuCardDataStore.length > 0 && menuCardDataStore[0].options) && (!control)">
-        <b-list-group>
-          <!--  verander de remove function      -->
-
-          <b-list-group-item
-            :key="item.id"
-            @click="removeItem(index)"
-            class="customStyle flex-column align-items-start"
-            href="#"
-            v-for="(item, index) in menuCardDataStore[0].options"
-          >
-            <div class="d-flex w-100 justify-content-between ">
-              <!--     Moet dit afvangen bij de backend        -->
-              <h5 class="mb-1">
-                {{ item.name }}
-              </h5>
-            </div>
-            <p class="mb-1">
-              {{ item.desc }}
-            </p>
-          </b-list-group-item>
-        </b-list-group>
-      </div>
-
-
-      <div v-else>
         <b-list-group>
 
           <b-list-group-item :key="item.id" @click="removeItem(index)"
                              class="customStyle  flex-column align-items-start"
-                             href="#" v-for="(item, index) in menuCardDataStore">
+                             href="#" v-for="(items) in item">
 
             <div class="d-flex w-100 justify-content-between ">
               <h5 class="mb-1">
-                {{ item.name }}
+                {{ items.name }}
               </h5>
             </div>
             <p class="mb-1">
-              {{ item.desc }}
+              {{ items.desc }}
             </p>
-
           </b-list-group-item>
         </b-list-group>
       </div>
-
-
     </section>
 
     <div class="pusher">
@@ -103,23 +48,15 @@
     data () {
       return {
         active: false,
-        menudataTest: []
       }
     },
-    // watch:{
-    //   menuCardDataStore: function(){
-    //     return this.$store.state.createdMenu.createdMenu
-    //   }
-    // },
-
     computed: {
-      control: function () {
-        return this.$route.name === 'control'
-      },
+      // control: function () {
+      //   return this.$route.name === 'control'
+      // },
       menuCardDataStore: function () {
-        this.menudataTest.push([])
-        return this.$store.state.createdMenu.createdMenu
-      }
+        return this.$store.state.createdMenu.menu
+      },
     },
     methods: {
       removeItem (index) {

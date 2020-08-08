@@ -6,17 +6,17 @@
 
       <div class="sizeAligner">
         <leftbar
-          title="Zoek op">
+          title="Zoeken bij de leverancier">
         </leftbar>
 
-
+<!--TODO:: Tooltip-->
         <div class="centerHolder">
           <deal-component/>
         </div>
       </div>
 
       <RightsideHolder
-        title="Gebruikt in"
+        title="Gebruikt in de gerechten"
       >
       </RightsideHolder>
 
