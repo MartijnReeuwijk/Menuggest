@@ -5,23 +5,15 @@
     </buttonHolder>
 
     <legenda></legenda>
+    <course-selector>
+
+    </course-selector>
 
     <menukaartA4>
     </menukaartA4>
 
 
     <action-bar></action-bar>
-    <!--    <div class="sideBarInside">-->
-    <!--      <div class="sideBarInsideRelative">-->
-    <!-- -->
-    <!--      </div>-->
-    <!--    </div>-->
-
-    <!--    <bottomNav-->
-    <!--      :style="{ width: myWidth + 'px' }"-->
-    <!--      class="smooth"-->
-    <!--    >-->
-    <!--    </bottomNav>-->
   </section>
 </template>
 
@@ -31,6 +23,7 @@
   import buttonHolder from './buttonHolder'
   import legenda from './legenda'
   import ActionBar from './actionBar'
+  import CourseSelector from './courses/courseSelector'
 
   export default {
     name: 'pageHolder',
@@ -45,6 +38,7 @@
       }
     },
     components: {
+      CourseSelector,
       ActionBar,
       menukaartA4,
       bottomNav,

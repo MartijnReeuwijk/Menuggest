@@ -7,6 +7,13 @@ export const state = () => ({
     "July", "August", "September", "October", "November", "December"
   ],
   createdMenu:[],
+  menu:
+    {
+      appetizer:[],
+      main:[],
+      after:[],
+    }
+  ,
   menuItems:[],
   toolkit:false,
   seasons:[],
@@ -18,6 +25,16 @@ export const state = () => ({
 // TODO:: Verbeter de store
 //  Action ipv just mutations
 export const mutations = {
+  appetizerAdd(state, item){
+    state.menu.appetizer.push(item)
+  },
+  mainAdd(state, item){
+    state.menu.main.push(item)
+  },
+  afterAdd(state, item){
+    state.menu.after.push(item)
+  },
+
   menuItemsToevoegen(state, item){
     state.menuItems.unshift(item)
   },

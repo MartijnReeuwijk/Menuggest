@@ -13,7 +13,6 @@
         <path d="M3 7.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
       </svg>
     </b-button>
-
     <b-button @click="checkData" variant="primary">
       Opslaan
       <svg class="bi bi-download" fill="currentColor" height="1em" viewBox="0 0 16 16" width="1em"
@@ -51,6 +50,7 @@
         window.print()
         // var printThis =  this.$parent.$children[0].$refs["menukaartPaper"]
       },
+      checkMenu (){},
       save: function (data, name) {
         const archive = this.archive
         const menuToArchive = {
@@ -63,7 +63,6 @@
         archive.push(menuToArchive)
         localStorage.setItem('MenuggestDB', archive)
       },
-
       checkData: function () {
         const data = this.$store.state.createdMenu.createdMenu
         const downloadAllowed = false
@@ -130,5 +129,6 @@
 
   .vertical-nav button {
     width: 100%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 </style>
