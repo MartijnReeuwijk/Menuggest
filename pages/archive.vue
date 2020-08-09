@@ -8,7 +8,9 @@
       "message": "Menukaart - Maart 2020",
       "desc":"",-->
     <section>
+
       <div class="gridArchive">
+        <b-card-group deck>
       <tile v-for="(item, value) in this.data"
             :title="item.message"
             :desc="item.desc"
@@ -16,6 +18,7 @@
             :type="item.seizoen"
       >
       </tile>
+        </b-card-group>
       </div>
     </section>
 

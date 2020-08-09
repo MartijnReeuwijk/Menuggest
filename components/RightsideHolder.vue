@@ -16,7 +16,7 @@
       </transition>
 
       <div class="innerScroll">
-        <menuDataHolder>
+        <menuDataHolder editAble>
         </menuDataHolder>
       </div>
     </div>
@@ -35,6 +35,10 @@
       return {}
     },
     props: {
+      editAble:{
+        Type: Boolean,
+        default: false
+      },
       title: {
         Type: String,
         default: null
