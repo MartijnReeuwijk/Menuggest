@@ -131,10 +131,7 @@
   export default {
     name: 'menuDataHolder',
     props:{
-      editAble:{
-        type: Boolean,
-        default: false
-      }
+      editAble:false,
     },
     components: {EditIcon},
     data () {

@@ -16,7 +16,7 @@
       </transition>
 
       <div class="innerScroll">
-        <menuDataHolder editAble>
+        <menuDataHolder :editAble="editAble">
         </menuDataHolder>
       </div>
     </div>
