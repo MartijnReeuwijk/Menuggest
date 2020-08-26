@@ -27,7 +27,7 @@
           {{profit}}
         </p>
       </div>
-      <div class="abc">
+      <div class="cardButtonHolder">
         <a href="#" class="btn btn-primary">Open</a>
         <a href="#" class="btn btn-outline-danger">Delete</a>
       </div>
@@ -63,7 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .abc{
+  .cardButtonHolder {
     width: 100%;
     padding: 10px;
     display: flex;
