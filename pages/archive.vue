@@ -9,8 +9,7 @@
       "desc":"",-->
     <section>
 
-      <div class="gridArchive">
-        <b-card-group deck>
+      <div class="card-columns">
       <tile v-for="(item, value) in this.data"
             :title="item.message"
             :desc="item.desc"
@@ -18,7 +17,6 @@
             :type="item.seizoen"
       >
       </tile>
-        </b-card-group>
       </div>
     </section>
 
@@ -66,11 +64,7 @@
     overflow: hidden;
     height: 100vh;
   }
-  .gridArchive{
-    width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .card-columns{
+    margin: 10px;
   }
 </style>

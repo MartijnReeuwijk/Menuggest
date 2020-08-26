@@ -1,0 +1,348 @@
+Artikelen,FIELD2,FIELD3,FIELD4,FIELD5,FIELD6,FIELD7,FIELD8,FIELD9,FIELD10,FIELD11,FIELD12,FIELD13
+Tijdstip geëxporteerd: 11-9-2018 10:57:49,,,,,,,,,,,,
+A.Omschrijving,A.Nummer,Tekst,Aantal,Prijs,Bedrag incl.,Bedrag excl.,BTW-code,BTW-tarief,Kortingspercentage,Kortingsbedrag,Omzetgroepnr.,Omzetgroep
+Coca cola,1,Coca cola,283,"2,50","707,50","667,87",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Coca cola light,2,Coca cola light,103,"2,50","257,50","243,08",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Spa rood,3,Spa rood,161,"2,50","402,50","379,94",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Spa blauw,4,Spa blauw,40,"2,50","100,00","94,40",1,6%,"0,00","0,00",1,Frisdrank Meierij
+7up,5,7up,25,"2,50","62,50","59,00",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Ice tea,6,Ice tea,102,"2,50","255,00","240,72",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Ice tea green,7,Ice tea green,78,"2,50","195,00","184,08",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Tonic ,8,Tonic ,60,"2,50","150,00","141,60",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Ginger ale,9,Ginger ale,5,"2,50","12,50","11,80",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Bitter lemon,10,Bitter lemon,49,"2,50","122,50","115,64",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Appelsap,11,Appelsap,69,"2,50","172,50","162,84",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Sinas,12,Sinas,55,"2,50","137,50","129,80",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Cassis,13,Cassis,36,"2,50","90,00","84,96",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Rivella,14,Rivella,13,"2,50","32,50","30,68",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Chocomel,15,Chocomel,10,"2,50","25,00","23,60",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Fristi,16,Fristi,8,"2,50","20,00","18,88",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Tonic fever tree,17,Tonic fever tree,2,"3,50","7,00","6,60",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Sourcy groot,18,Sourcy groot,28,"7,00","196,00","184,81",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Jus d’orange,19,Jus d’orange,81,"3,50","283,50","267,33",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Coca cola,20,Coca cola,0,"2,50","0,00","0,00",1,6%,"0,00","0,00",2,Frisdrank Bokkesteeg
+Coca cola light,21,Coca cola light,0,"2,50","0,00","0,00",1,6%,"0,00","0,00",2,Frisdrank Bokkesteeg
+Ice tea green,26,Ice tea green,0,"2,50","0,00","0,00",1,6%,"0,00","0,00",2,Frisdrank Bokkesteeg
+Koffie,39,Koffie,566,"2,50","1.415,00","1.335,61",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Thee,40,Thee,176,"2,50","440,00","415,33",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Cappuccino,41,Cappuccino,315,"2,70","850,50","802,57",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Koffie verkeerd,42,Koffie verkeerd,19,"2,70","51,30","48,44",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Late macchiato,43,Late macchiato,31,"2,70","83,70","79,01",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Espresso,44,Espresso,101,"2,50","252,50","238,35",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Chocomel warm,45,Chocomel warm,4,"2,50","10,00","9,44",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Slagroom,46,Slagroom,25,"1,00","25,00","23,55",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Munt thee,47,Munt thee,40,"3,00","120,00","113,20",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Dubbele espresso,48,Dubbele espresso,28,"3,50","98,00","92,41",1,6%,"0,00","0,00",3,Warme dranken Meierij
+Ierse koffie,49,Ierse koffie,96,"7,50","720,00","595,20",2,21%,"0,00","0,00",3,Warme dranken Meierij
+Spaanse koffie,50,Spaanse koffie,16,"7,50","120,00","99,20",2,21%,"0,00","0,00",3,Warme dranken Meierij
+Italiaanse koffie,51,Italiaanse koffie,26,"7,50","195,00","161,20",2,21%,"0,00","0,00",3,Warme dranken Meierij
+Belgische koffie,52,Belgische koffie,9,"7,50","67,50","55,80",2,21%,"0,00","0,00",3,Warme dranken Meierij
+Franse koffie,53,Franse koffie,30,"7,50","225,00","186,00",2,21%,"0,00","0,00",3,Warme dranken Meierij
+Kiss of fire,54,Kiss of fire,32,"7,50","240,00","198,40",2,21%,"0,00","0,00",3,Warme dranken Meierij
+Jenever,71,Jenever,33,"4,00","132,00","109,21",2,21%,"0,00","0,00",5,Binnenlands gedestilleerd Meierij
+Corenwijn,74,Corenwijn,11,"4,00","44,00","36,40",2,21%,"0,00","0,00",5,Binnenlands gedestilleerd Meierij
+Bacardi rum,85,Bacardi rum,5,"5,50","27,50","22,75",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Smirnoff vodka,86,Smirnoff vodka,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Bruine rum,87,Bruine rum,3,"5,50","16,50","13,65",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Malibu,88,Malibu,3,"5,50","16,50","13,65",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Campari,89,Campari,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Pernod,90,Pernod,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Gin,91,Gin,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",7,Buitenlands gedestilleerd Meierij
+Dimple,101,Dimple,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",9,Whiskey Meierij
+Glenfiddich,104,Glenfiddich,3,"6,00","18,00","14,88",2,21%,"0,00","0,00",9,Whiskey Meierij
+Glenlivet,105,Glenlivet,5,"5,50","27,50","22,75",2,21%,"0,00","0,00",9,Whiskey Meierij
+Jack daniels,106,Jack daniels,1,"5,00","5,00","4,13",2,21%,"0,00","0,00",9,Whiskey Meierij
+Tia maria,117,Tia maria,11,"5,00","55,00","45,43",2,21%,"0,00","0,00",11,Likeur Meierij
+Grand marnier,118,Grand marnier,16,"5,00","80,00","66,08",2,21%,"0,00","0,00",11,Likeur Meierij
+Amaretto,119,Amaretto,12,"5,00","60,00","49,56",2,21%,"0,00","0,00",11,Likeur Meierij
+Cointreau,120,Cointreau,17,"5,00","85,00","70,22",2,21%,"0,00","0,00",11,Likeur Meierij
+Drambuie,121,Drambuie,7,"5,00","35,00","28,91",2,21%,"0,00","0,00",11,Likeur Meierij
+Bailey's,122,Bailey's,3,"5,00","15,00","12,39",2,21%,"0,00","0,00",11,Likeur Meierij
+43 licor,123,43 licor,9,"5,00","45,00","37,17",2,21%,"0,00","0,00",11,Likeur Meierij
+Sambuca,124,Sambuca,7,"5,00","35,00","28,91",2,21%,"0,00","0,00",11,Likeur Meierij
+Dom benedictine,125,Dom benedictine,3,"5,00","15,00","12,39",2,21%,"0,00","0,00",11,Likeur Meierij
+Limoncello,126,Limoncello,6,"5,00","30,00","24,78",2,21%,"0,00","0,00",11,Likeur Meierij
+Port ,137,Port ,59,"4,25","250,75","207,11",2,21%,"0,00","0,00",13,Zuidwijn Meierij
+Port oud,138,Port oud,13,"5,50","71,50","59,13",2,21%,"0,00","0,00",13,Zuidwijn Meierij
+Sherry,139,Sherry,10,"4,25","42,50","35,10",2,21%,"0,00","0,00",13,Zuidwijn Meierij
+Martini,140,Martini,3,"4,25","12,75","10,53",2,21%,"0,00","0,00",13,Zuidwijn Meierij
+Joseph guy,145,Joseph guy,3,"5,50","16,50","13,64",2,21%,"0,00","0,00",15,Cognac Meierij
+Courvoisier,146,Courvoisier,4,"5,50","22,00","18,20",2,21%,"0,00","0,00",15,Cognac Meierij
+Remy martin vsop,148,Remy martin vsop,6,"6,50","39,00","32,22",2,21%,"0,00","0,00",15,Cognac Meierij
+Armagnac,149,Armagnac,3,"5,50","16,50","13,64",2,21%,"0,00","0,00",15,Cognac Meierij
+Calvados,150,Calvados,4,"5,50","22,00","18,20",2,21%,"0,00","0,00",15,Cognac Meierij
+Grappa,151,Grappa,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",15,Cognac Meierij
+Amstel fluit,159,Amstel fluit,6,"2,50","15,00","12,41",2,21%,"0,00","0,00",17,Bieren Meierij
+Amstel vaas,160,Amstel vaas,7,"2,80","19,60","16,17",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand fluit,162,Brand fluit,69,"2,60","179,40","148,35",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand vaas,163,Brand vaas,1.137,"3,00","3.411,00","2.819,76",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand 0.5l,164,Brand 0.5l,8,"6,00","48,00","39,68",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand 0.5l,164,Brand 0.5l,4,"7,00","28,00","23,14",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand up,165,Brand up,7,"4,00","28,00","23,16",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand weizen,166,Brand weizen,54,"4,00","216,00","178,67",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand IPA,167,Brand IPA,54,"4,00","216,00","178,68",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand imperator,168,Brand imperator,53,"4,00","212,00","175,40",2,21%,"0,00","0,00",17,Bieren Meierij
+Brand bock,169,Brand bock,0,"4,00","0,00","0,00",2,21%,"0,00","0,00",17,Bieren Meierij
+De koninck,170,De koninck,14,"3,70","51,80","42,82",2,21%,"0,00","0,00",17,Bieren Meierij
+Wieckse witte,171,Wieckse witte,17,"3,70","62,90","52,01",2,21%,"0,00","0,00",17,Bieren Meierij
+Wieckse rose,172,Wieckse rose,1,"3,70","3,70","3,06",2,21%,"0,00","0,00",17,Bieren Meierij
+Amstel 0.0,173,Amstel 0.0,83,"3,50","290,50","273,90",1,6%,"0,00","0,00",17,Bieren Meierij
+Amstel bock,174,Amstel bock,2,"3,70","7,40","6,12",2,21%,"0,00","0,00",17,Bieren Meierij
+Amstel radler,175,Amstel radler,25,"3,70","92,50","76,50",2,21%,"0,00","0,00",17,Bieren Meierij
+Amstel vaas,177,Amstel vaas,0,"2,80","0,00","0,00",2,21%,"0,00","0,00",18,Bieren Bokkesteeg
+"Glas wit 4,50",194,"Glas wit 4,50",574,"4,50","2.583,00","2.135,29",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Glas wit 4,75",195,"Glas wit 4,75",495,"4,75","2.351,25","1.944,31",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Glas rood 4,50",197,"Glas rood 4,50",380,"4,50","1.710,00","1.413,60",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Glas rood 4,75",198,"Glas rood 4,75",341,"4,75","1.619,75","1.339,40",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Glas rosé 4,50",200,"Glas rosé 4,50",42,"4,50","189,00","156,24",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Glas rosé 4,75",201,"Glas rosé 4,75",103,"4,75","489,25","404,63",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles wit 27,00",212,"Fles wit 27,00",32,"27,00","864,00","713,94",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles wit 28,50",213,"Fles wit 28,50",48,"28,50","1.368,00","1.130,41",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles wit 28,50",213,"Fles wit 28,50",2,"32,50","65,00","53,72",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles rood 27,00",215,"Fles rood 27,00",26,"27,00","702,00","580,06",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles rood 28,50",216,"Fles rood 28,50",43,"28,50","1.225,50","1.012,65",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles rosé 27,00",218,"Fles rosé 27,00",1,"27,00","27,00","22,31",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Fles rosé 28,50",219,"Fles rosé 28,50",8,"28,50","228,00","188,40",2,21%,"0,00","0,00",19,Wijnen Meierij
+Prosecco glas,220,Prosecco glas,71,"4,75","337,25","278,78",2,21%,"0,00","0,00",19,Wijnen Meierij
+Prosecco fles,221,Prosecco fles,7,"28,50","199,50","164,85",2,21%,"0,00","0,00",19,Wijnen Meierij
+Dessert wijn,222,Dessert wijn,15,"5,00","75,00","61,96",2,21%,"0,00","0,00",19,Wijnen Meierij
+Pedro Ximimez,223,Pedro Ximimez,17,"5,00","85,00","70,21",2,21%,"0,00","0,00",19,Wijnen Meierij
+"Glas wit 4,50",226,"Glas wit 4,50",1,"4,50","4,50","3,72",2,21%,"0,00","0,00",20,Wijnen Bokkesteeg
+"Glas rood 4,50",229,"Glas rood 4,50",1,"4,50","4,50","3,72",2,21%,"0,00","0,00",20,Wijnen Bokkesteeg
+Prosecco glas,252,Prosecco glas,0,"4,75","0,00","0,00",2,21%,"0,00","0,00",20,Wijnen Bokkesteeg
+Carpaccio,257,Carpaccio,322,"9,50","3.059,00","2.885,28",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Uiensoep,258,Uiensoep,201,"5,50","1.105,50","1.043,16",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Garnalenkroketjes,259,Garnalenkroketjes,206,"9,50","1.957,00","1.845,81",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Dagsoep,260,Dagsoep,225,"5,50","1.237,50","1.167,73",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Kaas-rucola kroketjes,261,Kaas-rucola kroketjes,22,"9,00","198,00","186,78",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Meierij proefplankje,262,Meierij proefplankje,111,"12,00","1.332,00","1.256,52",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Champignons ,263,Champignons ,145,"8,50","1.232,50","1.162,90",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Spaanse Garnalen,264,Garnalen,1,"9,50","9,50","8,96",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Spaanse Garnalen,264,Spaanse Garnalen,146,"9,50","1.387,00","1.308,22",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Salade gerookte zalm,265,Salade gerookte zalm,38,"9,50","361,00","340,49",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Fruitcocktail,266,Fruitcocktail,7,"4,00","28,00","26,40",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Tomatensoep,267,Tomatensoep,10,"4,00","40,00","37,71",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Champignonsoep,268,Champignonsoep,3,"4,00","12,00","11,31",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Carpaccio,269,Carpaccio,0,"9,50","0,00","0,00",1,6%,"0,00","0,00",22,Voorgerechten Bokkesteeg
+Uiensoep,270,Uiensoep,0,"5,50","0,00","0,00",1,6%,"0,00","0,00",22,Voorgerechten Bokkesteeg
+Bokkesteeg proeverij,273,Bokkesteeg proeverij,0,"11,50","0,00","0,00",1,6%,"0,00","0,00",22,Voorgerechten Bokkesteeg
+Ribeye,281,Ribeye,262,"23,50","6.157,00","5.808,54",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Ribeye,281,Runder-ribeye Black Angus,1,"23,50","23,50","22,17",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Zalmfilet,282,Zalmfilet,161,"18,50","2.978,50","2.809,59",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Eendenborst,283,Eendenborst,82,"18,50","1.517,00","1.431,04",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Saté,284,Saté,298,"16,50","4.917,00","4.639,25",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Saté,284,Saté van varkenshaas,3,"16,50","49,50","46,70",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Biefstuk,285,Biefstuk,444,"19,50","8.658,00","8.169,32",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Biefstuk,285,Ierse kogelbiefstuk,2,"19,50","39,00","36,80",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Varkenshaasje,286,Varkenshaasje,189,"19,00","3.591,00","3.386,96",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Vis van de markt,287,Vis van de markt,204,"18,50","3.774,00","3.560,14",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Vis van de markt,287,Vis van de markt,139,"19,00","2.641,00","2.491,19",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Rode curry,288,Rode curry,100,"17,00","1.700,00","1.603,99",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Ravioli ,289,Ravioli ,126,"18,50","2.331,00","2.198,82",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Kaasfondue,290,Kaasfondue,94,"18,00","1.692,00","1.596,12",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Pasta Bolognese,291,Pasta Bolognese,7,"7,00","49,00","46,20",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Kipnuggets,292,Kipnuggets,21,"7,00","147,00","138,62",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Frikadel,293,Frikadel,13,"7,00","91,00","85,81",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Hamburger,294,Hamburger,10,"7,00","70,00","66,00",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Stokje Saté kids,295,Stokje Saté kids,4,"9,50","38,00","35,84",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Kipschnitzel,296,Kipschnitzel,2,"9,50","19,00","17,92",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Zalm kids,297,Zalm kids,9,"9,50","85,50","80,64",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Spare-Ribs kids,298,Spare-Ribs kids,10,"9,50","95,00","89,60",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Biefstuk,299,Biefstuk,0,"18,50","0,00","0,00",1,6%,"0,00","0,00",24,Hoofgerechten Bokkesteeg
+Zalmfilet,305,Zalmfilet,0,"18,50","0,00","0,00",1,6%,"0,00","0,00",24,Hoofgerechten Bokkesteeg
+Saté,308,Saté,0,"16,50","0,00","0,00",1,6%,"0,00","0,00",24,Hoofgerechten Bokkesteeg
+Klassiek,319,Klassiek,191,"7,50","1.432,50","1.351,93",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Italiaans,320,Italiaans,123,"7,50","922,50","870,64",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Hollands,321,Hollands,97,"7,50","727,50","686,64",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Seizoens,322,Seizoens,26,"7,50","195,00","184,06",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Santpoorts Zooitje,323,Santpoorts Zooitje,123,"10,00","1.230,00","1.160,12",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Kaasplankje,324,Kaasplankje,33,"10,00","330,00","311,22",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Kinderijsje,325,Kinderijsje,36,"4,00","144,00","135,83",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Maandmenu Meierij,333,Maandmenu Meierij,281,"29,50","8.289,50","7.820,23",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Diversen keuken,339,Diversen keuken,2,"0,00","0,00","0,00",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"0,00","0,00","0,00",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,2,"2,00","4,00","3,78",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"2,50","2,50","2,36",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"2,75","2,75","2,59",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,3,"3,00","9,00","8,49",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,4,"3,50","14,00","13,20",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"4,00","4,00","3,77",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,5,"4,50","22,50","21,25",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"5,00","5,00","4,72",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,8,"5,50","44,00","41,52",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"6,00","6,00","5,66",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"6,50","6,50","6,13",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"7,50","7,50","7,08",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"7,50","7,50","7,08",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,6,"8,50","51,00","48,12",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"8,50","8,50","8,02",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,7,"9,00","63,00","59,43",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,4,"9,50","38,00","35,84",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"9,50","9,50","8,96",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"10,00","10,00","9,43",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"10,00","10,00","9,43",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"10,50","10,50","9,91",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"10,50","10,50","9,91",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"14,00","14,00","13,21",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,26,"14,50","377,00","355,68",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"14,50","14,50","13,68",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"16,50","16,50","15,57",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"17,00","17,00","16,04",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,3,"17,50","52,50","49,53",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"18,00","18,00","16,98",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,24,"18,50","444,00","418,81",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,2,"18,50","37,00","34,91",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"19,00","19,00","17,92",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"19,50","19,50","18,40",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,9,"19,50","175,50","165,59",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,1,"21,50","21,50","20,28",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,4,"22,00","88,00","83,00",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,55,"29,50","1.622,50","1.530,65",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,339,Diversen keuken,1,"29,50","29,50","27,83",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,339,Diversen keuken,14,"31,50","441,00","416,04",1,6%,"0,00","0,00",29,Diversen Meierij 6%
+Diversen keuken,340,Diversen keuken,1,"16,00","16,00","15,09",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Diversen keuken,340,Diversen keuken,1,"1.035,00","1.035,00","976,42",1,6%,"0,00","0,00",31,Diversen Bokkesteeg 6%
+Maandmenu Voor,341,Maandmenu Voor,285,"0,00","0,00","0,00",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,4,"5,00","20,00","18,87",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,14,"5,50","77,00","72,65",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,2,"6,00","12,00","11,32",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,17,"6,50","110,50","104,21",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,2,"7,50","15,00","14,16",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,1,"8,50","8,50","8,02",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,46,"9,50","437,00","412,21",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Voor,341,Maandmenu Voor,2,"29,50","59,00","55,66",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,285,"0,00","0,00","0,00",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,3,"9,50","28,50","26,89",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,1,"17,50","17,50","16,51",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,4,"18,00","72,00","67,92",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,11,"18,50","203,50","191,98",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,2,"19,00","38,00","35,84",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,75,"19,50","1.462,50","1.379,84",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,3,"20,00","60,00","56,61",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,2,"22,50","45,00","42,45",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Hoofd,342,Maandmenu Hoofd,1,"29,50","29,50","27,83",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Na,343,Maandmenu Na,289,"0,00","0,00","0,00",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Na,343,Maandmenu Na,0,"5,00","0,00","0,00",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Na,343,Maandmenu Na,17,"6,50","110,50","104,21",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Na,343,Maandmenu Na,1,"7,00","7,00","6,60",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Maandmenu Na,343,Maandmenu Na,16,"7,50","120,00","113,25",1,6%,"0,00","0,00",27,Maandmenu Meierij
+Limonade,344,Limonade,10,"1,50","15,00","14,17",1,6%,"0,00","0,00",1,Frisdrank Meierij
+ijs 1 bol,346,ijs 1 bol,19,"1,50","28,50","26,97",1,6%,"0,00","0,00",25,Nagerechten Meierij
+ijs 2 bollen,347,ijs 2 bollen,25,"3,00","75,00","70,75",1,6%,"0,00","0,00",25,Nagerechten Meierij
+ijs 3 bollen,348,ijs 3 bollen,10,"4,50","45,00","42,50",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Brood & kruidenboter,354,Brood & kruidenboter,9,"3,50","31,50","29,70",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+"Extra frites 3,00",356,"Extra frites 3,00",4,"3,00","12,00","11,32",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Extra frites,358,Extra frites,5,"0,00","0,00","0,00",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Dame Blanche,360,Dame Blanche,4,"6,00","24,00","22,64",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Weekschotel BOK,362,Weekschotel BOK,23,"14,50","333,50","314,64",1,6%,"0,00","0,00",24,Hoofgerechten Bokkesteeg
+Spare-Ribs,363,Spare-Ribs,4,"17,00","68,00","64,16",1,6%,"0,00","0,00",24,Hoofgerechten Bokkesteeg
+Wijn fles....,364,Wijn fles....,24,"12,50","300,00","247,93",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,1,"24,50","24,50","20,25",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,3,"26,00","78,00","64,47",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,2,"27,00","54,00","44,62",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,8,"27,50","220,00","181,84",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,1,"28,50","28,50","23,55",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,1,"29,50","29,50","24,38",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,10,"31,50","315,00","260,30",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,14,"32,50","455,00","376,04",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,2,"35,00","70,00","57,86",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn fles....,364,Wijn fles....,1,"42,50","42,50","35,12",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn karaf....,365,Wijn karaf....,1,"17,50","17,50","14,46",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn karaf....,365,Wijn karaf....,5,"18,00","90,00","74,40",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn karaf....,365,Wijn karaf....,1,"18,50","18,50","15,29",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn karaf....,365,Wijn karaf....,9,"19,00","171,00","141,30",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn glas....,366,Wijn glas....,179,"5,25","939,75","776,85",2,21%,"0,00","0,00",19,Wijnen Meierij
+Wijn glas....,366,Wijn glas....,1,"7,50","7,50","6,20",2,21%,"0,00","0,00",19,Wijnen Meierij
+Alcohol vrije wijn,370,Alcohol vrije wijn,4,"4,75","19,00","17,92",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Tomatensap,372,Tomatensap,6,"2,50","15,00","14,16",1,6%,"0,00","0,00",1,Frisdrank Meierij
+Geitenkaas Salade,377,Geitenkaas Salade,16,"9,00","144,00","135,84",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Geitenkaas Salade,377,Geitenkaas Salade,11,"9,50","104,50","98,56",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Tropisch,378,Tropisch,46,"7,50","345,00","325,62",1,6%,"0,00","0,00",25,Nagerechten Meierij
+Asperges & Ham,380,Asperges & Ham,65,"18,50","1.202,50","1.134,37",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Asperges & Zalm,381,Asperges & Zalm,54,"22,00","1.188,00","1.120,59",1,6%,"0,00","0,00",23,Hoofgerechten Meierij
+Ceasar Salade kip,384,Ceasar Salade kip,6,"9,50","57,00","53,76",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Ceasar Salade zalm,385,Ceasar Salade zalm,14,"9,50","133,00","125,44",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Ceasar Salade zalm,385,Ceasar Salade zalm,1,"14,50","14,50","13,68",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Ceasar Salade zalm,387,Ceasar Salade zalm,0,"9,50","0,00","0,00",1,6%,"0,00","0,00",22,Voorgerechten Bokkesteeg
+Geitenkaas Salade,391,Geitenkaas Salade,0,"9,50","0,00","0,00",1,6%,"0,00","0,00",22,Voorgerechten Bokkesteeg
+Seizoens kroketjes,393,Seizoens kroketjes,31,"8,50","263,50","248,62",1,6%,"0,00","0,00",21,Voorgerechten Meierij
+Coca cola FW,395,Coca cola FW,48,"2,50","120,00","113,28",1,6%,"0,00","0,00",33,Drank laag feestweek
+Coca cola light FW,396,Coca cola light FW,9,"2,50","22,50","21,24",1,6%,"0,00","0,00",33,Drank laag feestweek
+Spa rood FW,397,Spa rood FW,29,"2,50","72,50","68,44",1,6%,"0,00","0,00",33,Drank laag feestweek
+Spa blauw FW,398,Spa blauw FW,13,"2,50","32,50","30,68",1,6%,"0,00","0,00",33,Drank laag feestweek
+Sinas FW,399,Sinas FW,20,"2,50","50,00","47,20",1,6%,"0,00","0,00",33,Drank laag feestweek
+Ice Tea FW,400,Ice Tea FW,16,"2,50","40,00","37,76",1,6%,"0,00","0,00",33,Drank laag feestweek
+Appelsap FW,401,Appelsap FW,1,"2,50","2,50","2,36",1,6%,"0,00","0,00",33,Drank laag feestweek
+Chocomel FW,402,Chocomel FW,6,"2,50","15,00","14,16",1,6%,"0,00","0,00",33,Drank laag feestweek
+Fristi FW,403,Fristi FW,7,"2,50","17,50","16,52",1,6%,"0,00","0,00",33,Drank laag feestweek
+Appelsap pakje FW,404,Appelsap pakje FW,23,"2,50","57,50","54,28",1,6%,"0,00","0,00",33,Drank laag feestweek
+Caprisun pakje FW,405,Caprisun pakje FW,1,"2,50","2,50","2,36",1,6%,"0,00","0,00",33,Drank laag feestweek
+Amstel bier FW,407,Amstel bier FW,224,"2,50","555,00","458,84",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wieckse rosé FW,408,Wieckse rosé FW,6,"3,00","18,00","14,88",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Radler FW,409,Radler FW,7,"3,00","15,00","12,40",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Heineken 0.0 FW,410,Heineken 0.0 FW,7,"3,00","21,00","19,81",1,6%,"0,00","0,00",33,Drank laag feestweek
+Jillz FW,411,Jillz FW,1,"3,00","3,00","2,48",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Bacardi Cola FW,414,Bacardi Cola FW,1,"5,50","5,50","4,55",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wijn wit zoet glas FW,416,Wijn wit zoet glas FW,2,"3,50","7,00","5,78",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wijn wit droog glas FW,417,Wijn wit droog glas FW,54,"3,50","189,00","156,17",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wijn rosé glas FW,418,Wijn rosé glas FW,13,"3,50","45,50","37,58",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wijn rood glas FW,419,Wijn rood glas FW,24,"3,50","84,00","69,42",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Prosecco glas FW,420,Prosecco glas FW,2,"3,50","7,00","5,78",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wijn wit Montespina fles FW,422,Wijn wit Montespina fles FW,9,"26,00","234,00","193,41",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Rosé La Plume fles FW,425,Rosé La Plume fles FW,1,"20,00","20,00","16,53",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Wijn rood Purato fles FW,429,Wijn rood Purato fles FW,1,"26,00","26,00","21,49",2,21%,"0,00","0,00",34,Drank hoog feestweek
+Koffie FW,431,Koffie FW,15,"2,20","28,60","27,02",1,6%,"0,00","0,00",33,Drank laag feestweek
+Espresso FW,432,Espresso FW,2,"2,20","4,40","4,15",1,6%,"0,00","0,00",33,Drank laag feestweek
+Cappucino FW,433,Cappucino FW,20,"2,50","50,00","47,20",1,6%,"0,00","0,00",33,Drank laag feestweek
+Thee FW,434,Thee FW,2,"2,20","4,40","4,15",1,6%,"0,00","0,00",33,Drank laag feestweek
+Brood kruidenboter FW,435,Brood kruidenboter FW,6,"3,50","21,00","19,80",1,6%,"0,00","0,00",35,Keuken feestweek
+Watermeloen & feta FW,437,Watermeloen & feta FW,1,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Watermeloen & feta FW,437,Watermeloen & feta FW,3,"7,50","22,50","21,24",1,6%,"0,00","0,00",35,Keuken feestweek
+Garnalenkroketjes FW,438,Garnalenkroketjes FW,10,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Garnalenkroketjes FW,438,Garnalenkroketjes FW,11,"7,50","78,36","73,94",1,6%,"0,00","4,14",35,Keuken feestweek
+Carpaccio FW,439,Carpaccio FW,20,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Carpaccio FW,439,Carpaccio FW,20,"7,50","147,93","139,60",1,6%,"0,00","2,07",35,Keuken feestweek
+Geitenkaas salade FW,440,Geitenkaas salade FW,2,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Geitenkaas salade FW,440,Geitenkaas salade FW,12,"7,50","88,97","83,98",1,6%,"0,00","1,03",35,Keuken feestweek
+Tomatensoep FW,441,Tomatensoep FW,2,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Tomatensoep FW,441,Tomatensoep FW,8,"7,50","60,00","56,64",1,6%,"0,00","0,00",35,Keuken feestweek
+Saté FW,442,Saté FW,6,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Saté FW,442,Saté FW,50,"16,50","815,90","769,77",1,6%,"0,00","9,10",35,Keuken feestweek
+Kabeljauw FW,443,Kabeljauw FW,2,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Kabeljauw FW,443,Kabeljauw FW,11,"16,50","181,50","171,25",1,6%,"0,00","0,00",35,Keuken feestweek
+Biefstuk FW,444,Biefstuk FW,18,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Biefstuk FW,444,Biefstuk FW,36,"16,50","587,17","554,02",1,6%,"0,00","6,83",35,Keuken feestweek
+Ravioli FW,445,Ravioli FW,3,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Ravioli FW,445,Ravioli FW,25,"16,50","412,50","389,18",1,6%,"0,00","0,00",35,Keuken feestweek
+Zalmfilet FW,446,Zalmfilet FW,5,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Zalmfilet FW,446,Zalmfilet FW,14,"16,50","231,00","217,96",1,6%,"0,00","0,00",35,Keuken feestweek
+Varkenshaas FW,447,Varkenshaas FW,1,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Varkenshaas FW,447,Varkenshaas FW,13,"16,50","214,50","202,39",1,6%,"0,00","0,00",35,Keuken feestweek
+Creme Brulee FW,448,Creme Brulee FW,8,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Creme Brulee FW,448,Creme Brulee FW,6,"5,00","28,62","27,01",1,6%,"0,00","1,38",35,Keuken feestweek
+Hugosorbet FW,449,Hugosorbet FW,12,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Hugosorbet FW,449,Hugosorbet FW,6,"5,00","28,62","27,01",1,6%,"0,00","1,38",35,Keuken feestweek
+Flensje FW,450,Flensje FW,12,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Flensje FW,450,Flensje FW,6,"5,00","27,93","26,35",1,6%,"0,00","2,07",35,Keuken feestweek
+Kaas FW,451,Kaas FW,3,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+Kaas FW,451,Kaas FW,2,"5,00","10,00","9,44",1,6%,"0,00","0,00",35,Keuken feestweek
+Fruitcocktail kids FW,452,Fruitcocktail kids FW,1,"4,00","4,00","3,77",1,6%,"0,00","0,00",35,Keuken feestweek
+Tomatensoep kids FW,453,Tomatensoep kids FW,2,"4,00","8,00","7,54",1,6%,"0,00","0,00",35,Keuken feestweek
+Kipnuggets FW,454,Kipnuggets FW,9,"7,00","63,00","59,41",1,6%,"0,00","0,00",35,Keuken feestweek
+Fricandel FW,455,Fricandel FW,4,"7,00","28,00","26,40",1,6%,"0,00","0,00",35,Keuken feestweek
+Hamburger FW,456,Hamburger FW,2,"7,00","14,00","13,20",1,6%,"0,00","0,00",35,Keuken feestweek
+Saté kind FW,457,Saté kind FW,2,"9,50","19,00","17,92",1,6%,"0,00","0,00",35,Keuken feestweek
+Zalm kind FW,458,Zalm kind FW,2,"9,50","19,00","17,92",1,6%,"0,00","0,00",35,Keuken feestweek
+3-gangen menu feestweek,459,3-gangen menu feestweek,7,"0,00","0,00","0,00",1,6%,"0,00","0,00",35,Keuken feestweek
+3-gangen menu feestweek,459,3-gangen menu feestweek,35,"25,00","875,00","825,32",1,6%,"0,00","0,00",35,Keuken feestweek
+Bitterballen FW,461,Bitterballen FW,5,"5,00","25,00","23,59",1,6%,"0,00","0,00",35,Keuken feestweek
+Kaas Kroketjes FW,462,Kaas Kroketjes FW,7,"5,00","35,00","33,04",1,6%,"0,00","0,00",35,Keuken feestweek
+Luxe Borrel Boordje FW,463,Luxe Borrel Boordje FW,10,"7,50","75,00","70,78",1,6%,"0,00","0,00",35,Keuken feestweek
+Diversen keuken FW,464,Diversen keuken FW,2,"1,50","3,00","2,84",1,6%,"0,00","0,00",35,Keuken feestweek
+Diversen keuken FW,464,Diversen keuken FW,2,"3,50","7,00","6,60",1,6%,"0,00","0,00",35,Keuken feestweek
+Diversen keuken FW,464,Diversen keuken FW,2,"5,00","10,00","9,44",1,6%,"0,00","0,00",35,Keuken feestweek
+Diversen keuken FW,464,Diversen keuken FW,1,"14,50","14,50","13,68",1,6%,"0,00","0,00",35,Keuken feestweek
+Appelgebak FW,466,Appelgebak FW,8,"3,50","28,00","26,42",1,6%,"0,00","0,00",35,Keuken feestweek
+Appelgebak + koffie FW,467,Appelgebak + koffie FW,5,"5,00","25,00","23,58",1,6%,"0,00","0,00",35,Keuken feestweek
+7up FW,468,7up FW,5,"2,50","12,50","11,80",1,6%,"0,00","0,00",33,Drank laag feestweek
+,,,14.190,,"115.001,70","105.503,26",,,,"28,00",,
