@@ -8,6 +8,7 @@
                          class="customStyle card-1 flex-column align-items-start" href="#"
                          v-for="item in filteredData"
       >
+<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
@@ -30,37 +31,39 @@
 
     <h5>Voorgerechten</h5>
     <transition-group name="list" tag="div">
-    <b-list-group-item :key="item.name" @click="clickEvent(item)"
-                       class="customStyle card-1 flex-column align-items-start" href="#"
-                       v-for="item in datashow"
-                       v-if="item.course === 'appetizer'"
-    >
+      <b-list-group-item :key="item.name" @click="clickEvent(item)"
+                         class="customStyle card-1 flex-column align-items-start" href="#"
+                         v-for="item in datashow"
+                         v-if="item.course === 'appetizer'"
+      >
+<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
-      <div class="clickThrough d-flex w-100 justify-content-between ">
-        <transition name="fade">
-          <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
-        </transition>
-        <h5 class="mb-1">
-          {{ item.name }}
+        <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
-            <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+            <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
           </transition>
-        </h5>
-      </div>
-      <p class="clickThrough mb-1">
-        {{ item.desc }}
-      </p>
+          <h5 class="mb-1">
+            {{ item.name }}
+            <transition name="fade">
+              <b-badge v-show="(suggestions) && (item.prime) " variant="success">Primeur</b-badge>
+            </transition>
+          </h5>
+        </div>
+        <p class="clickThrough mb-1">
+          {{ item.desc }}
+        </p>
 
-    </b-list-group-item>
+      </b-list-group-item>
     </transition-group>
 
     <h5>Hoofdgerechten</h5>
     <transition-group name="list" tag="div">
-    <b-list-group-item :key="item.name" @click="clickEvent(item)"
+      <b-list-group-item :key="item.name" @click="clickEvent(item)"
                          class="customStyle card-1 flex-column align-items-start" href="#"
                          v-for="item in datashow"
                          v-if="item.course === 'main'"
       >
+<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
@@ -83,13 +86,15 @@
 
     <h5>Nagerechten</h5>
     <transition-group name="list" tag="div">
-    <b-list-group-item :key="item.name" @click="clickEvent(item)"
+      <b-list-group-item :key="item.name" @click="clickEvent(item)"
                          class="customStyle card-1 flex-column align-items-start" href="#"
                          v-for="item in datashow"
                          v-if="item.course === 'after'"
       >
+<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
+
           <transition name="fade">
             <div class="profit-colour" v-bind:class="`${item.profit}`" v-show="suggestions"></div>
           </transition>
@@ -108,7 +113,7 @@
     </transition-group>
 
 
-    <div class="noResults"  v-if="datashow.length === 0">
+    <div class="noResults" v-if="datashow.length === 0">
       <h3>Geen resultaat</h3>
     </div>
 
@@ -116,32 +121,31 @@
   </b-list-group>
 
 
-
-
-
-
 </template>
 
 <script>
   /* eslint-disable no-alert, no-console */
   import menukaart from '../assets/menukaart.json'
+  import EditIcon from './editIcon'
 
   export default {
     name: 'menuDataHolder',
+    props:{
+      editAble:false,
+    },
+    components: {EditIcon},
     data () {
-      return {
-      }
+      return {}
     },
     created: function () {
       let menuKaartNoIng = []
-      if(menukaart.length > 0){
+      if (menukaart.length > 0) {
         menukaart.forEach(item => {
           if (item.ingredient === false) {
             menuKaartNoIng.push(item)
           }
         })
-      }
-      else {
+      } else {
         // const localStorageMenukaart = localStorage.getItem('MenuggestDB_menuKaart')
         // localStorageMenukaart.forEach(item => {
         //   if (item.ingredient === false) {
@@ -153,10 +157,11 @@
       }
       this.$store.commit('createdMenu/addMenucardItem', menuKaartNoIng)
 
+      // if(window.location.pathname === "editMenu"){
+      //   console.log('editMenu')
+      // }
     },
-    watch:{
-
-    },
+    watch: {},
     computed: {
       suggestions: function () {
         return this.$store.state.createdMenu.suggestionMode
@@ -176,13 +181,13 @@
         } else {
           event.target.classList.add('active')
         }
-        if (item.course === 'appetizer'){
+        if (item.course === 'appetizer') {
           this.$store.commit('createdMenu/appetizerAdd', item)
         }
-        if (item.course === 'main'){
+        if (item.course === 'main') {
           this.$store.commit('createdMenu/mainAdd', item)
         }
-        if (item.course === 'after'){
+        if (item.course === 'after') {
           this.$store.commit('createdMenu/afterAdd', item)
         }
         this.$store.commit('createdMenu/addMenu', item)
@@ -201,15 +206,18 @@
   ::-webkit-scrollbar {
     display: none;
   }
-.noResults{
-  text-align: center;
-}
-  .list-group-item.active{
+
+  .noResults {
+    text-align: center;
+  }
+
+  .list-group-item.active {
     z-index: 2;
     color: inherit;
-    background-color:inherit;
+    background-color: inherit;
     border-color: inherit;
   }
+
   .pusher {
     height: 60px;
   }
@@ -218,7 +226,14 @@
     /*click whole element*/
     pointer-events: none;
   }
+.editAble{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.editAble:hover{
 
+}
   .customStyle {
     margin: 5px 0;
     text-transform: capitalize;
@@ -273,5 +288,30 @@
     left: -10px;
   }
 
+  .animate {
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -ms-transition: -ms-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+  }
+
+  .editAble{
+
+  }
+  .editAble:hover {
+    animation: rotating .5s ease-in-out;
+  }
+
+
+  @keyframes rotating {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100%{
+      transform: rotate(0);
+    }
+  }
 
 </style>

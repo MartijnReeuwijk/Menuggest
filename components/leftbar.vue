@@ -144,6 +144,12 @@
     padding: 0 1rem;
     margin: 0;
   }
+  .titelHolder{
+    margin-bottom: 5px;
+    /*<!--box-shadow: 0 4px 2px -2px gray;-->*/
+    box-shadow:  0 4px 2px -2px rgba(0, 0, 0, 0.12),
+     0 4px 2px -2px rgba(0, 0, 0, 0.24);
+  }
   .titelHolder h2 {
     text-align: center;
   }
@@ -160,7 +166,7 @@
     max-width: 300px;
     background-color: #F7F8FB;
     position: relative;
-    padding: 5px;
+    padding: 5px 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 

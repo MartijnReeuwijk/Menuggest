@@ -133,7 +133,7 @@
         <ingredient-floater title="Ingredienten" :data="this.form.ingredients"  v-show="this.form.ingredients.length > 0" ></ingredient-floater>
       </transition>
 
-      <RightsideHolder title="Gerechten"></RightsideHolder>
+      <RightsideHolder editAble="true" title="Gerechten"></RightsideHolder>
     </main>
 
 
