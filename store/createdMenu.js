@@ -19,7 +19,9 @@ export const state = () => ({
   seasons:[],
   suggestionMode:false,
   switchIndex:false,
-  saveAlert:false
+  saveAlert:false,
+  dataVisualA:[],
+  dataVisualUseable:[]
 })
 
 // TODO:: Verbeter de store
@@ -67,5 +69,11 @@ export const mutations = {
   saveAlert (state, item){
     state.saveAlert = item
     console.log('state.saveAlert', state.saveAlert)
+  },
+  dataVisualA(state, item){
+    state.dataVisualA = item
+  },
+  dataVisualUseable(state, item){
+    state.dataVisualUseable = item
   },
 }
