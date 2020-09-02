@@ -1,7 +1,7 @@
 {
   "name": "Menuggest",
-  "version": "1.0.0",
-  "description": "My tremendous Nuxt.js project",
+  "version": "0.0.6",
+  "description": "Mijn gemaakte afstudeer project",
   "author": "Martijn",
   "private": true,
   "config": {

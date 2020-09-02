@@ -28,7 +28,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/bootstrap-vue',
 
   ],
   /*
@@ -64,7 +63,7 @@ export default {
       lang: 'en',
       display: "standalone",
       background_color: "#fff",
-      description: "A simply readable Hacker News app.",
+      description: "App to assist in making profit driven decisions",
       icons: [{
         "src": "static/favicons.ico/android-icon-48x48.png",
         "sizes": "48x48",
