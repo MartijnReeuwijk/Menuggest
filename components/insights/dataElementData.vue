@@ -3,17 +3,13 @@
     <p>{{title}}</p>
     <div class="dataElementData">
 
-
-
-
-
-
       <ol v-if="Array.isArray(summeryData)">
         <li v-for="item in summeryData" :key="item.message">
           {{ item }}
         </li>
       </ol>
-      <p v-else>{{summeryData}}</p>
+
+      <p class="biggerText success" v-bind:class="{ lowProfit: randomValue }" v-else>{{summeryData}}</p>
 
     </div>
   </div>
@@ -31,11 +27,37 @@
       summeryData:{
         default:"Data inzicht"
       }
-    }
+    },
+    data () {
+      return {
+       randomValue: true
+      }
+    },
+
+    methods:{
+      random(){
+        const a = Math.random() < 0.5;
+        console.log(a)
+        this.randomValue = a
+        // return a
+      }
+    },
+    mounted () {
+      this.random()
+    },
   }
 </script>
 
 <style lang="scss" scoped>
+  .success {
+    color: var(--success);
+  }
+  .lowProfit {
+    color: var(--danger);
+  }
+  .biggerText{
+    font-size: 1.6em;
+  }
   .dataElement{
     width: 250px;
     min-height: 125px;
@@ -49,9 +71,9 @@
     margin: 0;
   }
   .dataElementData{
-    width: calc(100% - 10px);
-    height: auto;
-    /*background-color: orangered;*/
+    width: 100%;
+    height: 100%;
+    padding: 10px;
     border-top: #47494e solid 1px;
     display: flex;
     justify-content: space-evenly;
@@ -60,4 +82,5 @@
     padding: 5px;
     margin: 0px;
   }
+
 </style>

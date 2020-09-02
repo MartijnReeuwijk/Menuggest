@@ -320,13 +320,12 @@
     width: 100%;
     height: 150px;
     display: flex;
-    justify-content: space-evenly;
+    padding: 10px;
+    justify-content: space-between;
   }
   .centerDataHolder{
     display: flex;
   }
-
-
 .titleHolder{
   width: 100%;
   border-bottom: 1px solid gray;
@@ -334,9 +333,9 @@
   text-transform: capitalize;
 }
 .DataHolder{
-  width: calc(50% - 20px);
+  width: calc(50%);
   position: relative;
-  padding: 5px;
+  padding: 10px;
   background-color: white;
   border-radius: 5px;
   margin: 10px;
