@@ -8,6 +8,7 @@
         <leftbar
           title="Zoeken bij de leverancier">
         </leftbar>
+        <legenda></legenda>
 
 <!--TODO:: Tooltip-->
         <div class="centerHolder">
@@ -31,10 +32,12 @@
   import leftbar from '../components/leftbar'
   import RightsideHolder from '../components/RightsideHolder'
   import DealComponent from '../components/dealpage/dealComponent'
+  import Legenda from '../components/legenda'
 
   export default {
     name: 'deals',
     components: {
+      Legenda,
       DealComponent,
       navigationBar,
       leftbar,

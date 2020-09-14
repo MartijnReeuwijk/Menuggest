@@ -16,10 +16,13 @@
               {{ item.name }}
               <b-badge v-show="item.prime" variant="success">Primeur</b-badge>
             </h5>
-          <div >
-            <p> Winstmarge: {{item.margin}}% </p>
-            <b-badge class="profitBadge" variant="success" v-bind:class="`${item.profit}`">€ {{item.price}}</b-badge>
+            <div >
+              <p> Winstmarge: {{item.margin}}% </p>
+              <b-badge class="profitBadge" variant="success" v-bind:class="`${item.profit}`">€ {{item.price}}</b-badge>
+            </div>
           </div>
+          <div>
+            <p>logo</p>
           </div>
         </b-list-group-item>
       </transition-group>
@@ -99,6 +102,62 @@
             name: 'tross tomaat',
             price: 18,
             profit: 'bad'
+          },
+          {
+            type: 'groente',
+            margin: '0',
+            currency: 'euro',
+            name: 'tomaat',
+            price: 18,
+            profit: 'bad'
+          },
+          {
+            type: 'Vis',
+            margin: '0',
+            currency: 'euro',
+            name: 'Bot',
+            price: 18,
+            profit: 'bad'
+          },
+          {
+            type: 'Vis',
+            margin: '10',
+            currency: 'euro',
+            name: 'Forel',
+            price: 18,
+            profit: 'good'
+          },
+          {
+            type: 'Vis',
+            margin: '2',
+            currency: 'euro',
+            name: 'Geep',
+            price: 18,
+            profit: 'bad'
+          },
+          {
+            type: 'gevogelte',
+            margin: '12',
+            currency: 'euro',
+            name: 'fazant',
+            price: 14,
+            profit: 'good'
+          },
+          {
+            type: 'gevogelte',
+            margin: '7',
+            currency: 'euro',
+            name: 'eend',
+            price: 23,
+            profit: 'good'
+          },
+          {
+            type: 'Sause',
+            margin: '200',
+            currency: 'euro',
+            name: 'Pesto',
+            price: 10,
+            profit: 'good'
           }
         ]
       }

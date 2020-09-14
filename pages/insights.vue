@@ -50,6 +50,8 @@
                   </b-list-group-item>
                   <b-list-group-item class="d-flex justify-content-between align-items-center" data-filterValue="gedestilleerd Meierij" @click="filterJson">Gedestilleerd
                   </b-list-group-item>
+                  <b-list-group-item class="d-flex justify-content-between align-items-center" data-filterValue="Likeur Meierij" @click="filterJson">Likeur Meierij
+                  </b-list-group-item>
                 </b-list-group>
               </div>
             </b-tab>
