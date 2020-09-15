@@ -178,5 +178,20 @@
     "currency":"euro",
     "foodType":"ice",
     "ingredients": ["ijs","framboos"]
+  },
+  {
+    "name" : "Garnalenkroketjes",
+    "profit": "avg",
+    "desc": "drie stukjes met selderijsalade & cocktailsaus",
+    "time": "0,5",
+    "luxe": true,
+    "vegan": false,
+    "vegetarian": false,
+    "course": "appetizer",
+    "ingredient": false,
+    "price": 9.50,
+    "currency":"euro",
+    "foodType":"soup",
+    "ingredients": ["Cocktailsaus","bleekselderij","garnalen","ijsbergsla"]
   }
 ]

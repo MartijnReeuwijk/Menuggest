@@ -105,27 +105,38 @@
                 </div>
 
 
-                <b-form-group id="input-group-4" label="Extra gerechten infomatie" label-for="input-4">
+                <b-form-group id="input-group-4" label="Allergenen" label-for="input-4">
                   <b-form-checkbox-group id="checkboxes-4" v-model="form.extraFoodData">
-                    <b-form-checkbox value="vegetarisch">vegetarisch</b-form-checkbox>
-                    <b-form-checkbox value="vegan">vegan</b-form-checkbox>
+                    <b-form-checkbox value="soja">soja</b-form-checkbox>
                     <b-form-checkbox value="noten">noten</b-form-checkbox>
-                    <b-form-checkbox value="luxe">luxe product</b-form-checkbox>
-                    <b-form-checkbox value="primeur">primeur</b-form-checkbox>
+                    <b-form-checkbox value="gluten">gluten</b-form-checkbox>
+                    <b-form-checkbox value="schaaldieren">schaaldieren</b-form-checkbox>
+                    <b-form-checkbox value="lactose">lactose</b-form-checkbox>
+                    <b-form-checkbox value="ei">ei</b-form-checkbox>
+                    <b-form-checkbox value="pinda">pinda</b-form-checkbox>
+                    <b-form-checkbox value="sesam">sesam</b-form-checkbox>
+                    <b-form-checkbox value="mosterd">mosterd</b-form-checkbox>
+                    <b-form-checkbox value="fructose">fructose</b-form-checkbox>
                   </b-form-checkbox-group>
                 </b-form-group>
+
+                <b-form-group id="input-group-5" label="Extra's" label-for="input-5">
+                <b-form-checkbox-group id="checkboxes-5" v-model="form.extraFoodData">
+                  <b-form-checkbox value="vegetarisch">vegetarisch</b-form-checkbox>
+                  <b-form-checkbox value="vegan">vegan</b-form-checkbox>
+                  <b-form-checkbox value="luxe">luxe product</b-form-checkbox>
+                  <b-form-checkbox value="primeur">primeur</b-form-checkbox>
+                </b-form-checkbox-group>
+                </b-form-group>
+
+
                 <b-button type="submit" variant="primary">Submit</b-button>
                 <b-button type="reset" variant="danger">Reset</b-button>
                 <b-button type="info" variant="info">Uitleg</b-button>
               </b-form>
-
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
 
@@ -186,9 +197,9 @@
           text: 'Opties',
           value: null
         }, 'Soep','Rund', 'Zalm', 'Tonijn', 'Lam', 'Kalf', 'Varken', 'Schaap', 'Schol', 'Tong', 'Bot', 'Tarbot', 'Kreeft', 'Krab', 'Schaaldier', 'Overig'],
-        seasons: [{text: 'Opties', value: null}],
+        seasons: [{text: 'N.v.t', value: null}],
         coursed:[
-          { value: null, text: 'Selecteer een gang' },
+          { value: null, text: 'N.v.t' },
           {
             text:'Voorgerecht',
             value:'appetizer'
@@ -200,10 +211,6 @@
           {
             text:'Nagerecht',
             value:'dessert'
-          },
-          {
-            text:'Niet van toepassing',
-            value:'none'
           }
         ],
         show: true
@@ -274,9 +281,6 @@
   ::-webkit-scrollbar {
     display: none;
   }
-  .custom-select{
-
-  }
   .sizeAligner {
     width: 100%;
     display: flex;
@@ -295,7 +299,7 @@
   }
 
   .customCard {
-    max-width: 500px;
+    max-width: 550px;
     margin: 10px auto;
     padding: 10px;
   }
@@ -316,7 +320,6 @@
 
   .extraPadding {
     padding: 5px 0 0 0;
-
   }
 
   .ingredientListHolder {

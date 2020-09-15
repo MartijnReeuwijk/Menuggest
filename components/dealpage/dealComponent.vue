@@ -21,8 +21,8 @@
               <b-badge class="profitBadge" variant="success" v-bind:class="`${item.profit}`">€ {{item.price}}</b-badge>
             </div>
           </div>
-          <div>
-            <p>logo</p>
+          <div class="iconHolder">
+            <p>soort</p> <p>allergeen</p>  <p>allergeen</p>
           </div>
         </b-list-group-item>
       </transition-group>
@@ -173,6 +173,11 @@
 <style lang="scss" scoped>
   h5,p{
     margin: 0;
+  }
+  .iconHolder{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
   }
   .profitBadge{
     align-self: center;
