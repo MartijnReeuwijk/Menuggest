@@ -1,41 +1,18 @@
 <template>
-<!--  <div class="cardWrapper">-->
-<!--    <b-card :title=title :sub-title=type>-->
-<!--      <b-card-text>-->
-<!--       {{desc}}-->
-<!--      </b-card-text>-->
-
-<!--      <b-card-text>{{profit}}</b-card-text>-->
-
-<!--      <div class="abc">-->
-<!--        <b-button href="#" variant="primary">Open menu</b-button>-->
-<!--        <b-button href="#" variant="light">Delete</b-button>-->
-<!--      </div>-->
-<!--      <div class="card-footer text-muted">-->
-<!--        2 days ago-->
-<!--      </div>-->
-<!--    </b-card>-->
-
-    <div :title=title :sub-title=type class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">
-          {{desc}}
-        </p>
-
-        <p class="card-text">
-          {{profit}}
-        </p>
-      </div>
-      <div class="cardButtonHolder">
-        <a href="#" class="btn btn-primary">Open</a>
-        <a href="#" class="btn btn-outline-danger">Delete</a>
-      </div>
-
-      <div class="card-footer">
-        <small class="text-muted">Gemaakt op [Datum]</small>
-      </div>
+  <b-card :title=title header-tag="header" footer-tag="footer">
+    <template v-slot:header>
+      <h6 class="mb-0">{{type}}</h6>
+      <h6 class="mb-0">Verkocht: {{sold}}</h6>
+    </template>
+    <b-card-text>{{desc}}</b-card-text>
+    <div class="betterSpace">
+    <b-button  variant="primary">Menu inzien</b-button>
+    <b-button  @click="deleteItem" variant="light">Delete</b-button>
     </div>
+    <template v-slot:footer>
+      <em>{{datum}}</em>
+    </template>
+  </b-card>
 
 <!--  </div>-->
 
@@ -50,26 +27,50 @@
         type: String,
         default: ''
       },
+      datum:{
+        type: String,
+        default: '10-12-2019'
+      },
       type:{
         type: String,
-        default: 'Geen seizoen'
+        default: ''
       },
       profit:{
         type: String,
         default: 'Geen data'
+      },
+      sold:{
+        type: Number,
+        default: 0
+      }
+    },
+    methods:{
+      deleteItem(){
+        this.$store.commit('createdMenu/showOverlay', true)
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .betterSpace{
+    justify-content: space-between;
+    display: flex;
+  }
   .cardButtonHolder {
     width: 100%;
     padding: 10px;
     display: flex;
+    margin: 10px;
+    justify-content: space-between;
+  }
+  .card-header{
+    display: flex;
     justify-content: space-between;
   }
 .card{
+  min-width: 300px;
+  margin: 10px;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 .card:hover {
