@@ -85,10 +85,7 @@
       match(){
         const preFilter = this.preFilter
         const selectedIngredient = this.search.ingredients
-        console.log(preFilter)
         let containsSelected = []
-
-
         // Ingredenten match alles naar lowercase zo dat de user fouten niet uitmaken
         if (selectedIngredient.length > 0){
           preFilter.forEach(item =>{
@@ -96,21 +93,15 @@
               selectedIngredient.forEach(selectedIngredientCheck => {
                 const lowerCase = ingredientsArray.toLowerCase()
                 const lowerCaseSelected = selectedIngredientCheck.toLowerCase()
-                console.log('lowerCase', lowerCase)
-                console.log('lowerCaseSelected', lowerCaseSelected)
                 // Dit moet omdat ik niet de API van de makro of sligro bestuur of heb
                 // Anders had ik dit op die API geplaatst en altijd Lowercase terug gegeven
                 if(lowerCase === lowerCaseSelected){
-                  console.log('item', item)
                   containsSelected.push(item)
                 }
                 else{
                   return false
                 }
-
-
               })
-
             })
           })
           // if(containsSelected.length == 0){

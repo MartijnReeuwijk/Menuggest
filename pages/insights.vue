@@ -73,28 +73,6 @@
                 </b-list-group>
               </div>
             </b-tab>
-<!--            <b-tab title="Terras">-->
-<!--              <div class="itemsHolder">-->
-<!--                <b-list-group>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Voorgerechten-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Hoofdgerechten-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Na gerechten-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Seizoens gerechten-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Drank totaal-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Koffie-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Fris-->
-<!--                  </b-list-group-item>-->
-<!--                  <b-list-group-item class="d-flex justify-content-between align-items-center" @click="filterJson">Bier-->
-<!--                  </b-list-group-item>-->
-<!--                </b-list-group>-->
-<!--              </div>-->
-<!--            </b-tab>-->
           </b-tabs>
         </b-card>
 
