@@ -5,18 +5,16 @@
 
     </menuNameComponent>
     <section v-for="(item,value) in menuCardDataStore">
-      <div class="menukaartPaper" :id="value">
+      <div :id="value" class="menukaartPaper">
         <!--    split this up-->
         <shadowOverlay v-if="active"></shadowOverlay>
-
         <b-list-group>
-
           <b-list-group-item :key="item.id" @click="removeItem(index)"
                              class="customStyle  flex-column align-items-start"
                              href="#" v-for="(items) in item">
 
             <div class="d-flex w-100 justify-content-between ">
-              <h5 class="mb-1">
+              <h5 class="mb-1 text-capitalize">
                 {{ items.name }}
               </h5>
             </div>

@@ -15,9 +15,9 @@
 <script>
   export default {
     name: 'ingredientFloater',
-    props:{
-      data:Array,
-      title:String
+    props: {
+      data: Array,
+      title: String
     }
   }
 </script>

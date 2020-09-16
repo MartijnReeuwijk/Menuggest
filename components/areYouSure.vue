@@ -1,32 +1,32 @@
-<b-overlay :show="busy" no-wrap @shown="onShown" @hidden="onHidden">
+<b-overlay :show="busy" @hidden="onHidden" @shown="onShown" no-wrap>
   <template v-slot:overlay>
-    <div v-if="processing" class="text-center p-4 bg-primary text-light rounded">
-      <b-icon icon="cloud-upload" font-scale="4"></b-icon>
+    <div class="text-center p-4 bg-primary text-light rounded" v-if="processing">
+      <b-icon font-scale="4" icon="cloud-upload"></b-icon>
       <div class="mb-3">Deleting</div>
       <b-progress
-        min="1"
-        max="20"
         :value="counter"
-        variant="success"
-        height="3px"
         class="mx-n4 rounded-0"
+        height="3px"
+        max="20"
+        min="1"
+        variant="success"
       ></b-progress>
     </div>
     <div
-      v-else
-      ref="dialog"
-      tabindex="-1"
-      role="dialog"
-      aria-modal="false"
       aria-labelledby="form-confirm-label"
+      aria-modal="false"
       class="text-center p-3"
+      ref="dialog"
+      role="dialog"
+      tabindex="-1"
+      v-else
     >
       <p><strong id="form-confirm-label">Are you sure?</strong></p>
       <div class="d-flex">
-        <b-button variant="outline-danger" class="mr-3" @click="onCancel">
+        <b-button @click="onCancel" class="mr-3" variant="outline-danger">
           Cancel
         </b-button>
-        <b-button variant="outline-success" @click="onOK">OK</b-button>
+        <b-button @click="onOK" variant="outline-success">OK</b-button>
       </div>
     </div>
   </template>
@@ -35,7 +35,7 @@
 <script>
   export default {
     name: 'areYouSure',
-    data() {
+    data () {
       return {
         busy: false,
         processing: false,
@@ -43,33 +43,33 @@
         interval: null
       }
     },
-    beforeDestroy() {
+    beforeDestroy () {
       this.clearInterval()
     },
     methods: {
-      clearInterval() {
+      clearInterval () {
         if (this.interval) {
           clearInterval(this.interval)
           this.interval = null
         }
       },
-      onShown() {
+      onShown () {
         // Focus the dialog prompt
         this.$refs.dialog.focus()
       },
-      onHidden() {
+      onHidden () {
         // In this case, we return focus to the submit button
         // You may need to alter this based on your application requirements
         this.$refs.submit.focus()
       },
-      onSubmit() {
+      onSubmit () {
         this.processing = false
         this.busy = true
       },
-      onCancel() {
+      onCancel () {
         this.busy = false
       },
-      onOK() {
+      onOK () {
         this.counter = 1
         this.processing = true
         // Simulate an async request

@@ -16,13 +16,15 @@
               {{ item.name }}
               <b-badge v-show="item.prime" variant="success">Primeur</b-badge>
             </h5>
-            <div >
+            <div>
               <p> Winstmarge: {{item.margin}}% </p>
-              <b-badge class="profitBadge" variant="success" v-bind:class="`${item.profit}`">€ {{item.price}}</b-badge>
+              <b-badge class="profitBadge" v-bind:class="`${item.profit}`" variant="success">€ {{item.price}}</b-badge>
             </div>
           </div>
           <div class="iconHolder">
-            <p>soort</p> <p>allergeen</p>  <p>allergeen</p>
+            <p>soort</p>
+            <p>allergeen</p>
+            <p>allergeen</p>
           </div>
         </b-list-group-item>
       </transition-group>
@@ -162,8 +164,8 @@
         ]
       }
     },
-    methods:{
-      clickEvent: function (item){
+    methods: {
+      clickEvent: function (item) {
         console.log('item', item)
       }
     }
@@ -171,19 +173,22 @@
 </script>
 
 <style lang="scss" scoped>
-  h5,p{
+  h5, p {
     margin: 0;
   }
-  .iconHolder{
+
+  .iconHolder {
     width: 200px;
     display: flex;
     justify-content: space-between;
   }
-  .profitBadge{
+
+  .profitBadge {
     align-self: center;
     margin: 0 0 0 10px;
     padding: 5px;
   }
+
   .dealItems {
     margin: 10px;
   }
@@ -196,6 +201,7 @@
     position: relative;
     overflow: hidden;
   }
+
   .customStyle div {
     display: flex;
   }

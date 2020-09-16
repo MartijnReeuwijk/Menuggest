@@ -50,7 +50,7 @@
         window.print()
         // var printThis =  this.$parent.$children[0].$refs["menukaartPaper"]
       },
-      checkMenu (){},
+      checkMenu () {},
       save: function (data, name) {
         this.$store.commit('createdMenu/saveAlert', true)
         const archive = this.archive

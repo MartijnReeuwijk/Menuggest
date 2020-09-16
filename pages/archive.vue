@@ -12,7 +12,7 @@
             :title="item.message"
             :desc="item.desc"
             :datum="item.datum"
-            :profit="item.profitUserText"
+            :profit="item.profitUserText"b
             :type="item.seizoen"
             :sold="item.sold"
 

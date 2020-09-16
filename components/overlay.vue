@@ -15,13 +15,13 @@
 <script>
   export default {
     name: 'overlay',
-    computed:{
+    computed: {
       showOverlay () {
         return this.$store.state.createdMenu.showOverlay
       }
     },
-    methods:{
-      closeOverlay(){
+    methods: {
+      closeOverlay () {
         this.$store.commit('createdMenu/showOverlay', false)
       },
     }

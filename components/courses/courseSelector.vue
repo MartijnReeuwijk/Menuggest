@@ -9,8 +9,8 @@
 <script>
   export default {
     name: 'courseSelector',
-    computed:{
-      withPlacer (){
+    computed: {
+      withPlacer () {
         return withofItem + 10
       }
     }
@@ -18,18 +18,19 @@
 </script>
 
 <style lang="scss" scoped>
-.courses-nav{
-  z-index: 10;
-  height: 150px;
-  width: 150px;
-  background-color: transparent;
-  position: fixed;
-  right: 320px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-  .courses-nav a{
+  .courses-nav {
+    z-index: 10;
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    position: fixed;
+    right: 320px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .courses-nav a {
     width: 100%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }

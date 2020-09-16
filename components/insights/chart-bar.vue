@@ -11,7 +11,8 @@
 
 <script>
   import { Bar } from 'vue-chartjs'
-  const { reactiveProp } = mixins
+
+  const {reactiveProp} = mixins
 
   export default {
     extends: Bar,
@@ -20,19 +21,18 @@
     mounted () {
       this.renderChart(this.chartdata, this.options)
     },
-    data() {
-      return {
-    }
-    // ,
-    // computed:{
-    //   test: function (){
-    //     const newData = this.$store.state.createdMenu.dataVisualA
-    //     newData.forEach(items => {
-    //       console.log('items', items["FIELD4"])
-    //       this.data.push(items["FIELD4"])
-    //     })
-    //     console.log('newData', newData)
-    //   },
+    data () {
+      return {}
+      // ,
+      // computed:{
+      //   test: function (){
+      //     const newData = this.$store.state.createdMenu.dataVisualA
+      //     newData.forEach(items => {
+      //       console.log('items', items["FIELD4"])
+      //       this.data.push(items["FIELD4"])
+      //     })
+      //     console.log('newData', newData)
+      //   },
     }
   }
 </script>

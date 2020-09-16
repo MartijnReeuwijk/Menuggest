@@ -17,11 +17,6 @@
         </b-navbar-nav>
 
 
-
-
-
-
-
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
@@ -32,17 +27,6 @@
             <b-dropdown-item href="login">Loguit</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
-
-
-
-
-
-
-
-
-
-
-
 
 
       </b-collapse>
@@ -61,7 +45,8 @@
   .nav-item {
     margin: 0 15px;
   }
-  .dropdown-toggle::after{
+
+  .dropdown-toggle::after {
     display: none;
   }
 

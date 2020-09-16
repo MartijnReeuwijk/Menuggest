@@ -6,6 +6,7 @@
 
 <script>
   import Tile from './tile'
+
   export default {
     name: 'ArchiveGrid',
     components: {Tile}

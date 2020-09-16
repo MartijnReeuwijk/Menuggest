@@ -8,7 +8,7 @@
                          class="customStyle card-1 flex-column align-items-start" href="#"
                          v-for="item in filteredData"
       >
-<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
+        <edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
@@ -36,7 +36,7 @@
                          v-for="item in datashow"
                          v-if="item.course === 'appetizer'"
       >
-<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
+        <edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
@@ -63,7 +63,7 @@
                          v-for="item in datashow"
                          v-if="item.course === 'main'"
       >
-<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
+        <edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
           <transition name="fade">
@@ -91,7 +91,7 @@
                          v-for="item in datashow"
                          v-if="item.course === 'after'"
       >
-<edit-icon class="editAble animate" v-show="editAble"></edit-icon>
+        <edit-icon class="editAble animate" v-show="editAble"></edit-icon>
 
         <div class="clickThrough d-flex w-100 justify-content-between ">
 
@@ -130,8 +130,8 @@
 
   export default {
     name: 'menuDataHolder',
-    props:{
-      editAble:false,
+    props: {
+      editAble: false,
     },
     components: {EditIcon},
     data () {
@@ -226,14 +226,17 @@
     /*click whole element*/
     pointer-events: none;
   }
-.editAble{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.editAble:hover{
 
-}
+  .editAble {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .editAble:hover {
+
+  }
+
   .customStyle {
     margin: 5px 0;
     text-transform: capitalize;
@@ -294,9 +297,10 @@
     transition: transform .3s ease-in-out;
   }
 
-  .editAble{
+  .editAble {
 
   }
+
   .editAble:hover {
     animation: rotating .5s ease-in-out;
   }
@@ -309,7 +313,7 @@
     50% {
       transform: rotate(45deg);
     }
-    100%{
+    100% {
       transform: rotate(0);
     }
   }

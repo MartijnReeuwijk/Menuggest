@@ -4,7 +4,7 @@
     <div class="dataElementData">
 
       <ol v-if="Array.isArray(summeryData)">
-        <li v-for="item in summeryData" :key="item.message">
+        <li :key="item.message" v-for="item in summeryData">
           {{ item }}
         </li>
       </ol>
@@ -19,24 +19,24 @@
 <script>
   export default {
     name: 'dataElementData',
-    props:{
-      title:{
+    props: {
+      title: {
         type: String,
-        default:"Data inzicht"
+        default: 'Data inzicht'
       },
-      summeryData:{
-        default:"Data inzicht"
+      summeryData: {
+        default: 'Data inzicht'
       }
     },
     data () {
       return {
-       randomValue: true
+        randomValue: true
       }
     },
 
-    methods:{
-      random(){
-        const a = Math.random() < 0.5;
+    methods: {
+      random () {
+        const a = Math.random() < 0.5
         console.log(a)
         this.randomValue = a
         // return a
@@ -52,13 +52,16 @@
   .success {
     color: var(--success);
   }
+
   .lowProfit {
     color: var(--danger);
   }
-  .biggerText{
+
+  .biggerText {
     font-size: 1.6em;
   }
-  .dataElement{
+
+  .dataElement {
     width: 250px;
     min-height: 125px;
     padding: 10px;
@@ -67,10 +70,12 @@
     background-color: white;
     text-transform: capitalize;
   }
+
   .dataElement p {
     margin: 0;
   }
-  .dataElementData{
+
+  .dataElementData {
     width: 100%;
     height: 100%;
     padding: 10px;
@@ -78,6 +83,7 @@
     display: flex;
     justify-content: space-evenly;
   }
+
   .dataElementData ol {
     padding: 5px;
     margin: 0px;

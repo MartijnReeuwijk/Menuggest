@@ -8,7 +8,7 @@
       this.renderChart(this.data, this.options)
     },
     watch: {
-      data: function() {
+      data: function () {
         // Smooth update ipv rerender
 
         // this.renderChart.destroy();
