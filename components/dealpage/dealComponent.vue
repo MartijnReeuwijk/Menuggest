@@ -22,9 +22,8 @@
             </div>
           </div>
           <div class="iconHolder">
-            <p>soort</p>
-            <p>allergeen</p>
-            <p>allergeen</p>
+            <p>Type: {{item.type}}</p>
+            <p>Leverancier: {{item.supplier}}</p>
           </div>
         </b-list-group-item>
       </transition-group>
@@ -41,6 +40,7 @@
         deal: [
           {
             type: 'rund',
+            supplier:"Sligro",
             name: 'Runderhaas',
             price: 25,
             currency: 'euro',
@@ -49,6 +49,7 @@
           },
           {
             type: 'rund',
+            supplier:"Sligro",
             name: 'muis',
             price: 10,
             currency: 'euro',
@@ -57,6 +58,7 @@
           },
           {
             type: 'rund',
+            supplier:"Makro",
             name: 'Runder muis',
             price: 20,
             currency: 'euro',
@@ -66,6 +68,7 @@
           },
           {
             type: 'rund',
+            supplier:"Sligro",
             name: 'Pianostuk',
             price: 20,
             currency: 'euro',
@@ -75,6 +78,7 @@
           {
             type: 'rund',
             name: 'Flank',
+            supplier:"Sligro",
             price: 30,
             currency: 'euro',
             profit: 'good',
@@ -84,6 +88,7 @@
             type: 'tomaat',
             margin: '5',
             currency: 'euro',
+            supplier:"Bidfood & Sligro",
             name: 'vlees tomaat',
             price: 10,
             profit: 'good'
@@ -92,6 +97,7 @@
             type: 'tomaat',
             margin: '2.5',
             currency: 'euro',
+            supplier:"Bidfood",
             name: 'cherry tomaat',
             price: 13,
             profit: 'avg',
@@ -101,21 +107,24 @@
             type: 'tomaat',
             margin: '0',
             currency: 'euro',
+            supplier:"Bidfood",
             name: 'tross tomaat',
             price: 18,
             profit: 'bad'
           },
           {
-            type: 'groente',
-            margin: '0',
+            type: 'tomaat',
+            margin: '30',
+            supplier:"Bidfood",
             currency: 'euro',
             name: 'tomaat',
             price: 18,
-            profit: 'bad'
+            profit: 'good'
           },
           {
             type: 'Vis',
-            margin: '0',
+            margin: '2',
+            supplier:"Bidfood",
             currency: 'euro',
             name: 'Bot',
             price: 18,
@@ -124,6 +133,7 @@
           {
             type: 'Vis',
             margin: '10',
+            supplier:"Makro",
             currency: 'euro',
             name: 'Forel',
             price: 18,
@@ -132,6 +142,7 @@
           {
             type: 'Vis',
             margin: '2',
+            supplier:"Makro",
             currency: 'euro',
             name: 'Geep',
             price: 18,
@@ -140,6 +151,7 @@
           {
             type: 'gevogelte',
             margin: '12',
+            supplier:"Makro & Sligro",
             currency: 'euro',
             name: 'fazant',
             price: 14,
@@ -148,18 +160,30 @@
           {
             type: 'gevogelte',
             margin: '7',
+            supplier:"Makro & Bidfood",
             currency: 'euro',
             name: 'eend',
+            prime: true,
             price: 23,
             profit: 'good'
           },
           {
             type: 'Sause',
             margin: '200',
+            supplier:"Bidfood",
             currency: 'euro',
             name: 'Pesto',
             price: 10,
             profit: 'good'
+          },
+          {
+            type: 'Sause',
+            margin: '7',
+            currency: 'euro',
+            supplier:"Makro & Bidfood",
+            name: 'Mosterdsauze',
+            price: 2,
+            profit: 'avg'
           }
         ]
       }
@@ -177,10 +201,8 @@
     margin: 0;
   }
 
-  .iconHolder {
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
+  .iconHolder p{
+    margin: 0 7px 0 0;
   }
 
   .profitBadge {
