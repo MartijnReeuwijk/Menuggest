@@ -2,7 +2,7 @@
   {
     "name" : "Eendenborst",
     "profit": "bad",
-    "desc": "Eend",
+    "desc": "zuurkool & aardappelpuree",
     "time": "0,5",
     "luxe": false,
     "vegan": false,
@@ -12,7 +12,7 @@
     "price": 20,
     "currency":"euro",
     "foodType":"eend",
-    "ingredients": ["eend","seizoensgroenten","rode wijnsaus","friet"]
+    "ingredients": ["eend","seizoensgroenten","rode wijnsaus","zuurkool","aardappelpuree","aardappel"]
   },
   {
     "name" : "Tournedos",

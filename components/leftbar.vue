@@ -32,7 +32,7 @@
           </b-card-header>
 
           <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
-            <b-card-body class="ingredientListHolder">
+            <b-card-body class="ingredientListHolder text-capitalize">
               <div class="click" v-for="item in items.subMenu">
                 <b-form-checkbox @change.native="match" :value="item" v-model="search.ingredients">
                   {{item}}
