@@ -1,10 +1,20 @@
 <template>
   <transition name="fade">
-  <div class="alert-fixed" v-show="alert">
-    <b-alert show variant="info">
-        <b-spinner small></b-spinner>
-        <span class="sr-only">Opslaan Opslaan naar de database</span>
-      Opslaan naar de database
+  <div class="alert-fixed" v-show="alert" >
+    <b-alert
+      :show="dismissCountDown"
+      dismissible
+      variant="info"
+      @dismissed="dismissCountDown=0"
+      @dismiss-count-down="countDownChanged"
+    >
+      <p>Opslaan naar de cloud</p>
+      <b-progress
+        variant="info"
+        :max="dismissSecs"
+        :value="dismissCountDown"
+        height="4px"
+      ></b-progress>
     </b-alert>
   </div>
   </transition>
@@ -21,21 +31,28 @@
     },
     computed: {
       alert(){
+        this.showAlert()
         return this.$store.state.createdMenu.saveAlert
       }
     },
-    methods: {
-      countDownChanged(dismissCountDown) {
-        this.dismissCountDown = dismissCountDown
+      methods: {
+        countDownChanged(dismissCountDown) {
+          this.dismissCountDown = dismissCountDown
+          if(this.dismissCountDown === 0){
+              this.$store.commit('createdMenu/saveAlert', false)
+          }
+        },
+        showAlert() {
+          this.dismissCountDown = this.dismissSecs
+        }
       }
-    }
   }
 </script>
 
 <style lang="scss" scoped>
 .alert-fixed{
   position: fixed;
-  width: 250px;
+  width: 300px;
   margin: 0 auto;
   top: 10px;
   left: 0;
