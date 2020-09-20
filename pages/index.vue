@@ -60,6 +60,11 @@
 
   .centerHolder {
     width: 100%;
+    height: 100vh;
+    overflow: scroll;
+  }
+  .centerHolder::-webkit-scrollbar {
+    display: none;
   }
 
 </style>

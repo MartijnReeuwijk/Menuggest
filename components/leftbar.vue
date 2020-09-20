@@ -21,7 +21,7 @@
 
 
       </div>
-
+<div class="overflowFix">
       <b-card class="mb-1" no-body>
         <div v-for="(items, index) in apiListedIngredients">
           <b-card-header class="p-1" header-tag="header" role="tab">
@@ -42,6 +42,7 @@
           </b-collapse>
         </div>
       </b-card>
+</div>
     </b-nav>
   </section>
 </template>
@@ -127,7 +128,13 @@
     background-color: white;
     text-transform: capitalize;
   }
-
+.overflowFix{
+  max-height: 500px;
+  overflow: scroll;
+}
+.overflowFix::-webkit-scrollbar {
+  display: none;
+}
   .title {
     display: block;
     padding: 0 1rem;
