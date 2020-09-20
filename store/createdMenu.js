@@ -17,6 +17,7 @@ export const state = () => ({
   showOverlay:false,
   menuItems:[],
   toolkit:false,
+  searched:false,
   seasons:[],
   suggestionMode:false,
   switchIndex:false,

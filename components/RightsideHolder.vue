@@ -16,7 +16,10 @@
       </transition>
 
       <div class="innerScroll">
-        <menuDataHolder :editAble="editAble">
+        <div v-if="toolkit.searched">
+
+        </div>
+        <menuDataHolder v-else :editAble="editAble">
         </menuDataHolder>
       </div>
     </div>
@@ -48,6 +51,9 @@
     },
     computed: {
       toolkit: function () {
+        return this.$store.state.createdMenu
+      },
+      searched: function () {
         return this.$store.state.createdMenu
       }
     },

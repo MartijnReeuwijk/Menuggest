@@ -28,7 +28,6 @@
       </b-list-group-item>
     </transition-group>
 
-
     <h5>Voorgerechten</h5>
     <transition-group name="list" tag="div">
       <b-list-group-item :key="item.name" @click="clickEvent(item)"
