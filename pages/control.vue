@@ -47,7 +47,5 @@
 </script>
 
 <style>
-  .mainHolderDeluxChangeThislater {
-    overflow: hidden;
-  }
+
 </style>

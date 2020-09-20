@@ -1,6 +1,7 @@
 [
   {
     "name" : "Eendenborst",
+        "prime": true,
     "profit": "bad",
     "desc": "zuurkool & aardappelpuree",
     "time": "0,5",
@@ -16,6 +17,7 @@
   },
   {
     "name" : "Tournedos",
+        "prime": false,
     "profit": "good",
     "desc": "tournedos,zachtste gedeelte van de haas & bearnaisesaus",
     "time": "0,5",
@@ -31,6 +33,7 @@
   },
   {
     "name" : "Runder-ribeye 350 gram",
+        "prime": false,
     "profit": "good",
     "desc": "voor de vleesliefhebber 350 gram van de grill met pepersaus",
     "time": "0,5",
@@ -46,6 +49,7 @@
   },
   {
     "name" : "seizoensgroenten",
+        "prime": false,
     "profit": "good",
     "desc": "",
     "time": "0,5",
@@ -61,6 +65,7 @@
   },
   {
     "name" : "carpaccio",
+        "prime": true,
     "profit": "bad",
     "desc": "van dun gesneden ossenhaas met pesto, rucola en olijfjes",
     "time": "0,5",
@@ -76,6 +81,7 @@
   },
   {
     "name" : "Zalmfilet",
+        "prime": false,
     "profit": "good",
     "desc": "op de huid gebakken met saus van mosterd & basilicum",
     "time": "0,5",
@@ -91,6 +97,7 @@
   },
   {
     "name" : "visgroenten",
+        "prime": false,
     "profit": "good",
     "desc": "",
     "time": "0,5",
@@ -106,6 +113,7 @@
   },
   {
     "name" : "runderribeye",
+        "prime": false,
     "profit": "good",
     "desc": "",
     "time": "0,5",
@@ -121,6 +129,7 @@
   },
   {
     "name" : "pepersaus",
+        "prime": false,
     "profit": "good",
     "desc": "",
     "time": "0,5",
@@ -136,6 +145,7 @@
   },
   {
     "name" : "uiensoep",
+        "prime": false,
     "profit": "avg",
     "desc": "Uiensoep met een kaasdakje",
     "time": "0,5",
@@ -151,6 +161,7 @@
   },
   {
     "name" : "pesto",
+        "prime": false,
     "profit": "avg",
     "desc": "",
     "time": "0,5",
@@ -166,6 +177,7 @@
   },
   {
     "name" : "Italiaans dessert",
+        "prime": false,
     "profit": "good",
     "desc": "Italiaans dessert",
     "time": "0,5",
@@ -181,6 +193,7 @@
   },
   {
     "name" : "Garnalenkroketjes",
+        "prime": false,
     "profit": "avg",
     "desc": "drie stukjes met selderijsalade & cocktailsaus",
     "time": "0,5",
@@ -196,6 +209,7 @@
   },
   {
     "name" : "Meierij proefplankje",
+        "prime": true,
     "profit": "good",
     "desc": "spinata romana, truffelsalami, dagsoepje, kroketje, chorizo & parmaham",
     "time": "0,5",
@@ -211,6 +225,7 @@
   },
   {
     "name" : "Champignons",
+        "prime": false,
     "profit": "avg",
     "desc": "gevuld met gekruid gehakt & gegratineerd met kaas",
     "time": "0,5",
@@ -226,6 +241,7 @@
   },
   {
     "name" : "Salade  gerookte zalm",
+        "prime": false,
     "profit": "avg",
     "desc": "gevuld met gekruid gehakt & gegratineerd met kaas",
     "time": "0,5",
@@ -241,6 +257,7 @@
   },
   {
     "name" : "Lamsfilet",
+        "prime": false,
     "profit": "good",
     "desc": "seizoensgroenten en een saus van rode wijn, knoflook & tijm",
     "time": "0,5",
@@ -256,6 +273,7 @@
   },
   {
     "name" : "Saté van varkenshaas",
+        "prime": false,
     "profit": "good",
     "desc": "met pittige pindasaus en cassave",
     "time": "0,5",
@@ -271,6 +289,7 @@
   },
   {
     "name" : "Vis van de markt.",
+        "prime": false,
     "profit": "good",
     "desc": "met pittige pindasaus en cassave",
     "time": "0,5",
@@ -298,6 +317,7 @@
   },
   {
     "name" : "Rode curry",
+        "prime": false,
     "profit": "good",
     "desc": "diverse groenten  kip of tofu in kokosmelk en thaise kruiden",
     "time": "0,5",
@@ -313,6 +333,7 @@
   },
   {
     "name" : "Chocolade lava taartje",
+        "prime": false,
     "profit": "good",
     "desc": "(warm) met vanille roomijs",
     "time": "0,5",
@@ -328,6 +349,7 @@
   },
   {
     "name" : "IJsmacaron",
+        "prime": true,
     "profit": "good",
     "desc": "met vulling van mango & passiefruit",
     "time": "0,5",

@@ -52,8 +52,18 @@
           {value: 'Maart', text: 'Maart'},
           {value: 'April', text: 'April'},
           {value: 'Mei', text: 'Mei'},
+          {value: 'Juni', text: 'Juni'},
+          {value: 'Juli', text: 'Juli'},
+          {value: 'Augustus', text: 'Augustus'},
+          {value: 'September', text: 'September'},
+          {value: 'Oktober', text: 'Oktober'},
+          {value: 'November', text: 'November'},
+          {value: 'December', text: 'December'},
+          {value: 'Asperges', text: 'Asperges'},
           {value: 'Kerst', text: 'Kerst'},
-          {value: 'Asperges', text: 'Asperges'}
+          {value: 'Lam', text: 'Lam'},
+          {value: 'Kreeft', text: 'Kreeft'},
+
         ]
       }
     },

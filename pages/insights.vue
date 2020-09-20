@@ -202,7 +202,7 @@
         }
         this.totalProductsSold = Math.floor(Math.random() * (10000 - 3500) + 3500)
         this.$store.commit('createdMenu/dataVisualUseable', usefulldata)
-        
+
         this.makeDon(this.defaultSelected)
         this.populairDish()
         this.highSaleRate()

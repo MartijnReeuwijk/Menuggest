@@ -16,6 +16,17 @@
         <p>Soort</p>
       </b-button>
 
+      <b-button @click="suggesties" variant="light">
+        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-bullseye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+          <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+          <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+        </svg>
+        <p>Suggesties</p>
+      </b-button>
+
+
       <b-button @click="tool_kit" variant="light">
         <svg class="bi bi-search" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +75,10 @@
       tool_kit () {
         this.$store.commit('createdMenu/switchToolKit')
       },
-      filterMenuData: function () {
+      suggesties (){
+        this.$store.commit('createdMenu/switchIndex', true)
+      },
+      filterMenuData () {
         const data = this.$store.state.createdMenu.menuItems
 
         // Dit is onhandig veel

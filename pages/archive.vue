@@ -64,10 +64,7 @@
 </script>
 
 <style>
-  .mainHolderDeluxChangeThislater {
-    overflow: hidden;
-    height: 100vh;
-  }
+
   .overlayHolder{
     position: fixed;
     width: 100%;

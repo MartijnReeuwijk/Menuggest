@@ -63,10 +63,7 @@
 </script>
 
 <style>
-  .mainHolderDeluxChangeThislater {
-    height: 100vh;
-    overflow: hidden;
-  }
+
   @media print {
     body * {
       visibility: hidden;
