@@ -80,11 +80,11 @@
       <section class="right DataHolder">
         <div class="titleHolder d-flex flex-row">
           <p>Data breakdown:</p>
-          <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2 test">
-            <b-dropdown-item>Bar chart</b-dropdown-item>
-            <b-dropdown-item>Line chart</b-dropdown-item>
-            <b-dropdown-item>Donought chart</b-dropdown-item>
-          </b-dropdown>
+<!--          <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2 test">-->
+<!--            <b-dropdown-item>Bar chart</b-dropdown-item>-->
+<!--            <b-dropdown-item>Line chart</b-dropdown-item>-->
+<!--            <b-dropdown-item>Donought chart</b-dropdown-item>-->
+<!--          </b-dropdown>-->
         </div>
         <div class="dataVisualHolder">
           <client-only>
