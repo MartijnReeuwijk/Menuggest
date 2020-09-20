@@ -6,7 +6,7 @@
     </template>
     <b-card-text>{{desc}}</b-card-text>
     <div class="betterSpace">
-      <b-button variant="primary">Menu inzien</b-button>
+      <b-button href="/menuArchive" variant="primary">Menu inzien</b-button>
       <b-button @click="deleteItem" variant="light">Delete</b-button>
     </div>
     <template v-slot:footer>
