@@ -14,6 +14,7 @@ export const state = () => ({
       after:[],
     }
   ,
+  showOverlay:false,
   menuItems:[],
   toolkit:false,
   seasons:[],
@@ -37,6 +38,9 @@ export const mutations = {
     state.menu.after.push(item)
   },
 
+  showOverlay(state, item){
+    state.showOverlay = item
+  },
   menuItemsToevoegen(state, item){
     state.menuItems.unshift(item)
   },

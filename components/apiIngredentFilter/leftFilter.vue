@@ -15,7 +15,7 @@
         </svg>
         <p>Soort</p>
       </b-button>
-<!--Dit kan allemaal in slots en parts maar is vel werk-->
+      <!--Dit kan allemaal in slots en parts maar is vel werk-->
       <b-button variant="light">
         <svg class="bi bi-search" fill="currentColor" height="1.5em" viewBox="0 0 16 16" width="1.5em"
              xmlns="http://www.w3.org/2000/svg">
@@ -47,8 +47,7 @@
   export default {
     name: 'leftfilter',
     components: {},
-    methods: {
-    }
+    methods: {}
   }
 </script>
 

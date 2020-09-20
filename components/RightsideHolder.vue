@@ -35,7 +35,7 @@
       return {}
     },
     props: {
-      editAble:{
+      editAble: {
         Type: Boolean,
         default: false
       },

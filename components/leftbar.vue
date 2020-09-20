@@ -9,11 +9,11 @@
         <leftfilter></leftfilter>
 
         <div class="buttonHolder">
-          <b-button block variant="primary" class="text-capitalize">
+          <b-button block class="text-capitalize" variant="primary">
             gerecht zoeken
           </b-button>
 
-          <b-button block @click="reset" variant="danger" class="text-capitalize">
+          <b-button @click="reset" block class="text-capitalize" variant="danger">
             Reset
           </b-button>
         </div>
@@ -32,9 +32,9 @@
           </b-card-header>
 
           <b-collapse :id="'accordion-' + index" accordion="my-accordion" role="tabpanel">
-            <b-card-body class="ingredientListHolder">
+            <b-card-body class="ingredientListHolder text-capitalize">
               <div class="click" v-for="item in items.subMenu">
-                <b-form-checkbox @change.native="match" :value="item" v-model="search.ingredients">
+                <b-form-checkbox :value="item" @change.native="match" v-model="search.ingredients">
                   {{item}}
                 </b-form-checkbox>
               </div>
@@ -54,11 +54,11 @@
     name: 'leftbar',
     data () {
       return {
-        preFilter:[],
+        preFilter: [],
         ingredientsList: ingredients,
         apiListedIngredients: [],
-        search:{
-          ingredients:[]
+        search: {
+          ingredients: []
         }
       }
     },
@@ -68,7 +68,7 @@
         default: null
       },
     },
-    components:{
+    components: {
       Leftfilter
     },
     mounted () {
@@ -78,39 +78,29 @@
         this.apiListedIngredients.push(items)
       })
     },
-    methods:{
-      reset(){
+    methods: {
+      reset () {
 
       },
-      match(){
+      match () {
         const preFilter = this.preFilter
         const selectedIngredient = this.search.ingredients
         let containsSelected = []
-
-        if (selectedIngredient.length > 0){
-
-          preFilter.forEach(item =>{
-            item.ingredients.forEach(ingredientsArray =>{
+        // Ingredenten match alles naar lowercase zo dat de user fouten niet uitmaken
+        if (selectedIngredient.length > 0) {
+          preFilter.forEach(item => {
+            item.ingredients.forEach(ingredientsArray => {
               selectedIngredient.forEach(selectedIngredientCheck => {
-                const lowerCase = selectedIngredientCheck.toLowerCase()
-                const uppercase = selectedIngredientCheck.toUpperCase()
-                const capitalize = selectedIngredientCheck.charAt(0).toUpperCase() + selectedIngredientCheck.slice(1)
-
+                const lowerCase = ingredientsArray.toLowerCase()
+                const lowerCaseSelected = selectedIngredientCheck.toLowerCase()
                 // Dit moet omdat ik niet de API van de makro of sligro bestuur of heb
                 // Anders had ik dit op die API geplaatst en altijd Lowercase terug gegeven
-                // Waarom werkt dit niet lekker
-
-                if(ingredientsArray.includes(
-                  (lowerCase) || (uppercase) || (capitalize)
-                )){
-
+                if (lowerCase === lowerCaseSelected) {
                   containsSelected.push(item)
-                } else{
+                } else {
                   return false
                 }
-
               })
-
             })
           })
           // if(containsSelected.length == 0){
@@ -119,8 +109,7 @@
           //   }]
           // }
           this.$store.commit('createdMenu/addMenucardItem', containsSelected)
-        }
-        else {
+        } else {
           console.log('preFilter', preFilter)
           this.$store.commit('createdMenu/addMenucardItem', preFilter)
         }
@@ -144,23 +133,28 @@
     padding: 0 1rem;
     margin: 0;
   }
-  .titelHolder{
+
+  .titelHolder {
     margin-bottom: 5px;
     /*<!--box-shadow: 0 4px 2px -2px gray;-->*/
-    box-shadow:  0 4px 2px -2px rgba(0, 0, 0, 0.12),
-     0 4px 2px -2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.12),
+    0 4px 2px -2px rgba(0, 0, 0, 0.24);
   }
+
   .titelHolder h2 {
     text-align: center;
   }
-  .buttonHolder{
+
+  .buttonHolder {
     width: 100%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
-  .buttonHolder button{
+
+  .buttonHolder button {
     margin: 5px;
   }
+
   .sideMenuDeals {
     width: 100%;
     max-width: 300px;
@@ -175,7 +169,8 @@
     position: absolute;
     bottom: 5px;
   }
-  .custom-control{
+
+  .custom-control {
     cursor: pointer;
 
   }

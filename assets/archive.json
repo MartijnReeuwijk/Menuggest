@@ -1,10 +1,13 @@
   [
     {
       "id":1,
+      "sold": 830,
       "profit":"good",
       "profitUserText":"Hoge verkoopcijfers",
-      "message": "Menukaart - Maart 2020",
-      "desc":"Menukaart van maart we hebben en extra terras",
+      "seizoen":"Wild seizoen",
+      "message": "Menukaart - Wild 2020",
+      "desc":"Wild kaart met nieuw recept voor hert",
+      "datum": "1-8-2020",
       "options":[
         {
           "id":1,
@@ -69,10 +72,12 @@
     },
     {
       "id":2,
+      "sold": 1218,
       "profit":"good",
       "profitUserText":"Hoge verkoopcijfers",
-      "message": "Menukaart - Wild 2020",
-      "desc":"Wild kaart met nieuw recept voor hert",
+      "message": "Menukaart - Maart 2020",
+      "desc":"Menukaart van maart we hebben en extra terras",
+      "datum": "12-3-2020",
       "options":[
         {
           "id":1,
@@ -137,12 +142,14 @@
     },
     {
       "id":3,
+      "sold": 1821,
       "profit":"good",
       "profitUserText":"Hoge verkoopcijfers",
       "seizoen":"Asperges seizoen",
       "message": "Menukaart - Asperges 2019",
       "desc":"Asperges menu",
-          "options":[
+      "datum": "29-4-2019",
+      "options":[
         {
           "id":1,
           "profit":"good",
@@ -208,11 +215,13 @@
     },
     {
       "id":4,
+      "sold": 900,
       "profit":"avg",
       "message": "Menukaart - April 2020",
       "profitUserText":"Gemiddelde verkoop",
-      "desc":"",
-          "options":[
+      "desc":"De menukaart voor april 2020, deze maand hebben we een nieuwe slager voor de tournedos",
+      "datum": "29-4-2020",
+      "options":[
         {
           "id":1,
           "profit":"good",
@@ -278,12 +287,14 @@
     },
     {
       "id":5,
-      "profit":"bad",
+      "sold": 2320,
+      "profit":"good",
       "profitUserText":"Lage verkoop verander misshien wat gerechten of doe anderen inkoop",
       "message": "Menukaart - Kerst 2019",
+      "seizoen":"Kerst",
       "desc":"Kerst menu",
-
-       "options":[
+      "datum": "1-11-2019",
+      "options":[
         {
           "id":1,
           "profit":"good",
@@ -348,11 +359,226 @@
    },
     {
       "id":6,
+      "sold": 1320,
       "profit":"Good",
       "profitUserText":"Hoge verkoopcijfers",
+      "message": "Menukaart - Augustus 2018",
+      "desc":"Augustus menukaart, we doen van af nu geen inkoop meer bij Bidfood",
+      "datum": "29-7-2018",
+      "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Kerst kalkoen",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Kalkoen met kip en groente"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Tonijn",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "bad",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van kip",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "warning",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Gebakken met een saus van champion"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+    },
+    {
+      "id":7,
+      "sold": 842,
+      "profit":"avg",
+      "profitUserText":"Lage verkoopcijfers",
+      "seizoen":"Lam seizoen",
+      "message": "Menukaart - Mei 2018",
+      "desc":"Deze periode hadden we lam op het menu, en een redelijke prijs deal op kunnen krijgen",
+      "datum": "2-2-2018",
+      "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Kerst kalkoen",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Kalkoen met kip en groente"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Tonijn",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "bad",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van kip",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "warning",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Gebakken met een saus van champion"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+    },
+    {
+      "id":8,
+      "sold": 629,
+      "profit":"bad",
+      "profitUserText":"Lage verkoopcijfers",
+      "message": "Menukaart - Maart  2018",
+      "desc":"Kerst menu eerte jaar met de nieuwe opstelling",
+      "datum": "4-3-2018",
+      "options":[
+        {
+          "id":1,
+          "profit":"good",
+          "message": "Kerst kalkoen",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Kalkoen met kip en groente"
+        },
+        {
+          "id":2,
+          "profit":"good",
+          "message": "Tonijn",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc": "Tonijn op de huid gebakken met sause van mosterd en basilicum"
+        },
+        {
+          "id":3,
+          "profit":"good",
+          "message": "Eendenborst",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "bad",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Zuurkool en aardappelpuree"
+        },
+        {
+          "id":4,
+          "profit":"avg",
+          "message": "Sate van kip",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "warning",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"Gebakken met een saus van champion"
+        },
+        {
+          "id":5,
+          "profit":"bad",
+          "message": "sate van varkenshaas",
+          "profitInsight":{
+            "title": "Winst inzicht",
+            "messageType": "good",
+            "content": "Deze dit gerecht tekiezen heeft u €120 bespaart"
+          },
+
+          "desc":"rose gebakken met een saus van gorgonzolakaas"
+        }
+      ]
+    },
+    {
+      "id":9,
+      "sold": 1792,
+      "profit":"good",
+      "profitUserText":"Lage verkoopcijfers",
       "message": "Menukaart - Kerst 2018",
       "desc":"Kerst menu eerte jaar met de nieuwe opstelling",
-
+      "datum": "29-10-2018",
       "options":[
         {
           "id":1,
@@ -416,4 +642,7 @@
         }
       ]
     }
+
+
+
   ]

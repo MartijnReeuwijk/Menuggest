@@ -2,7 +2,7 @@
   <div class="mainHolderDeluxChangeThislater">
     <navigationBar title="Menuggest">
     </navigationBar>
-
+<alert></alert>
     <menuBased
       title="Menukaart maken"
       >
@@ -17,6 +17,7 @@
   import navigationBar from '../components/navigationBar'
   import menuBased from '../components/menuBased'
   import myFile from '../assets/menukaart.json'
+  import Alert from '../components/alert'
 
   export default {
     data () {
@@ -28,6 +29,7 @@
       }
     },
     components: {
+      Alert,
       navigationBar,
       menuBased
     },
@@ -43,10 +45,7 @@
 </script>
 
 <style>
-  .mainHolderDeluxChangeThislater {
-    height: 100vh;
-    overflow: hidden;
-  }
+
   @media print {
     body * {
       visibility: hidden;

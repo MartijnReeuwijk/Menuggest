@@ -50,8 +50,9 @@
         window.print()
         // var printThis =  this.$parent.$children[0].$refs["menukaartPaper"]
       },
-      checkMenu (){},
+      checkMenu () {},
       save: function (data, name) {
+        this.$store.commit('createdMenu/saveAlert', true)
         const archive = this.archive
         const menuToArchive = {
           id: Math.floor(Math.random() * 10000),
@@ -65,7 +66,7 @@
       },
       checkData: function () {
         const data = this.$store.state.createdMenu.createdMenu
-        const downloadAllowed = false
+        const downloadAllowed = true
         //TODO: Deze prefix stuff verbeteren
         // Get prefix voor errors of dat de user het vergeet
         const date = new Date()
