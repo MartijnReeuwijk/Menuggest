@@ -18,7 +18,7 @@
     <section class="centerDataHolder">
       <section class="left DataHolder">
         <div class="titleHolder">
-          <p>Overzicht:</p>
+          <p>Overzicht: <em>10-2-2020 tot 23-4-2020</em> </p>
         </div>
         <b-card no-body>
           <b-tabs card>

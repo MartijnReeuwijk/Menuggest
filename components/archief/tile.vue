@@ -2,7 +2,7 @@
   <b-card :title=title footer-tag="footer" header-tag="header">
     <template v-slot:header>
       <h6 class="mb-0">{{type}}</h6>
-      <h6 class="mb-0">Verkocht: {{sold}}</h6>
+      <h6 class="mb-0">Items verkocht: {{sold}}</h6>
     </template>
     <b-card-text>{{desc}}</b-card-text>
     <div class="betterSpace">
