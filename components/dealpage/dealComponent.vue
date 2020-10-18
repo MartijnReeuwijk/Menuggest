@@ -1,6 +1,6 @@
 <template>
   <section class="dealItems">
-    <b-form-group id="input-group-2" class="deallistFilter" label="Zoek leverancier data" label-for="input-2">
+    <b-form-group id="input-group-2" class="deallistFilter" label="Zoek door leverancier data" label-for="input-2">
       <div class="buttonHandeler">
         <b-form-input
           id="input-2"
@@ -236,9 +236,17 @@
       },
         filterSearch () {
           const data = this.deal
+          const filter = this.form.name.toLowerCase()
           const newDataArray = []
           data.filter(item => {
-            if (item.name.toLowerCase().indexOf(this.form.name.toLowerCase()) > -1 || item.supplier.toLowerCase().indexOf(this.form.name.toLowerCase()) > -1) {
+            if (
+              item.name.toLowerCase().indexOf(filter) > -1
+              || item.supplier.toLowerCase().indexOf(filter) > -1
+              || item.type.toLowerCase().indexOf(filter) > -1
+              || item.margin.toLowerCase().indexOf(filter) > -1
+              || item.amount.toLowerCase().indexOf(filter) > -1
+
+            ) {
               newDataArray.unshift(item)
             } else {
               newDataArray.push(item)
