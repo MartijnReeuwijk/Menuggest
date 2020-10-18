@@ -28,7 +28,6 @@
             newDataArray.push(item)
           }
         })
-        console.log('filteredData', newDataArray)
         this.$store.commit('createdMenu/addMenucardItem', newDataArray)
       }
     }

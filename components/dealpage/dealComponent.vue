@@ -5,20 +5,18 @@
         <b-form-input
           id="input-2"
           v-model="form.name"
+          @change="filterSearch"
           required
           placeholder="Zoeken"
         >
         </b-form-input>
-        <b-button variant="info">
+        <b-button variant="info" onclick.native="filterSearch">
           Zoeken
         </b-button>
       </div>
-
     </b-form-group>
 
     <b-list-group>
-      <!--  Active moet met var  -->
-      <!-- De transision moet van buiten het scherm komen -->
       <transition-group name="list" tag="div">
         <b-list-group-item
           :key="item.name"
@@ -235,8 +233,21 @@
     },
     methods: {
       clickEvent: function (item) {
-        console.log('item', item)
-      }
+      },
+        filterSearch () {
+          const data = this.deal
+          const newDataArray = []
+          data.filter(item => {
+            if (item.name.toLowerCase().indexOf(this.form.name.toLowerCase()) > -1) {
+              newDataArray.unshift(item)
+            } else {
+              newDataArray.push(item)
+            }
+          })
+          this.deal = newDataArray
+        }
+
+
     }
   }
 </script>
