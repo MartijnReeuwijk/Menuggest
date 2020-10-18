@@ -196,7 +196,7 @@
         foods: [{
           text: 'Opties',
           value: null
-        }, 'Soep','Rund', 'Zalm', 'Tonijn', 'Lam', 'Kalf', 'Varken', 'Schaap', 'Schol', 'Tong', 'Bot', 'Tarbot', 'Kreeft', 'Krab', 'Schaaldier', 'Overig'],
+        }, 'Soep','Pasta','Rund', 'Zalm', 'Tonijn', 'Lam', 'Kalf', 'Varken', 'Schaap', 'Schol', 'Tong', 'Bot', 'Tarbot', 'Kreeft', 'Krab', 'Schaaldier', 'Overig'],
         seasons: [{text: 'N.v.t', value: null}],
         coursed:[
           { value: null, text: 'N.v.t' },

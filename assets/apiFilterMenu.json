@@ -125,6 +125,26 @@
     ]
   },
   {
+    "mainMenu": "Pasta",
+    "subMenu": [
+      "Farfalle",
+      "Fusilli",
+      "Macaroni",
+      "Penne",
+      "Rigatoni",
+      "Orecchiette",
+      "Gnocchi",
+      "Lasagne",
+      "Maltagliati",
+      "Ravioli",
+      "Spaghetti",
+      "Strozzapreti",
+      "Tagliatelle",
+      "Tortellini"
+    ]
+  },
+
+  {
     "mainMenu": "groente",
     "subMenu": [
       "aardaker",
