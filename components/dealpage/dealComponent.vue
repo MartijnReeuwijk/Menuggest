@@ -238,7 +238,7 @@
           const data = this.deal
           const newDataArray = []
           data.filter(item => {
-            if (item.name.toLowerCase().indexOf(this.form.name.toLowerCase()) > -1) {
+            if (item.name.toLowerCase().indexOf(this.form.name.toLowerCase()) > -1 || item.supplier.toLowerCase().indexOf(this.form.name.toLowerCase()) > -1) {
               newDataArray.unshift(item)
             } else {
               newDataArray.push(item)
