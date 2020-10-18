@@ -127,7 +127,7 @@
     text-transform: capitalize;
   }
 .overflowFix{
-  max-height: 500px;
+  max-height: calc(100vh - 290px);
   overflow: scroll;
 }
 .overflowFix::-webkit-scrollbar {
