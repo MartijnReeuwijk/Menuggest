@@ -28,6 +28,7 @@
       </b-list-group-item>
     </transition-group>
 
+    <div v-if="datashow.length != 0">
     <h5>Voorgerechten</h5>
     <transition-group name="list" tag="div">
       <b-list-group-item :key="item.name" @click="clickEvent(item)"
@@ -82,7 +83,6 @@
       </b-list-group-item>
     </transition-group>
 
-
     <h5>Nagerechten</h5>
     <transition-group name="list" tag="div">
       <b-list-group-item :key="item.name" @click="clickEvent(item)"
@@ -111,6 +111,7 @@
       </b-list-group-item>
     </transition-group>
 
+    </div>
 
     <div class="noResults" v-if="datashow.length === 0">
       <h3>Geen resultaat</h3>

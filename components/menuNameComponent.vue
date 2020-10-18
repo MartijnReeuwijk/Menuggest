@@ -59,11 +59,15 @@
           {value: 'Oktober', text: 'Oktober'},
           {value: 'November', text: 'November'},
           {value: 'December', text: 'December'},
+          {value: 'Lente', text: 'Lente'},
+          {value: 'Zomer', text: 'Zomer'},
+          {value: 'Herfst', text: 'Herfst'},
+          {value: 'Winter', text: 'Winter'},
           {value: 'Asperges', text: 'Asperges'},
           {value: 'Kerst', text: 'Kerst'},
           {value: 'Lam', text: 'Lam'},
           {value: 'Kreeft', text: 'Kreeft'},
-
+          {value: 'Wild', text: 'Wild'}
         ]
       }
     },

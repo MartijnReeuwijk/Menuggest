@@ -1,8 +1,22 @@
 <template>
   <section class="dealItems">
+    <b-form-group id="input-group-2" class="deallistFilter" label="Zoek door leverancier data" label-for="input-2">
+      <div class="buttonHandeler">
+        <b-form-input
+          id="input-2"
+          v-model="form.name"
+          @change="filterSearch"
+          required
+          placeholder="Zoeken"
+        >
+        </b-form-input>
+        <b-button variant="info" onclick.native="filterSearch">
+          Zoeken
+        </b-button>
+      </div>
+    </b-form-group>
+
     <b-list-group>
-      <!--  Active moet met var  -->
-      <!-- De transision moet van buiten het scherm komen -->
       <transition-group name="list" tag="div">
         <b-list-group-item
           :key="item.name"
@@ -12,19 +26,29 @@
 
           <div class=" d-flex justify-content-between">
             <div class="profit-colour" v-bind:class="`${item.profit}`"></div>
-            <h5>
-              {{ item.name }}
-              <b-badge v-show="item.prime" variant="success">Primeur</b-badge>
-            </h5>
-            <div>
-              <p> Winstmarge: {{item.margin}}% </p>
-              <b-badge class="profitBadge" v-bind:class="`${item.profit}`" variant="success">€ {{item.price}}</b-badge>
+
+            <div class="iconHolder">
+              <h5>
+                {{ item.name }}
+                <b-badge v-show="item.prime" variant="success">Primeur</b-badge>
+              </h5>
+              <div>
+              <p>Type: {{item.type}}</p>
+              <p>Leverancier: {{item.supplier}}</p>
+              </div>
+            </div>
+
+
+
+            <div class="iconHolderMargin">
+              <b-badge class="profitBadge larger" v-bind:class="`${item.profit}`" variant="success">€ {{item.price}}</b-badge>
+              <p> Marge: {{item.margin}}%
+              </p>
+              <p>Gewicht: {{item.amount}}G</p>
             </div>
           </div>
-          <div class="iconHolder">
-            <p>Type: {{item.type}}</p>
-            <p>Leverancier: {{item.supplier}}</p>
-          </div>
+
+
         </b-list-group-item>
       </transition-group>
     </b-list-group>
@@ -37,6 +61,9 @@
     name: 'dealComponent',
     data () {
       return {
+        form: {
+          name: '',
+        },
         deal: [
           {
             type: 'rund',
@@ -45,6 +72,7 @@
             price: 25,
             currency: 'euro',
             profit: 'good',
+            amount:'500',
             margin: '5'
           },
           {
@@ -54,6 +82,7 @@
             price: 10,
             currency: 'euro',
             profit: 'good',
+            amount:'500',
             margin: '4'
           },
           {
@@ -64,6 +93,7 @@
             currency: 'euro',
             profit: 'bad',
             margin: '0.5',
+            amount:'500',
             prime: true,
           },
           {
@@ -73,6 +103,7 @@
             price: 20,
             currency: 'euro',
             profit: 'bad',
+            amount:'500',
             margin: '0.5'
           },
           {
@@ -82,6 +113,7 @@
             price: 30,
             currency: 'euro',
             profit: 'good',
+            amount:'500',
             margin: '5'
           },
           {
@@ -91,7 +123,8 @@
             supplier:"Bidfood & Sligro",
             name: 'vlees tomaat',
             price: 10,
-            profit: 'good'
+            profit: 'good',
+            amount:'1000',
           },
           {
             type: 'tomaat',
@@ -101,6 +134,7 @@
             name: 'cherry tomaat',
             price: 13,
             profit: 'avg',
+            amount:'1000',
             prime: true,
           },
           {
@@ -110,6 +144,7 @@
             supplier:"Bidfood",
             name: 'tross tomaat',
             price: 18,
+            amount:'1000',
             profit: 'bad'
           },
           {
@@ -119,7 +154,8 @@
             currency: 'euro',
             name: 'tomaat',
             price: 18,
-            profit: 'good'
+            profit: 'good',
+            amount:'1000',
           },
           {
             type: 'Vis',
@@ -128,7 +164,8 @@
             currency: 'euro',
             name: 'Bot',
             price: 18,
-            profit: 'bad'
+            profit: 'bad',
+            amount:'2000'
           },
           {
             type: 'Vis',
@@ -137,7 +174,8 @@
             currency: 'euro',
             name: 'Forel',
             price: 18,
-            profit: 'good'
+            profit: 'good',
+            amount:'2000',
           },
           {
             type: 'Vis',
@@ -146,7 +184,8 @@
             currency: 'euro',
             name: 'Geep',
             price: 18,
-            profit: 'bad'
+            profit: 'bad',
+            amount:'500'
           },
           {
             type: 'gevogelte',
@@ -155,7 +194,8 @@
             currency: 'euro',
             name: 'fazant',
             price: 14,
-            profit: 'good'
+            profit: 'good',
+            amount:'500',
           },
           {
             type: 'gevogelte',
@@ -165,7 +205,8 @@
             name: 'eend',
             prime: true,
             price: 23,
-            profit: 'good'
+            profit: 'good',
+            amount:'500',
           },
           {
             type: 'Sause',
@@ -174,8 +215,9 @@
             currency: 'euro',
             name: 'Pesto',
             price: 10,
-            profit: 'good'
-          },
+            profit: 'good',
+
+            amount:'500',          },
           {
             type: 'Sause',
             margin: '7',
@@ -183,15 +225,37 @@
             supplier:"Makro & Bidfood",
             name: 'Mosterdsauze',
             price: 2,
-            profit: 'avg'
+            profit: 'avg',
+            amount:'500'
           }
         ]
       }
     },
     methods: {
       clickEvent: function (item) {
-        console.log('item', item)
-      }
+      },
+        filterSearch () {
+          const data = this.deal
+          const filter = this.form.name.toLowerCase()
+          const newDataArray = []
+          data.filter(item => {
+            if (
+              item.name.toLowerCase().indexOf(filter) > -1
+              || item.supplier.toLowerCase().indexOf(filter) > -1
+              || item.type.toLowerCase().indexOf(filter) > -1
+              || item.margin.toLowerCase().indexOf(filter) > -1
+              || item.amount.toLowerCase().indexOf(filter) > -1
+
+            ) {
+              newDataArray.unshift(item)
+            } else {
+              newDataArray.push(item)
+            }
+          })
+          this.deal = newDataArray
+        }
+
+
     }
   }
 </script>
@@ -200,7 +264,26 @@
   h5, p {
     margin: 0;
   }
+  .buttonHandeler{
+    display: flex;
+  }
+  .form-control{
+    width: calc(100% - 100px);
+  }
+  .btn{
+    width: 90px;
+    margin: 0 0 0 10px;
+  }
+  .iconHolderMargin{
+    text-align: right;
+  }
 
+  .deallistFilter{
+    background-color: white;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 0;
+  }
   .iconHolder p{
     margin: 0 7px 0 0;
   }
@@ -208,7 +291,8 @@
   .profitBadge {
     align-self: center;
     margin: 0 0 0 10px;
-    padding: 5px;
+    padding: 7px;
+    font-size: 12px;
   }
 
   .dealItems {
@@ -224,9 +308,6 @@
     overflow: hidden;
   }
 
-  .customStyle div {
-    display: flex;
-  }
 
   .card-1 {
     margin: 10px 0;

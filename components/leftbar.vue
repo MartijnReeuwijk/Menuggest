@@ -111,10 +111,8 @@
           // }
           this.$store.commit('createdMenu/addMenucardItem', containsSelected)
         } else {
-          console.log('preFilter', preFilter)
           this.$store.commit('createdMenu/addMenucardItem', preFilter)
         }
-        console.log('containsSelected', containsSelected)
       }
     }
   }
