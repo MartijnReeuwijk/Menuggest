@@ -72,8 +72,8 @@
                   </div>
 
                   <div class="extraPadding">
-                    <b-input-group prepend="€" size="md">
-                      <b-form-input placeholder="Geschate omzet" type="number" v-model="form.userAssignedProfit">
+                    <b-input-group prepend="%" size="md">
+                      <b-form-input placeholder="Bruto winst marge" type="number" v-model="form.userAssignedProfit">
                       </b-form-input>
                     </b-input-group>
                   </div>
@@ -119,7 +119,6 @@
                     <b-form-checkbox value="fructose">fructose</b-form-checkbox>
                   </b-form-checkbox-group>
                 </b-form-group>
-
                 <b-form-group id="input-group-5" label="Extra's" label-for="input-5">
                 <b-form-checkbox-group id="checkboxes-5" v-model="form.extraFoodData">
                   <b-form-checkbox value="vegetarisch">vegetarisch</b-form-checkbox>
@@ -128,7 +127,6 @@
                   <b-form-checkbox value="primeur">primeur</b-form-checkbox>
                 </b-form-checkbox-group>
                 </b-form-group>
-
 
                 <b-button type="submit" variant="primary">Submit</b-button>
                 <b-button type="reset" variant="danger">Reset</b-button>

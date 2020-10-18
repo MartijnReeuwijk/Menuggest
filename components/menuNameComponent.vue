@@ -67,7 +67,7 @@
           {value: 'Kerst', text: 'Kerst'},
           {value: 'Lam', text: 'Lam'},
           {value: 'Kreeft', text: 'Kreeft'},
-
+          {value: 'Wild', text: 'Wild'}
         ]
       }
     },
