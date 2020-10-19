@@ -1,6 +1,6 @@
 # Menuggest
 
-> My tremendous Nuxt.js project
+> My graduation project
 
 ## Build Setup
 
