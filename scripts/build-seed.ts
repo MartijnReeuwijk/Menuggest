@@ -100,7 +100,7 @@ const gerechten = lees<OudGerecht[]>('legacy/assets/menukaart.json')
     }
   })
 
-const seed = { versie: 1, ingredienten, prijzen: [], gerechten, receptRegels: [] }
+const seed = { versie: 2, ingredienten, prijzen: [], gerechten, receptRegels: [], imports: [], verkoopregels: [], koppelingen: [] }
 writeFileSync(new URL('data/seed.json', root), `${JSON.stringify(seed, null, 2)}\n`)
 
 // SQL

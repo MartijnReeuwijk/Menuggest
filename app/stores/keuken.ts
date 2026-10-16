@@ -1,20 +1,25 @@
 import {
   type Eenheid,
   type Gang,
+  type KassaArtikel,
   type Kostprijs,
   type Marge,
   allergenenVan,
   berekenKostprijs,
   berekenMarge,
   geldendePrijs,
+  verkoopPerGerecht,
 } from '#domain'
 import {
   type Gerecht,
   type Ingredient,
   type IngredientPrijsRecord,
+  type KassaImport,
+  type KassaKoppeling,
   type Keuken,
   type ReceptRegelRecord,
   keukenSchema,
+  migreerKeuken,
 } from '#shared/schemas'
 import seed from '~~/data/seed.json'
 
@@ -33,7 +38,7 @@ function laad(): Keuken {
   try {
     const ruw = localStorage.getItem(OPSLAGSLEUTEL)
     if (ruw) {
-      const resultaat = keukenSchema.safeParse(JSON.parse(ruw))
+      const resultaat = keukenSchema.safeParse(migreerKeuken(JSON.parse(ruw)))
       if (resultaat.success) return resultaat.data
       console.warn('Opgeslagen keukendata is ongeldig; startdata geladen.', resultaat.error)
     }
@@ -42,6 +47,18 @@ function laad(): Keuken {
     console.warn('Kon keukendata niet lezen; startdata geladen.', fout)
   }
   return startdata()
+}
+
+/** Een kassa-artikel zoals het koppelscherm het toont: uit een lopende import of uit de opslag. */
+export interface TeKoppelenArtikel {
+  id: string
+  artikelnaam: string
+  sleutel: string
+  artikelnummers: string[]
+  omzetgroep: string | null
+  aantal: number
+  omzetExclCenten: number
+  gangbarePrijsInclCenten: number | null
 }
 
 export interface GerechtAnalyse {
@@ -139,6 +156,8 @@ export const useKeukenStore = defineStore('keuken', () => {
   function verwijderGerecht(id: string) {
     staat.value.gerechten = staat.value.gerechten.filter(g => g.id !== id)
     staat.value.receptRegels = staat.value.receptRegels.filter(r => r.gerechtId !== id)
+    // Zoals `on delete cascade`: het kassa-artikel is daarna weer open, niet genegeerd.
+    staat.value.koppelingen = staat.value.koppelingen.filter(k => k.gerechtId !== id)
   }
 
   // Receptregels
@@ -204,6 +223,106 @@ export const useKeukenStore = defineStore('keuken', () => {
     staat.value.prijzen = staat.value.prijzen.filter(p => p.id !== id)
   }
 
+  // Kassa-import
+
+  const imports = computed(() => [...staat.value.imports].sort((a, b) => b.periodeVan.localeCompare(a.periodeVan)))
+  const koppelingOpSleutel = computed(() => new Map(staat.value.koppelingen.map(k => [k.sleutel, k])))
+
+  function koppelingVan(sleutel: string): KassaKoppeling | undefined {
+    return koppelingOpSleutel.value.get(sleutel)
+  }
+
+  /** gerechtId = null: bewust negeren. */
+  function zetKoppeling(sleutel: string, kassaArtikelnaam: string, gerechtId: string | null) {
+    const index = staat.value.koppelingen.findIndex(k => k.sleutel === sleutel)
+    const koppeling = { sleutel, kassaArtikelnaam, gerechtId }
+    if (index >= 0) staat.value.koppelingen[index] = koppeling
+    else staat.value.koppelingen.push(koppeling)
+  }
+
+  function verwijderKoppeling(sleutel: string) {
+    staat.value.koppelingen = staat.value.koppelingen.filter(k => k.sleutel !== sleutel)
+  }
+
+  function maakGerechtVanArtikel(artikel: TeKoppelenArtikel, gang: Gang): Gerecht {
+    const gerecht = nieuwGerecht(gang)
+    gerecht.naam = artikel.artikelnaam
+    gerecht.menuprijsCenten = artikel.gangbarePrijsInclCenten ?? 0
+    zetKoppeling(artikel.sleutel, artikel.artikelnaam, gerecht.id)
+    return gerecht
+  }
+
+  function slaImportOp(invoer: Omit<KassaImport, 'id' | 'geimporteerdOp'>, artikelen: readonly KassaArtikel[]): KassaImport {
+    const kassaImport: KassaImport = { ...invoer, id: crypto.randomUUID(), geimporteerdOp: new Date().toISOString() }
+    staat.value.imports.push(kassaImport)
+    for (const artikel of artikelen) {
+      staat.value.verkoopregels.push({
+        id: crypto.randomUUID(),
+        importId: kassaImport.id,
+        kassaArtikelnaam: artikel.artikelnaam,
+        sleutel: artikel.sleutel,
+        kassaArtikelnummers: artikel.artikelnummers,
+        omzetgroep: artikel.omzetgroep,
+        aantal: artikel.aantal,
+        omzetExclCenten: artikel.omzetExclCenten,
+        omzetInclCenten: artikel.omzetInclCenten,
+        gangbarePrijsInclCenten: artikel.gangbarePrijsInclCenten,
+      })
+    }
+    return kassaImport
+  }
+
+  function verwijderImport(id: string) {
+    staat.value.imports = staat.value.imports.filter(i => i.id !== id)
+    staat.value.verkoopregels = staat.value.verkoopregels.filter(r => r.importId !== id)
+  }
+
+  function regelsVanImport(importId: string) {
+    return staat.value.verkoopregels.filter(r => r.importId === importId)
+  }
+
+  /** Alle kassa-artikelen over alle imports, per omzetgroep en naam opgeteld. */
+  const kassaArtikelen = computed<TeKoppelenArtikel[]>(() => {
+    const map = new Map<string, TeKoppelenArtikel>()
+    for (const regel of staat.value.verkoopregels) {
+      const id = `${regel.omzetgroep ?? ''}\u0000${regel.sleutel}`
+      const artikel = map.get(id) ?? {
+        id,
+        artikelnaam: regel.kassaArtikelnaam,
+        sleutel: regel.sleutel,
+        artikelnummers: [],
+        omzetgroep: regel.omzetgroep,
+        aantal: 0,
+        omzetExclCenten: 0,
+        gangbarePrijsInclCenten: regel.gangbarePrijsInclCenten,
+      }
+      artikel.aantal += regel.aantal
+      artikel.omzetExclCenten += regel.omzetExclCenten
+      for (const nummer of regel.kassaArtikelnummers) if (!artikel.artikelnummers.includes(nummer)) artikel.artikelnummers.push(nummer)
+      map.set(id, artikel)
+    }
+    return [...map.values()]
+  })
+
+  const gerechtVoorSleutel = (sleutel: string) => koppelingOpSleutel.value.get(sleutel)?.gerechtId
+
+  /** Per import: wat is er per gerecht verkocht. */
+  const verkoopPerImport = computed(() => new Map(staat.value.imports.map(i => [
+    i.id,
+    verkoopPerGerecht(regelsVanImport(i.id), gerechtVoorSleutel),
+  ])))
+
+  function verkoopVanGerecht(gerechtId: string) {
+    return imports.value.flatMap((kassaImport) => {
+      const verkocht = verkoopPerImport.value.get(kassaImport.id)?.get(gerechtId)
+      return verkocht ? [{ kassaImport, ...verkocht }] : []
+    })
+  }
+
+  function kassaNamenVanGerecht(gerechtId: string) {
+    return staat.value.koppelingen.filter(k => k.gerechtId === gerechtId).map(k => k.kassaArtikelnaam)
+  }
+
   function herstelStartdata() {
     staat.value = startdata()
   }
@@ -233,6 +352,17 @@ export const useKeukenStore = defineStore('keuken', () => {
     verwijderIngredient,
     voegPrijsToe,
     verwijderPrijs,
+    imports,
+    kassaArtikelen,
+    koppelingVan,
+    zetKoppeling,
+    verwijderKoppeling,
+    maakGerechtVanArtikel,
+    slaImportOp,
+    verwijderImport,
+    regelsVanImport,
+    verkoopVanGerecht,
+    kassaNamenVanGerecht,
     herstelStartdata,
   }
 })

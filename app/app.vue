@@ -5,6 +5,7 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 const links: NavigationMenuItem[] = [
   { label: 'Gerechten', to: '/gerechten', icon: 'i-lucide-utensils' },
   { label: 'Ingrediënten', to: '/ingredienten', icon: 'i-lucide-carrot' },
+  { label: 'Verkoop', to: '/verkoop', icon: 'i-lucide-receipt' },
 ]
 </script>
 

@@ -259,7 +259,7 @@ function verwijderGeopend() {
                     <span class="text-muted">· {{ formatPrijsPerEenheid(prijs) }}</span>
                   </div>
                   <div class="text-xs text-muted">
-                    vanaf {{ new Date(prijs.geldigVanaf).toLocaleDateString('nl-NL') }}<template v-if="prijs.leverancier">
+                    vanaf {{ formatDatum(prijs.geldigVanaf) }}<template v-if="prijs.leverancier">
                       · {{ prijs.leverancier }}
                     </template>
                   </div>

@@ -28,3 +28,8 @@ export function vandaag(): string {
   // Lokale datum als jjjj-mm-dd.
   return new Date().toLocaleDateString('sv-SE')
 }
+
+/** "2018-09-11" → "11-9-2018"; als lokale datum, niet als UTC-middernacht. */
+export function formatDatum(iso: string): string {
+  return new Date(`${iso}T00:00:00`).toLocaleDateString('nl-NL')
+}

@@ -27,6 +27,8 @@ useHead({ title: () => `${formulier.value?.naam ?? 'Gerecht'} · Menuggest` })
 const analyse = computed(() => keuken.analyses.get(id.value))
 const regels = computed(() => keuken.receptVan(id.value))
 const allergenen = computed(() => keuken.allergenenVanGerecht(id.value))
+const verkoop = computed(() => keuken.verkoopVanGerecht(id.value))
+const kassaNamen = computed(() => keuken.kassaNamenVanGerecht(id.value))
 
 const gangItems = GANGEN.map(gang => ({ label: GANG_LABELS[gang], value: gang }))
 const btwItems = computed(() => BTW_CATEGORIEEN.map(categorie => ({
@@ -255,6 +257,40 @@ async function verwijder() {
 
         <aside class="space-y-6">
           <MargeOverzicht :analyse="analyse" />
+
+          <UCard>
+            <template #header>
+              <h2 class="font-semibold">
+                Verkoop
+              </h2>
+            </template>
+            <template v-if="verkoop.length">
+              <ul class="divide-y divide-default text-sm -my-2">
+                <li v-for="periode in verkoop" :key="periode.kassaImport.id" class="py-2">
+                  <div class="flex justify-between gap-3">
+                    <span>{{ formatDatum(periode.kassaImport.periodeVan) }} t/m {{ formatDatum(periode.kassaImport.periodeTot) }}</span>
+                    <span class="bedrag font-medium">{{ formatGetal(periode.aantal) }} ×</span>
+                  </div>
+                  <div class="flex justify-between gap-3 text-xs text-muted">
+                    <span>{{ periode.kassaImport.locatie ?? '' }}</span>
+                    <span class="bedrag">{{ formatEuro(periode.omzetExclCenten) }} excl.</span>
+                  </div>
+                </li>
+              </ul>
+            </template>
+            <p v-else class="text-sm text-muted">
+              Nog geen verkoop.
+              <ULink to="/verkoop" class="text-primary">
+                Koppel een kassa-artikel
+              </ULink>
+              aan dit gerecht.
+            </p>
+            <template v-if="kassaNamen.length" #footer>
+              <p class="text-xs text-muted">
+                Kassa: {{ kassaNamen.join(', ') }}
+              </p>
+            </template>
+          </UCard>
 
           <UCard>
             <template #header>

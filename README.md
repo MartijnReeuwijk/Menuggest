@@ -12,7 +12,7 @@ Dit is de herbouw van mijn afstudeerproject uit 2020. Waarom en hoe staat in
 |---|---|---|
 | 0 | Fundament: stack, schema, seed uit oude assets | ✅ |
 | 1 | Kostprijs-engine: ingrediënten, recepten, yield, btw | ✅ lokaal (localStorage) |
-| 2 | Kassa-import | — |
+| 2 | Kassa-import: upload, kolommapping, koppelen met geheugen | ✅ lokaal |
 | 3 | Menu-engineeringmatrix | — |
 | 4 | Kaart samenstellen met live marge | — |
 | 5 | Uitgeven en vergelijken | — |
@@ -45,12 +45,15 @@ domain/            Rekenkern in pure TypeScript, zonder Vue. Alles wat geld raak
   kostprijs.ts     Recept → kostprijs, met markering van regels die niet te berekenen zijn
   marge.ts         Contributiemarge, food cost %, gewogen kaartmarge
   allergenen.ts    De 14 EU-allergenen, afgeleid uit ingrediënten
+  kassa.ts         Export lezen (CSV/JSON), kopregel en kolommen raden, artikelen optellen,
+                   gerecht voorstellen, gang raden uit omzetgroep
+  verkoop.ts       Verkoop per gerecht via het koppelgeheugen
 shared/schemas.ts  Zod-schema's per entiteit (formulieren, opslag, straks API en import)
 app/               Nuxt 4-app (Nuxt UI, Pinia)
   stores/keuken.ts Alle data plus afgeleide analyses per gerecht
-  pages/           /gerechten, /gerechten/:id, /ingredienten
+  pages/           /gerechten, /gerechten/:id, /ingredienten, /verkoop, /verkoop/import
 supabase/
-  migrations/      Postgres-schema met RLS
+  migrations/      Postgres-schema met RLS (basis + kassa-import)
   seed.sql         Gegenereerd uit legacy/assets
 data/seed.json     Dezelfde seed als startdata voor de app
 scripts/           build-seed.ts (npm run seed)
@@ -72,6 +75,44 @@ food_cost_pct = kostprijs ÷ netto_omzet
 - Inkoopprijzen zijn exclusief btw en worden aangevuld, niet overschreven. Bij twee prijzen
   op dezelfde datum telt de goedkoopste per eenheid.
 - Btw-tarieven staan per ingangsdatum in `domain/btw.ts`. Controleer ze bij elke wijziging.
+
+## Kassa-import
+
+`/verkoop/import` neemt een artikelexport van de kassa in drie stappen:
+
+1. **Bestand en periode.** Een CSV (komma of puntkomma) of JSON. De periode staat
+   niet in de export; die vul je zelf in. Als een periode overlapt met een eerdere
+   import, krijg je een waarschuwing, want anders telt de verkoop dubbel.
+2. **Kolommen.** De kopregel wordt tussen de metaregels gezocht en de kolommen worden
+   geraden (Nederlandse en Engelse namen). Regels van hetzelfde artikel worden per
+   omzetgroep opgeteld. Staat er een totaalregel in de export, dan wordt daartegen
+   gecontroleerd.
+3. **Koppelen.** Elk kassa-artikel wordt een gerecht, wordt genegeerd (drank, borrel)
+   of blijft open. Dat gaat per artikel, per omzetgroep of als nieuw gerecht met de
+   gangbare kassaprijs. Bij namen die in elkaar passen ("Saté" ↔ "Saté van
+   varkenshaas") doet de app een voorstel, maar dat moet je bevestigen.
+
+Wat je koppelt, wordt onthouden per genormaliseerde artikelnaam en geldt voor alle
+imports, ook de eerdere. Het gerecht wordt pas bij het lezen via de koppeling bepaald.
+Een gecorrigeerde koppeling hoeft dus nergens te worden bijgewerkt.
+
+De export uit 2018 (`legacy/assets/convertcsv.csv` en `csvjson.json`) staat als test in
+`domain/kassa.test.ts`: 344 regels worden 240 artikelen, en die tellen precies op tot de
+totaalregel van de kassa (14.190 stuks, € 105.503,26 excl. btw).
+
+Valkuilen in die export, nu afgevangen:
+
+- Aantallen met een duizendtalpunt: "1.137" is 1137.
+- Hetzelfde artikel staat op meerdere regels met verschillende prijzen, inclusief
+  € 0,00 voor onderdelen van een menu. Als menuprijs telt de prijs waarvoor de meeste
+  stuks verkocht zijn, niet het gemiddelde.
+- Omzet excl. btw is van de kassa zelf. Terugrekenen vanaf incl. wijkt af door
+  afronding per bon.
+- Twee locaties (Meierij, Bokkesteeg) zitten alleen in de naam van de omzetgroep.
+
+Nog niet ondersteund: Excel-bestanden (.xlsx); exporteer die als CSV. Menu's
+("Maandmenu Meierij" € 29 met losse gangen van € 0) worden nog niet over hun gangen
+verdeeld.
 
 ## Seed
 

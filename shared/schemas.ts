@@ -54,12 +54,60 @@ export const receptRegelSchema = z.object({
 })
 export type ReceptRegelRecord = z.infer<typeof receptRegelSchema>
 
-/** Alles wat de app lokaal bewaart, met een versienummer voor latere migraties. */
+export const kassaImportSchema = z.object({
+  id,
+  bestandsnaam: z.string(),
+  periodeVan: z.iso.date(),
+  periodeTot: z.iso.date(),
+  locatie: z.string().trim().nullable(),
+  geimporteerdOp: z.iso.datetime(),
+}).refine(i => i.periodeTot >= i.periodeVan, { message: 'Einddatum ligt voor de begindatum', path: ['periodeTot'] })
+export type KassaImport = z.infer<typeof kassaImportSchema>
+
+/** Eén kassa-artikel binnen één import, opgeteld over de regels van de export. */
+export const verkoopregelSchema = z.object({
+  id,
+  importId: id,
+  kassaArtikelnaam: z.string().min(1),
+  /** Genormaliseerde naam; sleutel naar het koppelgeheugen. */
+  sleutel: z.string().min(1),
+  kassaArtikelnummers: z.array(z.string()),
+  omzetgroep: z.string().nullable(),
+  aantal: z.int(),
+  omzetExclCenten: z.int(),
+  omzetInclCenten: z.int().nullable(),
+  gangbarePrijsInclCenten: z.int().nullable(),
+})
+export type Verkoopregel = z.infer<typeof verkoopregelSchema>
+
+/**
+ * Koppelgeheugen: welk kassa-artikel hoort bij welk gerecht. `gerechtId: null`
+ * betekent bewust genegeerd (drank, borrelhapjes, …). Eén keer kiezen, elke import raak.
+ */
+export const kassaKoppelingSchema = z.object({
+  sleutel: z.string().min(1),
+  kassaArtikelnaam: z.string(),
+  gerechtId: z.uuid().nullable(),
+})
+export type KassaKoppeling = z.infer<typeof kassaKoppelingSchema>
+
+/** Alles wat de app lokaal bewaart, met een versienummer voor migraties. */
 export const keukenSchema = z.object({
-  versie: z.literal(1),
+  versie: z.literal(2),
   ingredienten: z.array(ingredientSchema),
   prijzen: z.array(ingredientPrijsSchema),
   gerechten: z.array(gerechtSchema),
   receptRegels: z.array(receptRegelSchema),
+  imports: z.array(kassaImportSchema),
+  verkoopregels: z.array(verkoopregelSchema),
+  koppelingen: z.array(kassaKoppelingSchema),
 })
 export type Keuken = z.infer<typeof keukenSchema>
+
+/** Brengt opgeslagen data van een oudere versie naar de huidige vorm. */
+export function migreerKeuken(ruw: unknown): unknown {
+  if (ruw && typeof ruw === 'object' && 'versie' in ruw && ruw.versie === 1) {
+    return { ...ruw, versie: 2, imports: [], verkoopregels: [], koppelingen: [] }
+  }
+  return ruw
+}

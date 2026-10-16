@@ -1,5 +1,5 @@
 {
-  "versie": 1,
+  "versie": 2,
   "ingredienten": [
     {
       "id": "286a089e-2798-5f0d-930f-edfffa253ba2",
@@ -3520,5 +3520,8 @@
       "actief": true
     }
   ],
-  "receptRegels": []
+  "receptRegels": [],
+  "imports": [],
+  "verkoopregels": [],
+  "koppelingen": []
 }
